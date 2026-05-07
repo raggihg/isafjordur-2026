@@ -1,0 +1,4 @@
+[build]
+  base = "isafjordur-2026"
+  command = "npm run build"
+  publish = "dist"
