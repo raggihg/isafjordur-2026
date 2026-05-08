@@ -48,7 +48,7 @@ nav { display: flex; justify-content: center; gap: 30px; font-weight: 850; color
 nav a:hover { color: var(--blue); }
 
 .ghostButton {
-  height: 42px;
+  min-height: 42px;
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -64,32 +64,16 @@ nav a:hover { color: var(--blue); }
 .logoMark {
   width: 62px;
   height: 62px;
-  display: grid;
-  place-items: center;
   border-radius: 18px;
-  color: var(--party);
-  background: var(--light);
-  border: 1px solid color-mix(in srgb, var(--party) 24%, white);
-  box-shadow: inset 0 -10px 20px rgba(255,255,255,.42);
-}
-
-.logoMark span {
-  font-size: 24px;
-  font-weight: 950;
-  letter-spacing: -.06em;
+  object-fit: contain;
+  box-shadow: 0 10px 22px rgba(15,23,42,.08);
 }
 
 .logoMark.large {
   width: 132px;
   height: 132px;
   border-radius: 34px;
-  color: white;
-  background: var(--party);
-  box-shadow: 0 18px 40px color-mix(in srgb, var(--party) 26%, transparent);
-}
-
-.logoMark.large span {
-  font-size: 48px;
+  box-shadow: 0 18px 40px rgba(15,23,42,.12);
 }
 
 .hero {
@@ -140,7 +124,7 @@ nav a:hover { color: var(--blue); }
 
 .primaryButton,
 .secondaryButton {
-  height: 46px;
+  min-height: 46px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -204,6 +188,7 @@ nav a:hover { color: var(--blue); }
   color: var(--blue);
   font-weight: 950;
   cursor: pointer;
+  text-align: left;
 }
 
 .pageWrap {
@@ -279,10 +264,6 @@ nav a:hover { color: var(--blue); }
   border-radius: 13px;
 }
 
-.partyHead .logoMark span {
-  font-size: 17px;
-}
-
 .partyHead span { display: block; font-size: 13px; }
 
 .topicName {
@@ -301,9 +282,7 @@ nav a:hover { color: var(--blue); }
 
 .sideStack { display: grid; gap: 16px; align-content: start; }
 
-.statusList,
-.checkList,
-.simpleList {
+.statusList {
   padding: 0;
   margin: 14px 0 0;
   list-style: none;
@@ -311,24 +290,14 @@ nav a:hover { color: var(--blue); }
   gap: 10px;
 }
 
-.statusList li,
-.checkList li {
+.statusList li {
   display: flex;
   align-items: start;
   gap: 9px;
   color: #263653;
 }
 
-.statusList svg,
-.checkList svg { flex: 0 0 auto; color: #17a35f; }
-
-.simpleList li {
-  padding: 11px 13px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #f8fbff;
-  color: #263653;
-}
+.statusList svg { flex: 0 0 auto; color: #17a35f; }
 
 .sourcesPanel { margin-top: 16px; margin-bottom: 32px; }
 
@@ -414,7 +383,7 @@ nav a:hover { color: var(--blue); }
 
 .detailGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
   gap: 16px;
   margin-bottom: 16px;
 }
@@ -432,17 +401,39 @@ nav a:hover { color: var(--blue); }
   background: #fbfdff;
 }
 
-.policyItem h3 {
-  margin: 0 0 7px;
-  font-size: 17px;
+.policyItem h3 { margin: 0 0 7px; font-size: 17px; }
+.policyItem p { margin: 0; color: #34425f; }
+
+.smallIntro {
+  margin: 10px 0 0;
+  color: #5b6680;
 }
 
-.policyItem p {
-  margin: 0;
-  color: #34425f;
+.candidateList {
+  margin: 14px 0 0;
+  padding-left: 24px;
+  display: grid;
+  gap: 8px;
 }
 
-.note { margin-bottom: 0; font-size: 14px; }
+.candidateList li {
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f8fbff;
+}
+
+.candidateList strong {
+  display: block;
+  color: #132344;
+}
+
+.candidateList span {
+  display: block;
+  color: #5b6680;
+  font-size: 14px;
+  margin-top: 2px;
+}
 
 .topicCards {
   display: grid;

@@ -16,16 +16,7 @@ import {
 import { parties, sources, topics } from './data/parties.js'
 
 function LogoMark({ party, large = false }) {
-  return (
-    <div
-      className={large ? 'logoMark large' : 'logoMark'}
-      style={{ '--party': party.color, '--light': party.lightColor }}
-      aria-label={party.logoLabel}
-      title={party.logoLabel}
-    >
-      <span>{party.logoText}</span>
-    </div>
-  )
+  return <img className={large ? 'logoMark large' : 'logoMark'} src={party.logo} alt={`Merki ${party.name}`} />
 }
 
 function Header({ activeParty, setActiveParty }) {
@@ -54,6 +45,8 @@ function Header({ activeParty, setActiveParty }) {
 }
 
 function Hero() {
+  const candidateCount = parties.reduce((sum, party) => sum + party.candidates.length, 0)
+
   return (
     <section className="hero">
       <div className="heroContent">
@@ -70,9 +63,9 @@ function Hero() {
       </div>
 
       <div className="heroStats">
-        <div><strong>5</strong><span>framboðslistar</span></div>
+        <div><strong>{parties.length}</strong><span>framboðslistar</span></div>
         <div><strong>{topics.length}</strong><span>málaflokkar</span></div>
-        <div><strong>{sources.length}</strong><span>heimildatenglar</span></div>
+        <div><strong>{candidateCount}</strong><span>frambjóðendur skráðir</span></div>
       </div>
     </section>
   )
@@ -91,7 +84,7 @@ function PartyCards({ setActiveParty }) {
               {party.status}
             </span>
             <button onClick={() => setActiveParty(party.id)}>
-              Skoða nánar <ArrowRight size={16} />
+              Skoða flokk og frambjóðendur <ArrowRight size={16} />
             </button>
           </div>
         </article>
@@ -182,12 +175,15 @@ function PartyDetail({ party, setActiveParty }) {
 
         <article className="panel">
           <h2>Frambjóðendur</h2>
-          <ul className="simpleList">
+          <p className="smallIntro">{party.candidates.length} frambjóðendur á {party.list}.</p>
+          <ol className="candidateList">
             {party.candidates.map((candidate) => (
-              <li key={candidate}>{candidate}</li>
+              <li key={candidate.name}>
+                <strong>{candidate.name}</strong>
+                <span>{candidate.role}</span>
+              </li>
             ))}
-          </ul>
-          <p className="note">Næsta skref er að fylla út alla frambjóðendur fyrir C, D, M og S þegar listarnir hafa verið lesnir yfir.</p>
+          </ol>
         </article>
       </div>
 
@@ -258,7 +254,7 @@ export default function App() {
             </div>
             <div className="infoBox">
               <Info size={18} />
-              <span>Gögnin eru í vinnslu. Listamerkin eru sett upp sem vefvæn merki með listabókstöfum og flokkslitum.</span>
+              <span>Smelltu á flokk til að sjá frambjóðendur. Kennitölur og heimilisföng eru ekki birt.</span>
             </div>
           </section>
 
@@ -269,17 +265,17 @@ export default function App() {
                 <p className="eyebrow">Staða gagna</p>
                 <h2>Hvað er komið?</h2>
                 <ul className="statusList">
-                  <li><CheckCircle2 size={18} /> Listamerki fyrir alla flokka</li>
-                  <li><CheckCircle2 size={18} /> Meiri stefnumál á flokkasíðum</li>
+                  <li><CheckCircle2 size={18} /> Frambjóðendur allra lista</li>
+                  <li><CheckCircle2 size={18} /> Staðbundin SVG-listamerki</li>
                   <li><CheckCircle2 size={18} /> Stefnuskrár B, C, D og S tengdar</li>
-                  <li><Info size={18} /> M-lista vantar enn stefnuskrá/frambjóðendur</li>
+                  <li><Info size={18} /> M-lista vantar enn staðbundna stefnuskrá</li>
                 </ul>
               </article>
 
               <article className="panel">
                 <p className="eyebrow">Næst</p>
                 <h2>Til að klára</h2>
-                <p>Setja inn opinber myndmerki ef við fáum beinar logo-skrár, lesa PDF-skjölin nánar og bæta við beinum tilvitnunum.</p>
+                <p>Næst getum við lesið PDF-stefnuskrárnar nánar og sett inn beinar tilvitnanir með heimildum.</p>
               </article>
             </aside>
           </div>

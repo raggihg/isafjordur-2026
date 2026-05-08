@@ -1,3 +1,3 @@
 # Ísafjörður 2026
 
-Gagnadrifinn kosningavefur með listamerkjum, stefnumálum og heimildum.
+Uppfærð útgáfa með flokkasíðum, frambjóðendum allra lista, stefnumálum og listamerkjum.
