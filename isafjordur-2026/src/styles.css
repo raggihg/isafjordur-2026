@@ -2645,3 +2645,12 @@ body {
     gap: 8px;
   }
 }
+
+.eventEmpty {
+  padding: 16px;
+  border: 1px dashed rgba(13,27,42,.18);
+  border-radius: 14px;
+  color: #5b6680;
+  background: rgba(255,255,255,.65);
+  font-size: 14px;
+}

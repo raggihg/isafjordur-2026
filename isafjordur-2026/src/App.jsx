@@ -17,7 +17,7 @@ import {
   Vote
 } from 'lucide-react'
 import { parties, sources, topics } from './data/parties.js'
-import { events } from './data/events.js'
+import { loadEvents } from './data/eventsSheet.js'
 import { articles } from './data/articles.js'
 
 function stableShuffleOptions(options, questionIndex) {
@@ -815,7 +815,21 @@ function TopicsOverview({ setActiveTopic }) {
 
 
 function EventsPanel() {
-  const visibleEvents = [...events]
+  const [loadedEvents, setLoadedEvents] = useState([])
+
+  useEffect(() => {
+    let mounted = true
+
+    loadEvents().then((items) => {
+      if (mounted) setLoadedEvents(items)
+    })
+
+    return () => {
+      mounted = false
+    }
+  }, [])
+
+  const visibleEvents = [...loadedEvents]
     .filter((event) => event.date >= '2026-04-13')
     .sort((a, b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`))
 
@@ -825,7 +839,7 @@ function EventsPanel() {
         <div>
           <p className="eyebrow">Viðburðir</p>
           <h2>Næstu viðburðir</h2>
-          <p>Viðburðir, opið hús og kosningakaffi sem hafa verið auglýst eftir 13. apríl.</p>
+          <p>Viðburðir, opið hús og kosningakaffi sem hafa verið auglýst eftir 13. apríl. Hægt er að uppfæra listann úr Google Sheet.</p>
         </div>
       </div>
 
@@ -852,6 +866,12 @@ function EventsPanel() {
             </a>
           )
         })}
+
+        {!visibleEvents.length && (
+          <div className="eventEmpty">
+            Engir viðburðir fundust. Athugaðu Google Sheet tenginguna eða bættu við viðburði.
+          </div>
+        )}
       </div>
     </section>
   )
