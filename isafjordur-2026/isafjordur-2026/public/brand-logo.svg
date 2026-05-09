@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" role="img" aria-label="Ísafjarðarbær 2026">
+  <defs>
+    <linearGradient id="water" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1e88b5"/>
+      <stop offset="1" stop-color="#8ec1da"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(18 18)">
+    <circle cx="92" cy="92" r="86" fill="#fff" stroke="#0d1b2a" stroke-width="8"/>
+    <path d="M25 114 L62 77 L82 96 L113 56 L160 115 Z" fill="#0d1b2a"/>
+    <path d="M60 78 L74 91 L82 82 L92 94 L110 67 L124 92 L160 115 L25 115 Z" fill="#8ec1da" opacity=".55"/>
+    <path d="M39 132 C67 126 89 137 119 130 C137 126 151 128 168 122" fill="none" stroke="url(#water)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M36 151 C70 144 93 154 123 146 C144 141 158 143 174 137" fill="none" stroke="url(#water)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M83 112 h12 v-20 h16 v20 h10 v-31 h22 v31 h11 v17 H83z" fill="#fff"/>
+    <path d="M139 69 L162 92 L199 42" fill="none" stroke="#f2b705" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M30 94 A66 66 0 0 1 154 48" fill="none" stroke="#0d1b2a" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g font-family="Poppins, Arial, sans-serif">
+    <text x="245" y="94" font-size="58" font-weight="700" fill="#0d1b2a" letter-spacing="4">ÍSAFJARÐARBÆR</text>
+    <text x="770" y="94" font-size="58" font-weight="500" fill="#f2b705">2026</text>
+    <line x1="245" y1="119" x2="880" y2="119" stroke="#1e88b5" stroke-width="4"/>
+    <text x="245" y="169" font-size="27" font-weight="400" fill="#0d1b2a" letter-spacing="16">STEFNUSKRÁR Í EINUM STAÐ</text>
+  </g>
+</svg>
