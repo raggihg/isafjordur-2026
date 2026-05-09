@@ -2009,3 +2009,80 @@ body {
   content: " — ";
   color: #9aa6b5;
 }
+
+
+/* Lighter election info + footer style */
+.infoGrid {
+  gap: 10px !important;
+}
+
+.infoMiniCard {
+  padding: 14px 16px !important;
+  border-radius: 14px !important;
+  background: rgba(255,255,255,.72) !important;
+  box-shadow: 0 6px 18px rgba(15,23,42,.04) !important;
+}
+
+.infoMiniCard strong {
+  font-size: 13px !important;
+  opacity: .8;
+}
+
+.infoMiniCard h3,
+.infoMiniCard .value {
+  font-size: 18px !important;
+}
+
+.sourcesPanel {
+  padding-top: 22px !important;
+  padding-bottom: 22px !important;
+}
+
+.sourceGroup {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  background: rgba(255,255,255,.68) !important;
+}
+
+.sourceGroup summary {
+  min-height: 46px !important;
+  font-size: 14px !important;
+}
+
+.sourceGroupLinks a {
+  min-height: 34px !important;
+  font-size: 13px !important;
+  padding: 4px 0 !important;
+}
+
+.quizPanel {
+  overflow: hidden;
+  position: relative;
+}
+
+.quizPanel::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  background: rgba(242,183,5,.12);
+}
+
+.quizQuestion {
+  position: relative;
+  z-index: 2;
+  border-radius: 18px !important;
+}
+
+.quizOptions button {
+  min-height: 46px !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+}
+
+.quizResult {
+  border-radius: 22px !important;
+}

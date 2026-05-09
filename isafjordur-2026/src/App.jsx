@@ -78,7 +78,7 @@ const electionInfo = [
   {
     title: 'Kosningadagur',
     value: '16. maí 2026',
-    note: 'Kosið verður til bæjarstjórnar í Ísafjarðarbæ.'
+    note: 'Kjördagur sveitarstjórnarkosninga í Ísafjarðarbæ.'
   },
   {
     title: 'Kjörskrá',
@@ -146,7 +146,7 @@ const campaignInfo = [
   },
   {
     party: 'D',
-    title: 'Sjálfstæðisflokkurinn',
+    title: 'Sjálfstæðisflokkur',
     location: 'Aðalstræti 24, Ísafirði (Gamla bakaríið við Silfurtorg)',
     hours: 'Opnunartímar ekki staðfestir enn',
     cafe: 'Upplýsingar væntanlegar',
@@ -154,7 +154,7 @@ const campaignInfo = [
   },
   {
     party: 'M',
-    title: 'Miðflokkurinn og hin',
+    title: 'Miðflokkur og hin',
     location: 'Vesturferðir í Edinborgarhúsinu',
     hours: '9. maí kl. 12–14 · fleiri tímar væntanlegir',
     cafe: 'Heitt á könnunni ☕️',
@@ -197,14 +197,14 @@ const sourceGroups = [
     ]
   },
   {
-    title: 'Sjálfstæðisflokkurinn',
+    title: 'Sjálfstæðisflokkur',
     links: [
       { label: 'Heimasíða og frambjóðendur', url: 'https://xd.is/sveitarstjornarkosningar/isafjardarbaer/' },
       { label: 'Stefnuskrá', url: 'https://xd.is/wp-content/uploads/2026/05/xd-stefnuskra-isafjardarbaer.pdf' }
     ]
   },
   {
-    title: 'Miðflokkurinn og hin',
+    title: 'Miðflokkur og hin',
     links: [
       { label: 'Heimasíða framboðs', url: 'https://midflokkurinn.is/isafjordur' },
       { label: 'Facebook myndir / stefnumál', url: 'https://www.facebook.com/profile.php?id=61572070263010&sk=photos' },
@@ -250,7 +250,7 @@ function Header({ setActiveParty, setActiveTopic }) {
         <button onClick={() => goHome('#malefni')}>Málefni</button>
         <button onClick={() => goHome('#kosningar')}>Kosningar</button>
         <button onClick={() => goHome('#konnun')}>Könnun</button>
-        <button onClick={() => goHome('#heimildir')}>Heimildir</button>
+        <button onClick={() => goHome('#heimildir')}>Samfélagsmiðlar & heimildir</button>
       </nav>
     </header>
   )
