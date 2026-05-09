@@ -35,11 +35,6 @@ function Header({ activeParty, setActiveParty }) {
         <a href="#samanburdur">Samanburður</a>
         <a href="#heimildir">Heimildir</a>
       </nav>
-
-      <button className="ghostButton" onClick={() => setActiveParty(activeParty ? null : parties[0].id)}>
-        <Vote size={18} />
-        {activeParty ? 'Forsíða' : 'Skoða flokk'}
-      </button>
     </header>
   )
 }
@@ -50,17 +45,11 @@ function Hero() {
   return (
     <section className="hero">
       <div className="heroContent">
-        <img className="heroBrandLogo" src="/brand-logo.svg" alt="Ísafjarðarbær 2026 - Stefnuskrár í einum stað" />
         <p className="eyebrow"><ShieldCheck size={16} /> Óháð yfirlit í vinnslu</p>
         <h1>Berðu saman stefnur flokkanna í Ísafjarðarbæ.</h1>
         <p>
           Vefurinn safnar saman stefnuskrám, framboðslistum og heimildum á einn stað svo íbúar geti séð muninn á áherslum flokkanna.
         </p>
-
-        <div className="heroActions">
-          <a className="primaryButton" href="#samanburdur">Skoða samanburð <ArrowRight size={18} /></a>
-          <a className="secondaryButton" href="#flokkar">Velja flokk</a>
-        </div>
       </div>
 
       <div className="heroStats">
@@ -81,11 +70,8 @@ function PartyCards({ setActiveParty }) {
           <div className="partyCardBody">
             <p className="listName">{party.list}</p>
             <h2>{party.name}</h2>
-            <span className="pill" style={{ color: party.color, background: party.lightColor }}>
-              {party.status}
-            </span>
             <button onClick={() => setActiveParty(party.id)}>
-              Skoða flokk og frambjóðendur <ArrowRight size={16} />
+              Skoða nánar <ArrowRight size={16} />
             </button>
           </div>
         </article>

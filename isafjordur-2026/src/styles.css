@@ -23,7 +23,7 @@ button, input { font: inherit; }
   z-index: 50;
   min-height: 78px;
   display: grid;
-  grid-template-columns: 310px 1fr auto;
+  grid-template-columns: 310px 1fr;
   align-items: center;
   gap: 24px;
   padding: 12px 44px;
@@ -84,12 +84,12 @@ nav a:hover { color: var(--blue); }
 }
 
 .hero {
-  min-height: 440px;
+  min-height: 390px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
   gap: 28px;
   align-items: end;
-  padding: 64px 48px 128px;
+  padding: 58px 48px 116px;
   background:
     linear-gradient(90deg, rgba(248,251,255,.98) 0%, rgba(248,251,255,.88) 38%, rgba(248,251,255,.22) 72%),
     url("https://images.unsplash.com/photo-1533423996375-f914ab78988f?auto=format&fit=crop&w=1900&q=85");
@@ -638,5 +638,39 @@ nav a:hover { color: var(--blue); }
 
   .partyDetailNav .backButton {
     width: 100%;
+  }
+}
+
+
+/* Clean frontpage adjustments */
+.heroBrandLogo,
+.heroActions,
+.ghostButton {
+  display: none !important;
+}
+
+.partyCard {
+  border-color: rgba(7,22,49,.08);
+  box-shadow: 0 10px 24px rgba(15,23,42,.055);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.partyCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0,78,203,.22);
+  box-shadow: 0 16px 34px rgba(15,23,42,.09);
+}
+
+.partyCard .pill {
+  display: none !important;
+}
+
+.partyCard button {
+  margin-top: 18px;
+}
+
+@media (max-width: 1180px) {
+  .topbar {
+    grid-template-columns: 1fr;
   }
 }
