@@ -17,6 +17,8 @@ import {
   Vote
 } from 'lucide-react'
 import { parties, sources, topics } from './data/parties.js'
+import { events } from './data/events.js'
+import { articles } from './data/articles.js'
 
 function stableShuffleOptions(options, questionIndex) {
   return [...options]
@@ -339,6 +341,8 @@ function Header({ setActiveParty, setActiveTopic }) {
       <nav>
         <button onClick={() => goHome('#flokkar')}>Flokkar</button>
         <button onClick={() => goHome('#malefni')}>Málefni</button>
+        <button onClick={() => goHome('#vidburdir')}>Viðburðir</button>
+        <button onClick={() => goHome('#greinar')}>Greinar</button>
         <button onClick={() => goHome('#kosningar')}>Kosningar</button>
         <button onClick={() => goHome('#konnun')}>Könnun</button>
         <button onClick={() => goHome('#heimildir')}>Heimildir</button>
@@ -551,12 +555,6 @@ function ElectionInfoPanel() {
           <h3>Talning atkvæða</h3>
           <p>Talning hefst kl. 21:00 á kjördag í fundarsal Stjórnsýsluhússins á Ísafirði, 4. hæð.</p>
         </section>
-      </div>
-
-
-      <div className="siteCredit">
-        Unnið af Ragnari Högna í samstarfi við ChatGPT.<br />
-        Upplýsingar byggja á opinberum gögnum og efni frá framboðunum sjálfum.
       </div>
     </section>
   )
@@ -815,6 +813,88 @@ function TopicsOverview({ setActiveTopic }) {
   )
 }
 
+
+function EventsPanel() {
+  const visibleEvents = [...events]
+    .filter((event) => event.date >= '2026-04-13')
+    .sort((a, b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`))
+
+  return (
+    <section id="vidburdir" className="panel eventsPanel">
+      <div className="panelHeader">
+        <div>
+          <p className="eyebrow">Viðburðir</p>
+          <h2>Næstu viðburðir</h2>
+          <p>Viðburðir, opið hús og kosningakaffi sem hafa verið auglýst eftir 13. apríl.</p>
+        </div>
+      </div>
+
+      <div className="eventTimeline">
+        {visibleEvents.map((event) => {
+          const party = parties.find((item) => item.letter === event.party)
+
+          return (
+            <a className="eventItem" href={event.url} target="_blank" rel="noreferrer" key={`${event.date}-${event.time}-${event.title}`}>
+              <div className="eventDate">
+                <strong>{event.date.split('-').slice(1).reverse().join('.')}</strong>
+                <span>{event.time}</span>
+              </div>
+
+              <div className="eventLogo">
+                {party ? <LogoMark party={party} /> : <span>✓</span>}
+              </div>
+
+              <div>
+                <h3>{event.title}</h3>
+                <p>{event.location}</p>
+                <small>{event.source}</small>
+              </div>
+            </a>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
+function ArticlesPanel({ setActiveTopic }) {
+  const openArticle = (article) => {
+    if (article.topicId) {
+      setActiveTopic(article.topicId)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else if (article.anchor) {
+      document.querySelector(`#${article.anchor}`)?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  return (
+    <section id="greinar" className="panel articlesPanel">
+      <div className="panelHeader">
+        <div>
+          <p className="eyebrow">Greinar</p>
+          <h2>Kosningavakt</h2>
+          <p>Stuttar samantektir sem hjálpa íbúum að bera saman málefni og upplýsingar.</p>
+        </div>
+      </div>
+
+      <div className="articleGrid">
+        {articles.map((article) => (
+          <button
+            className="articleCard"
+            key={article.title}
+            onClick={() => openArticle(article)}
+          >
+            <span>{article.category}</span>
+            <h3>{article.title}</h3>
+            <p>{article.summary}</p>
+            <small>{article.date}</small>
+          </button>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function Sources() {
   return (
     <section id="heimildir" className="sourcesFooter">
@@ -865,6 +945,8 @@ export default function App() {
           <PartyCards setActiveParty={setActiveParty} />
 <div className="pageWrap stackedSections">
             <TopicsOverview setActiveTopic={setActiveTopic} />
+            <EventsPanel />
+            <ArticlesPanel setActiveTopic={setActiveTopic} />
             <ElectionInfoPanel />
             <CampaignInfoPanel />
             <QuizPanel />
