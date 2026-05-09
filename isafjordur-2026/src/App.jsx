@@ -78,7 +78,7 @@ const electionInfo = [
   {
     title: 'Kosningadagur',
     value: '16. maí 2026',
-    note: 'Kjördagur sveitarstjórnarkosninga í Ísafjarðarbæ.'
+    note: 'Kosið verður til bæjarstjórnar í Ísafjarðarbæ.'
   },
   {
     title: 'Kjörskrá',
@@ -250,7 +250,7 @@ function Header({ setActiveParty, setActiveTopic }) {
         <button onClick={() => goHome('#malefni')}>Málefni</button>
         <button onClick={() => goHome('#kosningar')}>Kosningar</button>
         <button onClick={() => goHome('#konnun')}>Könnun</button>
-        <button onClick={() => goHome('#heimildir')}>Samfélagsmiðlar & heimildir</button>
+        <button onClick={() => goHome('#heimildir')}>Heimildir</button>
       </nav>
     </header>
   )
@@ -341,14 +341,14 @@ function PartyDetail({ party, setActiveParty }) {
           <h1>{party.name}</h1>
           <p>{party.summary}</p>
           <div className="socialButtons">
-        {party.socials?.map((social) => (
-          <a key={social.url} href={social.url} target="_blank" rel="noreferrer">
-            {social.label}
-          </a>
-        ))}
-      </div>
+            {party.socials?.map((social) => (
+              <a key={social.url} href={social.url} target="_blank" rel="noreferrer">
+                {social.label}
+              </a>
+            ))}
+          </div>
 
-      <div className="detailLinks">
+          <div className="detailLinks">
             <a href={party.website} target="_blank" rel="noreferrer"><Globe2 size={17} /> Heimasíða</a>
             {party.manifestoUrl ? (
               <a href={party.manifestoUrl} target="_blank" rel="noreferrer"><FileText size={17} /> Stefnuskrá</a>
@@ -426,8 +426,8 @@ function ElectionInfoPanel() {
       <div className="infoGridCards">
         {electionInfo.map((item) => (
           <article className="infoMiniCard" key={item.title}>
-            <strong>{item.value}</strong>
             <span>{item.title}</span>
+            <strong>{item.value}</strong>
             <p>{item.note}</p>
           </article>
         ))}
@@ -535,19 +535,19 @@ function QuizPanel() {
         <div>
           <p className="eyebrow"><HelpCircle size={15} /> Könnun</p>
           <h2>Hvaða áherslur passa þér?</h2>
-          <p>Stutt próf sem ber saman áherslur, ekki endanlegt kosningapróf. Við getum fínpússað spurningarnar síðar.</p>
+          <p>Svaraðu spurningunum og sjáðu hvaða framboð í Ísafjarðarbæ er næst þínum áherslum.</p>
         </div>
+      </div>
+
+      <div className="quizProgress">
+        <div className="quizProgressBar">
+          <i style={{ width: `${(answeredCount / quizQuestions.length) * 100}%` }} />
+        </div>
+        <span>{answeredCount} af {quizQuestions.length} spurningum</span>
       </div>
 
       <div className="quizGrid">
-        <div className="quizProgress">
-        <div className="quizProgressBar">
-          <i style={{ width: '68%' }} />
-        </div>
-        <span>8 af 12 spurningum</span>
-      </div>
-
-      <div className="quizQuestions">
+        <div className="quizQuestions">
           {quizQuestions.map((question, index) => (
             <article className="quizQuestion" key={question.text}>
               <h3>{index + 1}. {question.text}</h3>
