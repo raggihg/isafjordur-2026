@@ -16,11 +16,7 @@ export const parties = [
     list: 'B-listi',
     name: 'Framsókn og óháðir',
     shortName: 'Framsókn',
-<<<<<<< HEAD
     logo: 'https://framerusercontent.com/images/G4wBTblLDHELMEnizfVG5za8.svg?height=120&width=220',
-=======
-    logo: '/logos/framsokn.svg',
->>>>>>> 1769a0f7686ab6001acd555b1219b1c4f6c9395c
     color: '#178447',
     lightColor: '#e4f6e9',
     website: 'https://www.framsokn.is/sveitarfelog/isafjardarbaer',
@@ -72,11 +68,7 @@ export const parties = [
     list: 'C-listi',
     name: 'Viðreisn',
     shortName: 'Viðreisn',
-<<<<<<< HEAD
     logo: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Vidreisn_symbol.svg',
-=======
-    logo: '/logos/vidreisn.svg',
->>>>>>> 1769a0f7686ab6001acd555b1219b1c4f6c9395c
     color: '#f58219',
     lightColor: '#fff0de',
     website: 'https://vidreisn.is/isafjardarbaer/',
@@ -127,11 +119,7 @@ export const parties = [
     list: 'D-listi',
     name: 'Sjálfstæðisflokkurinn',
     shortName: 'Sjálfstæðisflokkur',
-<<<<<<< HEAD
     logo: 'https://xd.is/wp-content/uploads/2025/10/xd2026.svg',
-=======
-    logo: '/logos/xd.svg',
->>>>>>> 1769a0f7686ab6001acd555b1219b1c4f6c9395c
     color: '#1f67c8',
     lightColor: '#eaf2ff',
     website: 'https://xd.is/sveitarstjornarkosningar/isafjardarbaer/',
@@ -223,11 +211,7 @@ export const parties = [
     list: 'S-listi',
     name: 'Samfylkingin',
     shortName: 'Samfylkingin',
-<<<<<<< HEAD
     logo: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Merki_Samfylkingarinnar_XS_2018.svg',
-=======
-    logo: '/logos/samfylking.svg',
->>>>>>> 1769a0f7686ab6001acd555b1219b1c4f6c9395c
     color: '#ce3346',
     lightColor: '#fde8eb',
     website: 'https://xs.is/isafjardarbaer',
