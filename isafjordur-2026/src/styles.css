@@ -2090,3 +2090,51 @@ body {
   border-radius: 999px;
   background: linear-gradient(90deg, #004ecb, #1e88b5);
 }
+
+
+/* Clean topic cards: no numbering */
+.topicOverviewCard span {
+  display: none !important;
+}
+
+.topicOverviewCard {
+  min-height: 104px;
+  align-content: center;
+}
+
+.topicOverviewCard strong {
+  font-size: 18px;
+}
+
+.topicIconLarge {
+  font-size: 72px !important;
+  line-height: 1;
+}
+
+/* Deeper quiz */
+.quizQuestion h3 {
+  font-size: 17px;
+}
+
+.quizOptions button {
+  text-align: left;
+  justify-content: flex-start;
+  line-height: 1.35;
+}
+
+.quizReset {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--blue);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.quizReset:hover {
+  border-color: var(--blue);
+  background: #eef6ff;
+}

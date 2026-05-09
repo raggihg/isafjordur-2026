@@ -33,43 +33,100 @@ const comparisonItems = [
 
 const quizQuestions = [
   {
-    text: 'Hvað skiptir þig mestu máli í skólamálum?',
+    text: 'Hvað skiptir þig mestu máli í leikskólamálum?',
     options: [
-      { label: 'Leikskólapláss og lægri kostnaður', parties: ['M', 'B'] },
-      { label: 'Sérfræðiþjónusta og inngilding', parties: ['C', 'S'] },
-      { label: 'Hagkvæm og sterk grunnþjónusta', parties: ['D', 'B'] }
+      { label: 'Leikskólapláss frá 12 mánaða aldri og lág gjöld', parties: ['M', 'B', 'D'] },
+      { label: 'Fleiri leikskólakennarar og faglegt skólastarf', parties: ['C', 'D', 'S'] },
+      { label: 'Endurskoða gjaldskrá, afslætti og tekjutengingu', parties: ['S', 'D'] }
     ]
   },
   {
-    text: 'Hvaða samgöngumál er mikilvægast?',
+    text: 'Hvernig á sveitarfélagið að forgangsraða í húsnæðismálum?',
     options: [
-      { label: 'Suðavíkurvegur og Vestfjarðagöng', parties: ['M', 'D'] },
-      { label: 'Tengingar milli byggðakjarna', parties: ['B', 'C'] },
-      { label: 'Aðgengi að þjónustu fyrir alla', parties: ['S', 'C'] }
+      { label: 'Nægt lóðaframboð í öllum byggðarkjörnum', parties: ['B', 'D', 'M'] },
+      { label: 'Samstarf við óhagnaðardrifin leigufélög', parties: ['S', 'B'] },
+      { label: 'Betri skipulagsferlar og þéttingarreitir', parties: ['C', 'D'] }
     ]
   },
   {
-    text: 'Hvernig ætti sveitarfélagið að nálgast fjármál?',
+    text: 'Hvaða nálgun finnst þér best í fjármálum bæjarins?',
     options: [
-      { label: 'Hagræða og stöðva útgjaldaaukningu', parties: ['M', 'D'] },
-      { label: 'Ábyrg fjármálastjórn og fjárfesting í innviðum', parties: ['B', 'D'] },
-      { label: 'Forgangsraða velferð og samfélagslegri þjónustu', parties: ['S', 'C'] }
+      { label: 'Lækka skuldir og fasteignaskattshlutfall', parties: ['C', 'D', 'B'] },
+      { label: 'Rýna rekstur og stöðva sjálfvirka útgjaldaaukningu', parties: ['M', 'D'] },
+      { label: 'Ábyrg fjármál en byggja upp velferð og þjónustu', parties: ['S', 'B'] }
     ]
   },
   {
-    text: 'Hvað er mikilvægast í húsnæðismálum?',
+    text: 'Hvað á að leggja mesta áherslu á í þjónustu við eldri borgara?',
     options: [
-      { label: 'Fjölga lóðum og ýta undir uppbyggingu', parties: ['B', 'M'] },
-      { label: 'Búsetuöryggi og samfélagsleg uppbygging', parties: ['S', 'C'] },
-      { label: 'Skipulag og framkvæmdir sem bæta búsetu', parties: ['D', 'B'] }
+      { label: 'Samþætta þjónustu og gera gott að eldast í Ísafjarðarbæ', parties: ['B', 'S'] },
+      { label: 'Sjálfstæð búseta, virkni og félagsleg tengsl', parties: ['D', 'C'] },
+      { label: 'Markvissa þjónustu og jöfn tækifæri', parties: ['M', 'S'] }
     ]
   },
   {
-    text: 'Hvað á að leggja mesta áherslu á í atvinnumálum?',
+    text: 'Hvaða samgöngumál skiptir þig mestu?',
     options: [
-      { label: 'Hafnir, innviðir og verðmætasköpun', parties: ['D', 'B'] },
-      { label: 'Nýsköpun og fjölbreytt samfélag', parties: ['C', 'S'] },
-      { label: 'Einfaldari stjórnsýsla fyrir fyrirtæki', parties: ['M', 'D'] }
+      { label: 'Suðavíkurvegur og tvöföldun Vestfjarðaganga', parties: ['M'] },
+      { label: 'Almenningssamgöngur milli byggðarkjarna', parties: ['B', 'C', 'D', 'S'] },
+      { label: 'Flugsamgöngur og öruggar tengingar til svæðisins', parties: ['B', 'C', 'S'] }
+    ]
+  },
+  {
+    text: 'Hvað á að gera fyrir atvinnulíf og fyrirtæki?',
+    options: [
+      { label: 'Einfalda stjórnsýslu og flýta afgreiðslu erinda', parties: ['M', 'D', 'S', 'C'] },
+      { label: 'Efla hafnir, móttökuhús og ferðaþjónustu', parties: ['C', 'D', 'S', 'B'] },
+      { label: 'Laða fyrirtæki og opinber störf til sveitarfélagsins', parties: ['B', 'S'] }
+    ]
+  },
+  {
+    text: 'Hvernig á að nálgast umhverfi og nærumhverfi?',
+    options: [
+      { label: 'Hreinni bær, betri umhirða og minna rusl', parties: ['C', 'D', 'S'] },
+      { label: 'Gangstéttir, göngustígar, leikvellir og græn svæði', parties: ['B', 'M', 'S'] },
+      { label: 'Aðgerðarbundin umhverfis- og loftslagsstefna', parties: ['S', 'D'] }
+    ]
+  },
+  {
+    text: 'Hvað skiptir mestu í menningu og tómstundum?',
+    options: [
+      { label: 'Hækka frístundastyrki og jafna aðgengi barna', parties: ['B', 'D', 'S'] },
+      { label: 'Ungmennahús, ungmennaráð og félagsmiðstöðvar', parties: ['B', 'C', 'M', 'S', 'D'] },
+      { label: 'Hækka menningarstyrki og efla menningarhús', parties: ['B', 'S', 'D', 'C'] }
+    ]
+  },
+  {
+    text: 'Hvaða skólaáhersla hljómar best?',
+    options: [
+      { label: 'Stækka Grunnskóla Ísafjarðar og bæta aðstöðu', parties: ['B', 'D'] },
+      { label: 'Metnaðarfull menntastefna og sérfræðingar í skólum', parties: ['C', 'D'] },
+      { label: 'Opinn leikskóli og sterkari forvarnir', parties: ['S'] }
+    ]
+  },
+  {
+    text: 'Hvernig á stjórnsýslan helst að breytast?',
+    options: [
+      { label: 'Rafrænni og skilvirkari þjónusta með styttri afgreiðslutíma', parties: ['C', 'D', 'S'] },
+      { label: 'Skýrari verkferlar, gagnsæi og nýting gervigreindar', parties: ['B'] },
+      { label: 'Leiðbeinandi og lausnamiðuð stjórnsýsla', parties: ['M', 'D'] }
+    ]
+  },
+  {
+    text: 'Hvaða uppbygging í íþróttamálum er mikilvægust?',
+    options: [
+      { label: 'Torfnessvæði, íþróttahús, sundlaug og knatthús', parties: ['B', 'C', 'D'] },
+      { label: 'Fjölnota íþróttahús og aðstaða fyrir samfélagið', parties: ['M'] },
+      { label: 'Jafnt aðgengi barna og fatlaðra að íþróttum', parties: ['S', 'D', 'B'] }
+    ]
+  },
+  {
+    text: 'Hvaða áhersla lýsir þér best?',
+    options: [
+      { label: 'Ábyrg uppbygging, innviðir og fjölskylduvænt samfélag', parties: ['B', 'D'] },
+      { label: 'Gagnsæi, skilvirkni, skólamál og jákvæð samvinna', parties: ['C'] },
+      { label: 'Velferð, jöfnuður, þjónusta og samfélagsleg ábyrgð', parties: ['S'] },
+      { label: 'Hagræðing, framkvæmdir og skýr forgangsröðun', parties: ['M'] }
     ]
   }
 ]
@@ -568,7 +625,7 @@ function QuizPanel() {
 
         <aside className="quizResult">
           <h3>Niðurstaða</h3>
-          <p>{answeredCount} af {quizQuestions.length} spurningum svarað.</p>
+          <p>{answeredCount} af {quizQuestions.length} spurningum svarað. Hæsta skor sýnir hvaða framboð passar best við svörin þín.</p>
           <div className="resultBars">
             {scores.map(({ letter, score, party }) => (
               <div className="resultRow" key={letter}>
@@ -579,6 +636,10 @@ function QuizPanel() {
               </div>
             ))}
           </div>
+
+          <button className="quizReset" onClick={() => setAnswers({})}>
+            Hreinsa svör
+          </button>
         </aside>
       </div>
     </section>
@@ -623,7 +684,7 @@ function TopicDetail({ topic, setActiveTopic }) {
       </div>
 
       <article className="detailHero topicHero">
-        <div className="topicIconLarge">{currentIndex + 1}</div>
+        <div className="topicIconLarge">•</div>
         <div>
           <p className="eyebrow">Málefnasíða</p>
           <h1>{topic.name}</h1>
@@ -668,9 +729,8 @@ function TopicsOverview({ setActiveTopic }) {
       </div>
 
       <div className="topicOverviewGrid">
-        {topics.map((topic, index) => (
+        {topics.map((topic) => (
           <button className="topicOverviewCard" key={topic.id} onClick={() => setActiveTopic(topic.id)}>
-            <span>{index + 1}</span>
             <strong>{topic.name}</strong>
             <small>Skoða áherslur allra flokka →</small>
           </button>
