@@ -60,7 +60,7 @@ export const parties = [
       environment: 'Sjálfbær uppbygging, orkutækifæri og skýrt skipulag.',
       transport: 'Betri samgöngur milli byggðakjarna og til og frá svæðinu.',
       culture: 'Jöfn tækifæri barna til íþrótta, tónlistar og tómstunda óháð búsetu.'
-    },,
+    },
     policyByTopic: {
       housing: [
         'Auka framboð á fjölbreyttu húsnæði fyrir ólík æviskeið.',
