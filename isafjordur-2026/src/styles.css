@@ -62,12 +62,19 @@ nav a:hover { color: var(--blue); }
 }
 
 .logoMark {
+<<<<<<< HEAD
   width: 66px;
   height: 66px;
   border-radius: 18px;
   object-fit: contain;
   background: #fff;
   padding: 8px;
+=======
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  object-fit: contain;
+>>>>>>> 1769a0f7686ab6001acd555b1219b1c4f6c9395c
   box-shadow: 0 10px 22px rgba(15,23,42,.08);
 }
 
@@ -75,9 +82,12 @@ nav a:hover { color: var(--blue); }
   width: 150px;
   height: 150px;
   border-radius: 34px;
+<<<<<<< HEAD
   object-fit: contain;
   background: #fff;
   padding: 18px;
+=======
+>>>>>>> 1769a0f7686ab6001acd555b1219b1c4f6c9395c
   box-shadow: 0 18px 40px rgba(15,23,42,.12);
 }
 
