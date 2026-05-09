@@ -33,100 +33,123 @@ const comparisonItems = [
 
 const quizQuestions = [
   {
-    text: 'Hvað skiptir þig mestu máli í leikskólamálum?',
+    text: 'Hvað á að vera stærsta forgangsmálið í húsnæðismálum?',
     options: [
-      { label: 'Leikskólapláss frá 12 mánaða aldri og lág gjöld', parties: ['M', 'B', 'D'] },
-      { label: 'Fleiri leikskólakennarar og faglegt skólastarf', parties: ['C', 'D', 'S'] },
-      { label: 'Endurskoða gjaldskrá, afslætti og tekjutengingu', parties: ['S', 'D'] }
+      { label: 'Fjölga lóðum og styðja leiguhúsnæði með samstarfi við leigufélög', parties: ['B'] },
+      { label: 'Bæta skipulagsferla og skipuleggja þéttingarreiti í öllum byggðarkjörnum', parties: ['C'] },
+      { label: 'Tryggja fjölbreytt lóðaframboð og skilvirkari byggingarmál', parties: ['D'] },
+      { label: 'Tryggja framboð lóða fyrir íbúðir og atvinnustarfsemi', parties: ['M'] },
+      { label: 'Byggja upp með óhagnaðardrifnum leigufélögum og áherslu á ungt fólk og eldri íbúa', parties: ['S'] }
     ]
   },
   {
-    text: 'Hvernig á sveitarfélagið að forgangsraða í húsnæðismálum?',
+    text: 'Hvaða leikskólaáhersla passar þér best?',
     options: [
-      { label: 'Nægt lóðaframboð í öllum byggðarkjörnum', parties: ['B', 'D', 'M'] },
-      { label: 'Samstarf við óhagnaðardrifin leigufélög', parties: ['S', 'B'] },
-      { label: 'Betri skipulagsferlar og þéttingarreitir', parties: ['C', 'D'] }
+      { label: 'Byggja við leikskóla og tryggja samfellu frá 12 mánaða aldri', parties: ['B'] },
+      { label: 'Stækka leikskóla og fjölga leikskólakennurum', parties: ['C'] },
+      { label: 'Heimgreiðslur frá 12 mánaða aldri og skoða gjaldfrjálsan leikskóla til kl. 14', parties: ['D'] },
+      { label: 'Leikskólapláss frá 12 mánaða aldri og halda leikskólagjöldum í lágmarki', parties: ['M'] },
+      { label: 'Endurskoða gjaldskrá, afsláttarkerfi og tekjutengingu leikskóla', parties: ['S'] }
     ]
   },
   {
     text: 'Hvaða nálgun finnst þér best í fjármálum bæjarins?',
     options: [
-      { label: 'Lækka skuldir og fasteignaskattshlutfall', parties: ['C', 'D', 'B'] },
-      { label: 'Rýna rekstur og stöðva sjálfvirka útgjaldaaukningu', parties: ['M', 'D'] },
-      { label: 'Ábyrg fjármál en byggja upp velferð og þjónustu', parties: ['S', 'B'] }
+      { label: 'Ábyrg fjármál, lægri fasteignaskattur og skýrari verkferlar', parties: ['B'] },
+      { label: 'Lækka fasteignaskatt, lækka skuldir og gera stjórnsýslu rafræna', parties: ['C'] },
+      { label: 'Ráðdeild, lægri fasteignaskattar og skilvirkari stafræna þjónusta', parties: ['D'] },
+      { label: 'Rýna rekstur, hagræða og stöðva sjálfvirka útgjaldaaukningu', parties: ['M'] },
+      { label: 'Ábyrg fjármál en bæta flæði, ferla og íbúalýðræði', parties: ['S'] }
     ]
   },
   {
-    text: 'Hvað á að leggja mesta áherslu á í þjónustu við eldri borgara?',
+    text: 'Hvernig á að þjónusta eldri borgara?',
     options: [
-      { label: 'Samþætta þjónustu og gera gott að eldast í Ísafjarðarbæ', parties: ['B', 'S'] },
-      { label: 'Sjálfstæð búseta, virkni og félagsleg tengsl', parties: ['D', 'C'] },
-      { label: 'Markvissa þjónustu og jöfn tækifæri', parties: ['M', 'S'] }
+      { label: 'Samþætta þjónustu ríkis og sveitarfélags við eldra fólk', parties: ['B'] },
+      { label: 'Efla félagsstarf eldri borgara og breyta 4. hæð Hlífar í íbúðir', parties: ['C'] },
+      { label: 'Styðja sjálfstæða búsetu, virkni og félagsleg tengsl', parties: ['D'] },
+      { label: 'Markviss þjónusta við eldri borgara og jöfn tækifæri', parties: ['M'] },
+      { label: 'Samfelld þjónusta, stuðningur í heimahúsum og öldrunarráð', parties: ['S'] }
     ]
   },
   {
-    text: 'Hvaða samgöngumál skiptir þig mestu?',
+    text: 'Hvaða samgönguáhersla skiptir þig mestu?',
     options: [
-      { label: 'Suðavíkurvegur og tvöföldun Vestfjarðaganga', parties: ['M'] },
-      { label: 'Almenningssamgöngur milli byggðarkjarna', parties: ['B', 'C', 'D', 'S'] },
-      { label: 'Flugsamgöngur og öruggar tengingar til svæðisins', parties: ['B', 'C', 'S'] }
+      { label: 'Fjölga almenningssamgöngum milli hverfa og byggðarkjarna', parties: ['B'] },
+      { label: 'Skoða hvernig almenningssamgöngur nýtast betur, sérstaklega börnum og ungmennum', parties: ['C'] },
+      { label: 'Efla frístundaakstur og almenningssamgöngur', parties: ['D'] },
+      { label: 'Setja Suðavíkurveg í forgang og þrýsta á tvöföldun Vestfjarðaganga', parties: ['M'] },
+      { label: 'Endurskoða akstur milli byggðarkjarna og tryggja öruggar flugsamgöngur', parties: ['S'] }
     ]
   },
   {
     text: 'Hvað á að gera fyrir atvinnulíf og fyrirtæki?',
     options: [
-      { label: 'Einfalda stjórnsýslu og flýta afgreiðslu erinda', parties: ['M', 'D', 'S', 'C'] },
-      { label: 'Efla hafnir, móttökuhús og ferðaþjónustu', parties: ['C', 'D', 'S', 'B'] },
-      { label: 'Laða fyrirtæki og opinber störf til sveitarfélagsins', parties: ['B', 'S'] }
+      { label: 'Laða fyrirtæki og opinber störf til bæjarins og berjast fyrir meiri raforku', parties: ['B'] },
+      { label: 'Klára móttökuhús, rafvæða höfn og styðja umhverfisvænt laxeldi', parties: ['C'] },
+      { label: 'Einfalda umsóknir, lækka álögur og tryggja atvinnulóðir', parties: ['D'] },
+      { label: 'Gera stjórnsýslu leiðbeinandi, lausnamiðaða og hraða í erindum fyrirtækja', parties: ['M'] },
+      { label: 'Fastur tengipunktur fyrir fyrirtæki og reglulegt samtal við atvinnulífið', parties: ['S'] }
     ]
   },
   {
-    text: 'Hvernig á að nálgast umhverfi og nærumhverfi?',
+    text: 'Hvaða umhverfis- og nærumhverfisáhersla hljómar best?',
     options: [
-      { label: 'Hreinni bær, betri umhirða og minna rusl', parties: ['C', 'D', 'S'] },
-      { label: 'Gangstéttir, göngustígar, leikvellir og græn svæði', parties: ['B', 'M', 'S'] },
-      { label: 'Aðgerðarbundin umhverfis- og loftslagsstefna', parties: ['S', 'D'] }
+      { label: 'Fjölga göngustígum, vistgötum, leikvöllum og bæta umhirðu', parties: ['B'] },
+      { label: 'Bæta ásýnd, fjarlægja rusl og klára fráveituframkvæmdir', parties: ['C'] },
+      { label: 'Setja skýrar kröfur um umgengni og hlúa að opnum svæðum', parties: ['D'] },
+      { label: 'Viðhald gatna, leikvellir og græn svæði í forgangi', parties: ['M'] },
+      { label: 'Hreint nærumhverfi, græn svæði og aðgerðarbundin umhverfisstefna', parties: ['S'] }
     ]
   },
   {
-    text: 'Hvað skiptir mestu í menningu og tómstundum?',
+    text: 'Hvaða menningar- og tómstundaáhersla passar þér?',
     options: [
-      { label: 'Hækka frístundastyrki og jafna aðgengi barna', parties: ['B', 'D', 'S'] },
-      { label: 'Ungmennahús, ungmennaráð og félagsmiðstöðvar', parties: ['B', 'C', 'M', 'S', 'D'] },
-      { label: 'Hækka menningarstyrki og efla menningarhús', parties: ['B', 'S', 'D', 'C'] }
+      { label: 'Hækka frístundastyrk, efla skíðasvæði og menningarstyrki', parties: ['B'] },
+      { label: 'Auka afþreyingu 16–23 ára og gera samning við Edinborg', parties: ['C'] },
+      { label: 'Hækka frístundastyrki, styrkja íþróttafélög og byggja upp Torfnes', parties: ['D'] },
+      { label: 'Öflugar félagsmiðstöðvar og fjölnota íþróttahús', parties: ['M'] },
+      { label: 'Ungmennahús, ungmennaráð, frístundastyrkir og listamannasamfélag', parties: ['S'] }
     ]
   },
   {
-    text: 'Hvaða skólaáhersla hljómar best?',
+    text: 'Hvaða áhersla í grunnskólum er mikilvægust?',
     options: [
-      { label: 'Stækka Grunnskóla Ísafjarðar og bæta aðstöðu', parties: ['B', 'D'] },
-      { label: 'Metnaðarfull menntastefna og sérfræðingar í skólum', parties: ['C', 'D'] },
-      { label: 'Opinn leikskóli og sterkari forvarnir', parties: ['S'] }
+      { label: 'Stækka Grunnskóla Ísafjarðar og innleiða símafrí', parties: ['B'] },
+      { label: 'Metnaðarfull menntastefna og sérfræðingar í skólum', parties: ['C'] },
+      { label: 'Stækka Grunnskólann og efla miðlæga fagþjónustu', parties: ['D'] },
+      { label: 'Efla grunnskóla og fagþjónustu í samráði við kennara', parties: ['M'] },
+      { label: 'Skoða sérstakt húsnæði fyrir unglingastig og félagsmiðstöð', parties: ['S'] }
     ]
   },
   {
-    text: 'Hvernig á stjórnsýslan helst að breytast?',
+    text: 'Hvað finnst þér mikilvægast í málefnum fatlaðs fólks og aðgengis?',
     options: [
-      { label: 'Rafrænni og skilvirkari þjónusta með styttri afgreiðslutíma', parties: ['C', 'D', 'S'] },
-      { label: 'Skýrari verkferlar, gagnsæi og nýting gervigreindar', parties: ['B'] },
-      { label: 'Leiðbeinandi og lausnamiðuð stjórnsýsla', parties: ['M', 'D'] }
+      { label: 'Tímasett aðgerðaráætlun um hjólastólaaðgengi', parties: ['B'] },
+      { label: 'Auka upplýsingagjöf og aðgengi fatlaðs fólks að húsnæði sveitarfélagsins', parties: ['C'] },
+      { label: 'Fjölga atvinnutækifærum fyrir fatlað fólk', parties: ['D'] },
+      { label: 'Tryggja jöfn tækifæri fyrir alla íbúa', parties: ['M'] },
+      { label: 'Skýrar boðleiðir, aðgengilegar upplýsingar og virka leiðbeiningarskyldu', parties: ['S'] }
     ]
   },
   {
-    text: 'Hvaða uppbygging í íþróttamálum er mikilvægust?',
+    text: 'Hvaða stórframkvæmd eða innviðamál ætti að vega þyngst?',
     options: [
-      { label: 'Torfnessvæði, íþróttahús, sundlaug og knatthús', parties: ['B', 'C', 'D'] },
-      { label: 'Fjölnota íþróttahús og aðstaða fyrir samfélagið', parties: ['M'] },
-      { label: 'Jafnt aðgengi barna og fatlaðra að íþróttum', parties: ['S', 'D', 'B'] }
+      { label: 'Íþróttamannvirki á Torfnesi og uppbygging í öllum byggðarkjörnum', parties: ['B'] },
+      { label: 'Móttökuhús, hafnir og rafvæðing hafna', parties: ['C'] },
+      { label: 'Torfnes með knatthús, sundlaug og stækkun íþróttahúss', parties: ['D'] },
+      { label: 'Suðavíkurvegur, Vestfjarðagöng og fjölnota íþróttahús', parties: ['M'] },
+      { label: 'Húsnæði, hafnsækin starfsemi, samgöngur og raforkumál', parties: ['S'] }
     ]
   },
   {
-    text: 'Hvaða áhersla lýsir þér best?',
+    text: 'Hvaða heildarstefna höfðar mest til þín?',
     options: [
-      { label: 'Ábyrg uppbygging, innviðir og fjölskylduvænt samfélag', parties: ['B', 'D'] },
+      { label: 'Fjölskylduvænt samfélag, innviðir og ábyrg uppbygging', parties: ['B'] },
       { label: 'Gagnsæi, skilvirkni, skólamál og jákvæð samvinna', parties: ['C'] },
-      { label: 'Velferð, jöfnuður, þjónusta og samfélagsleg ábyrgð', parties: ['S'] },
-      { label: 'Hagræðing, framkvæmdir og skýr forgangsröðun', parties: ['M'] }
+      { label: 'Ráðdeild, framkvæmdir, atvinnulíf og sterk grunnþjónusta', parties: ['D'] },
+      { label: 'Hagræðing, skýr forgangsröðun og framkvæmdir', parties: ['M'] },
+      { label: 'Velferð, jöfnuður, húsnæði og samfélagsleg ábyrgð', parties: ['S'] }
     ]
   }
 ]
@@ -397,15 +420,12 @@ function PartyDetail({ party, setActiveParty }) {
           <p className="eyebrow">{party.list}</p>
           <h1>{party.name}</h1>
           <p>{party.summary}</p>
-          <div className="socialButtons">
-            {party.socials?.map((social) => (
-              <a key={social.url} href={social.url} target="_blank" rel="noreferrer">
-                {social.label}
-              </a>
-            ))}
-          </div>
+          
 
           <div className="detailLinks">
+            {party.socials?.map((social) => (
+              <a key={social.url} href={social.url} target="_blank" rel="noreferrer">{social.label}</a>
+            ))}
             <a href={party.website} target="_blank" rel="noreferrer"><Globe2 size={17} /> Heimasíða</a>
             {party.manifestoUrl ? (
               <a href={party.manifestoUrl} target="_blank" rel="noreferrer"><FileText size={17} /> Stefnuskrá</a>
@@ -747,7 +767,7 @@ function Sources() {
         <div>
           <p className="eyebrow"><LinkIcon size={15} /> Heimildir</p>
           <h2>Heimildir</h2>
-          <p>Heimildir eru flokkaðar eftir opinberum vefjum og framboðum svo listinn taki minna pláss.</p>
+          <p>Helstu heimildir og tenglar, felld saman eftir flokkum.</p>
         </div>
       </div>
 

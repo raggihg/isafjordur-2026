@@ -14,7 +14,6 @@ export const parties = [
     id: 'framsokn',
     socials: [
       { label: 'Facebook', url: 'https://www.facebook.com/framsoknisafjardarbaer' },
-      { label: 'Vefsíða', url: 'https://www.framsokn.is/sveitarfelog/isafjardarbaer' }
     ],
     letter: 'B',
     list: 'B-listi',
@@ -150,7 +149,6 @@ export const parties = [
     socials: [
       { label: 'Facebook', url: 'https://www.facebook.com/vidreisnisafjardarbaer' },
       { label: 'Instagram', url: 'https://www.instagram.com/vidreisn/' },
-      { label: 'Vefsíða', url: 'https://vidreisn.is/isafjardarbaer/' }
     ],
     letter: 'C',
     list: 'C-listi',
@@ -255,7 +253,6 @@ export const parties = [
     id: 'sjalfstaedisflokkur',
     socials: [
       { label: 'Facebook', url: 'https://www.facebook.com/DlistinnIsafjardarbae' },
-      { label: 'Vefsíða', url: 'https://xd.is/sveitarstjornarkosningar/isafjardarbaer/' }
     ],
     letter: 'D',
     list: 'D-listi',
@@ -381,7 +378,6 @@ export const parties = [
     id: 'midflokkurinn',
     socials: [
       { label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61572070263010' },
-      { label: 'Vefsíða', url: 'https://midflokkurinn.is/isafjordur' }
     ],
     letter: 'M',
     list: 'M-listi',
@@ -474,7 +470,6 @@ export const parties = [
     socials: [
       { label: 'Facebook', url: 'https://www.facebook.com/samfylkinginisafjardarbae' },
       { label: 'Instagram', url: 'https://www.instagram.com/samfylkingin/' },
-      { label: 'Vefsíða', url: 'https://xs.is/isafjardarbaer' }
     ],
     letter: 'S',
     list: 'S-listi',
