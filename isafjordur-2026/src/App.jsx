@@ -118,11 +118,46 @@ const electionInfo = [
 ]
 
 const campaignInfo = [
-  { party: 'B', title: 'Framsókn og óháðir', value: 'Hafnarstræti 8', note: 'Kosningaskrifstofa opnaði 10. apríl kl. 17 samkvæmt BB.' },
-  { party: 'C', title: 'Viðreisn', value: 'Kosningamiðstöð', note: 'Viðburðir auglýstir á vef Viðreisnar; staðsetning/opnunartími þarf staðfestingu.' },
-  { party: 'D', title: 'Sjálfstæðisflokkurinn', value: 'Bíður upplýsinga', note: 'Setjum inn skrifstofu/kosningakaffi þegar staðfest.' },
-  { party: 'M', title: 'Miðflokkurinn', value: 'Bíður upplýsinga', note: 'Setjum inn skrifstofu/kosningakaffi þegar staðfest.' },
-  { party: 'S', title: 'Samfylkingin', value: 'Bíður upplýsinga', note: 'Setjum inn skrifstofu/kosningakaffi þegar staðfest.' }
+  {
+    party: 'B',
+    title: 'Framsókn og óháðir',
+    location: 'Hafnarstræti 8, Ísafirði',
+    hours: 'Virka daga 15:00–18:00',
+    cafe: 'Guðmundarbúð á kjördag 16. maí kl. 14–17',
+    status: 'confirmed'
+  },
+  {
+    party: 'C',
+    title: 'Viðreisn',
+    location: 'Gamla bakaríið, Ísafirði',
+    hours: 'Mán–fös 12–13 & 15–17 · Helgar 14–17',
+    cafe: 'Kosningamiðstöð opin alla kosningavikuna',
+    status: 'confirmed'
+  },
+  {
+    party: 'D',
+    title: 'Sjálfstæðisflokkurinn',
+    location: 'Aðalstræti 24, Ísafirði (Gamla bakaríið við Silfurtorg)',
+    hours: 'Opnunartímar ekki staðfestir enn',
+    cafe: 'Upplýsingar væntanlegar',
+    status: 'pending'
+  },
+  {
+    party: 'M',
+    title: 'Miðflokkurinn',
+    location: 'Vesturferðir í Edinborgarhúsinu',
+    hours: '9. maí kl. 12–14 · fleiri tímar væntanlegir',
+    cafe: 'Heitt á könnunni ☕️',
+    status: 'partial'
+  },
+  {
+    party: 'S',
+    title: 'Samfylkingin',
+    location: 'Hafnarstræti 5, Ísafirði',
+    hours: 'Mán–fös 11–14 & 16–19 · Lau 11–14',
+    cafe: 'Laugardagssúpa 9. maí kl. 11–14',
+    status: 'confirmed'
+  }
 ]
 
 
@@ -395,35 +430,67 @@ function ElectionInfoPanel() {
   )
 }
 
+
 function CampaignInfoPanel() {
+  const statusMap = {
+    confirmed: { label: 'Staðfestar upplýsingar', className: 'green' },
+    partial: { label: 'Fleiri upplýsingar væntanlegar', className: 'yellow' },
+    pending: { label: 'Beðið eftir upplýsingum', className: 'gray' }
+  }
+
   return (
     <section className="panel campaignPanel">
       <div className="panelHeader">
         <div>
-          <p className="eyebrow"><Coffee size={15} /> Skrifstofur og kosningakaffi</p>
-          <h2>Staðir og opnunartímar</h2>
-          <p>Þetta er vinnuyfirlit. Við fyllum inn kosningakaffi og opnun skrifstofa þegar flokkarnir auglýsa það.</p>
+          <p className="eyebrow">☕ Kosningavika</p>
+          <h2>Kosningaskrifstofur & kosningakaffi</h2>
+          <p>Yfirlit yfir kosningamiðstöðvar, opnunartíma og kosningakaffi framboðanna í Ísafjarðarbæ.</p>
         </div>
       </div>
 
-      <div className="campaignList">
+      <div className="campaignGrid">
         {campaignInfo.map((item) => {
-          const party = parties.find((p) => p.letter === item.party)
+          const status = statusMap[item.status]
+
           return (
-            <article className="campaignItem" key={item.party}>
-              {party && <LogoMark party={party} />}
-              <div>
-                <h3>{item.title}</h3>
-                <strong>{item.value}</strong>
-                <p>{item.note}</p>
+            <article className="campaignCard" key={item.party}>
+              <div className="campaignTop">
+                <div className="campaignLetter">{item.party}</div>
+
+                <div>
+                  <h3>{item.title}</h3>
+                  <span className={`statusBadge ${status.className}`}>
+                    {status.label}
+                  </span>
+                </div>
+              </div>
+
+              <div className="campaignInfoLine">
+                <strong>📍 Staðsetning</strong>
+                <p>{item.location}</p>
+              </div>
+
+              <div className="campaignInfoLine">
+                <strong>🕒 Opnunartímar</strong>
+                <p>{item.hours}</p>
+              </div>
+
+              <div className="campaignInfoLine">
+                <strong>☕ Kosningakaffi / viðburðir</strong>
+                <p>{item.cafe}</p>
               </div>
             </article>
           )
         })}
       </div>
+
+      <p className="campaignUpdated">
+        Síðast uppfært: maí 2026 · Upplýsingar uppfærast þegar framboð birta nýja opnunartíma eða viðburði.
+      </p>
     </section>
   )
 }
+
 
 function QuizPanel() {
   const [answers, setAnswers] = useState({})
