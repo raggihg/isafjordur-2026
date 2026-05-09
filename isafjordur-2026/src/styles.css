@@ -1307,3 +1307,135 @@ nav a:hover { color: var(--blue); }
 .topicPartyCard > p {
   margin-bottom: 0;
 }
+
+
+/* Compact frambjóðendalisti */
+.candidateList {
+  gap: 0 !important;
+  padding-left: 0 !important;
+  margin-top: 12px !important;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  counter-reset: candidate;
+}
+
+.candidateList li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 11px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--line) !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  counter-increment: candidate;
+}
+
+.candidateList li:last-child {
+  border-bottom: 0 !important;
+}
+
+.candidateList li::before {
+  content: counter(candidate) ".";
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.candidateList strong {
+  display: inline !important;
+  margin-right: 7px;
+  font-size: 14px !important;
+}
+
+.candidateList span {
+  display: inline !important;
+  color: #5b6680;
+  font-size: 12px !important;
+}
+
+.smallIntro {
+  font-size: 13px;
+}
+
+/* Folded source groups */
+.sourceList {
+  display: none !important;
+}
+
+.sourceAccordion {
+  display: grid;
+  gap: 10px;
+}
+
+.sourceGroup {
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fbfdff;
+  overflow: hidden;
+}
+
+.sourceGroup summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 15px;
+  cursor: pointer;
+  font-weight: 950;
+  color: #132344;
+  list-style: none;
+}
+
+.sourceGroup summary::-webkit-details-marker {
+  display: none;
+}
+
+.sourceGroup summary::after {
+  content: "Opna";
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.sourceGroup[open] summary::after {
+  content: "Loka";
+}
+
+.sourceGroup summary strong {
+  min-width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--blue);
+  font-size: 12px;
+}
+
+.sourceGroupLinks {
+  display: grid;
+  gap: 0;
+  padding: 0 15px 13px;
+}
+
+.sourceGroupLinks a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 42px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  color: #263653;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.sourceGroupLinks a:hover {
+  color: var(--blue);
+}

@@ -125,6 +125,57 @@ const campaignInfo = [
   { party: 'S', title: 'Samfylkingin', value: 'Bíður upplýsinga', note: 'Setjum inn skrifstofu/kosningakaffi þegar staðfest.' }
 ]
 
+
+const sourceGroups = [
+  {
+    title: 'Opinberir kosningavefir',
+    links: [
+      { label: 'Ísafjarðarbær — kosningar 2026', url: 'https://www.isafjordur.is/is/stjornsysla/stjornsyslan/kosningar-2026' },
+      { label: 'Þjóðskrá — talnaefni vegna sveitarstjórnarkosninga 2026', url: 'https://www.skra.is/gogn/talnaefni/kosningar/talnaefni-vegna-sveitarstjornakosninga-2026/' },
+      { label: 'Kosning.is', url: 'https://www.kosning.is/' }
+    ]
+  },
+  {
+    title: 'Framsókn og óháðir',
+    links: [
+      { label: 'Heimasíða framboðs', url: 'https://www.framsokn.is/sveitarfelog/isafjardarbaer' },
+      { label: 'Stefnuskrá', url: 'https://framerusercontent.com/assets/8duIPh2HtzZMoGVwPzCEsqBKD3w.pdf' },
+      { label: 'Frambjóðendalisti', url: 'https://www.framsokn.is/sveitarfelog/isafjardarbaer#frambo%C3%B0slisti' }
+    ]
+  },
+  {
+    title: 'Viðreisn',
+    links: [
+      { label: 'Heimasíða framboðs', url: 'https://vidreisn.is/isafjardarbaer/' },
+      { label: 'Stefna', url: 'https://vidreisn.is/isafjardarbaer/stefnan/' },
+      { label: 'Frambjóðendur', url: 'https://vidreisn.is/isafjardarbaer/frambjodendur/' }
+    ]
+  },
+  {
+    title: 'Sjálfstæðisflokkurinn',
+    links: [
+      { label: 'Heimasíða og frambjóðendur', url: 'https://xd.is/sveitarstjornarkosningar/isafjardarbaer/' },
+      { label: 'Stefnuskrá', url: 'https://xd.is/wp-content/uploads/2026/05/xd-stefnuskra-isafjardarbaer.pdf' }
+    ]
+  },
+  {
+    title: 'Miðflokkurinn',
+    links: [
+      { label: 'Heimasíða framboðs', url: 'https://midflokkurinn.is/isafjordur' },
+      { label: 'Facebook myndir / stefnumál', url: 'https://www.facebook.com/profile.php?id=61572070263010&sk=photos' },
+      { label: 'Opinber framboðslisti hjá Ísafjarðarbæ', url: 'https://www.isafjordur.is/is/stjornsysla/stjornsyslan/kosningar-2026' }
+    ]
+  },
+  {
+    title: 'Samfylkingin',
+    links: [
+      { label: 'Heimasíða framboðs', url: 'https://xs.is/isafjardarbaer' },
+      { label: 'Stefnuskrá', url: 'https://samfylkingin.cdn.prismic.io/samfylkingin/afyA0MBOoF08xt4D_Horfttilframt%C3%AD%C3%B0ar-Kosningastefna26.pdf' },
+      { label: 'Frambjóðendur', url: 'https://xs.is/frambjodendur-i-isafjar%C3%B0arbae' }
+    ]
+  }
+]
+
 function LogoMark({ party, large = false }) {
   return <img className={large ? 'logoMark large' : 'logoMark'} src={party.logo} alt={`Merki ${party.name}`} />
 }
@@ -540,17 +591,27 @@ function Sources() {
       <div className="panelHeader">
         <div>
           <p className="eyebrow"><LinkIcon size={15} /> Heimildir</p>
-          <h2>Frumheimildir og tenglar</h2>
-          <p>Allar upplýsingar eiga að vera rekjanlegar í stefnuskrár, heimasíður eða framboðslista.</p>
+          <h2>Heimildir</h2>
+          <p>Heimildir eru flokkaðar eftir opinberum vefjum og framboðum svo listinn taki minna pláss.</p>
         </div>
       </div>
 
-      <div className="sourceList">
-        {sources.map((source) => (
-          <a href={source.url} target="_blank" rel="noreferrer" key={source.url}>
-            <span>{source.label}</span>
-            <ExternalLink size={16} />
-          </a>
+      <div className="sourceAccordion">
+        {sourceGroups.map((group) => (
+          <details key={group.title} className="sourceGroup">
+            <summary>
+              <span>{group.title}</span>
+              <strong>{group.links.length}</strong>
+            </summary>
+            <div className="sourceGroupLinks">
+              {group.links.map((link) => (
+                <a href={link.url} target="_blank" rel="noreferrer" key={link.url}>
+                  {link.label}
+                  <ExternalLink size={15} />
+                </a>
+              ))}
+            </div>
+          </details>
         ))}
       </div>
     </section>
