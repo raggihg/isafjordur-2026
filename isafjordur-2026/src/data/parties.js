@@ -153,7 +153,7 @@ export const parties = [
       environment: 'Sjálfbærni og nútímaleg samfélagsuppbygging.',
       transport: 'Góðir innviðir og aðgengi styðja þjónustu og byggðaþróun.',
       culture: 'Fjölbreytt íþróttastarf og félagsstarf fyrir ólíka aldurshópa.'
-    },,
+    },
     policyByTopic: {
       housing: [
         'Skapa forsendur fyrir áframhaldandi búsetu og fjölbreyttu samfélagi.',
@@ -246,7 +246,7 @@ export const parties = [
       environment: 'Umhverfi, skipulag og framkvæmdir í samhengi við innviði.',
       transport: 'Samgöngur og hafnir sem lykill að atvinnu og búsetu.',
       culture: 'Íþrótta- og tómstundamál sem hluti af góðu samfélagi.'
-    },,
+    },
     policyByTopic: {
       housing: [
         'Styðja við uppbyggingu og framkvæmdir sem bæta búsetuskilyrði.',
@@ -329,7 +329,7 @@ export const parties = [
       environment: 'Vantar staðfesta stefnutexta.',
       transport: 'Vantar staðfesta stefnutexta.',
       culture: 'Vantar staðfesta stefnutexta.'
-    },,
+    },
     policyByTopic: {
       housing: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
       schools: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
@@ -391,7 +391,7 @@ export const parties = [
       environment: 'Sjálfbær og samfélagsleg nálgun í uppbyggingu.',
       transport: 'Samgöngur og aðgengi sem hluti af góðri þjónustu.',
       culture: 'Menning og samvera sem mikilvægur þáttur í lífsgæðum.'
-    },,
+    },
     policyByTopic: {
       housing: [
         'Auka húsnæðisframboð sem forsenda þess að samfélagið geti vaxið.',
