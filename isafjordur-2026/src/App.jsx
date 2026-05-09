@@ -586,6 +586,7 @@ function CampaignInfoPanel() {
 
 function QuizPanel() {
   const [answers, setAnswers] = useState({})
+  const [showResults, setShowResults] = useState(false)
 
   const scores = useMemo(() => {
     const result = { B: 0, C: 0, D: 0, M: 0, S: 0 }
@@ -633,7 +634,7 @@ function QuizPanel() {
                   <button
                     key={option.label}
                     className={answers[index]?.label === option.label ? 'selected' : ''}
-                    onClick={() => setAnswers({ ...answers, [index]: option })}
+                    onClick={() => { setAnswers({ ...answers, [index]: option }); setShowResults(false) }}
                   >
                     {option.label}
                   </button>
@@ -645,19 +646,37 @@ function QuizPanel() {
 
         <aside className="quizResult">
           <h3>Niðurstaða</h3>
-          <p>{answeredCount} af {quizQuestions.length} spurningum svarað. Hæsta skor sýnir hvaða framboð passar best við svörin þín.</p>
-          <div className="resultBars">
-            {scores.map(({ letter, score, party }) => (
-              <div className="resultRow" key={letter}>
-                <LogoMark party={party} />
-                <span>{party.shortName}</span>
-                <div className="bar"><i style={{ width: topScore ? `${(score / topScore) * 100}%` : '0%' }} /></div>
-                <strong>{score}</strong>
-              </div>
-            ))}
-          </div>
+          <p>{answeredCount} af {quizQuestions.length} spurningum svarað.</p>
 
-          <button className="quizReset" onClick={() => setAnswers({})}>
+          {!showResults ? (
+            <div className="quizLocked">
+              <strong>Engin niðurstaða enn</strong>
+              <span>Svaraðu spurningunum og smelltu svo á takkann til að sjá hvaða framboð passar best við áherslurnar þínar.</span>
+              <button
+                className="quizSubmit"
+                disabled={answeredCount === 0}
+                onClick={() => setShowResults(true)}
+              >
+                Sjá niðurstöðu
+              </button>
+            </div>
+          ) : (
+            <>
+              <div className="resultBars">
+                {scores.map(({ letter, score, party }) => (
+                  <div className="resultRow" key={letter}>
+                    <LogoMark party={party} />
+                    <span>{party.shortName}</span>
+                    <div className="bar"><i style={{ width: topScore ? `${(score / topScore) * 100}%` : '0%' }} /></div>
+                    <strong>{score}</strong>
+                  </div>
+                ))}
+              </div>
+              <p className="quizDisclaimer">Niðurstaðan er vísbending byggð á svörum þínum, ekki formleg kosningaráðgjöf.</p>
+            </>
+          )}
+
+          <button className="quizReset" onClick={() => { setAnswers({}); setShowResults(false) }}>
             Hreinsa svör
           </button>
         </aside>

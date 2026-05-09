@@ -2224,3 +2224,49 @@ body {
   min-height: 44px !important;
   text-align: left;
 }
+
+
+/* Quiz results are hidden until user submits */
+.quizLocked {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px dashed rgba(0,78,203,.25);
+  border-radius: 16px;
+  background: #f8fbff;
+}
+
+.quizLocked strong {
+  color: var(--deep);
+  font-size: 16px;
+}
+
+.quizLocked span {
+  color: #5b6680;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.quizSubmit {
+  min-height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(0,78,203,.18);
+}
+
+.quizSubmit:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+  box-shadow: none;
+}
+
+.quizDisclaimer {
+  margin: 12px 0 0;
+  color: #5b6680;
+  font-size: 12px;
+  line-height: 1.4;
+}
