@@ -18,7 +18,6 @@ import {
 } from 'lucide-react'
 import { parties, sources, topics } from './data/parties.js'
 import { loadEvents } from './data/eventsSheet.js'
-import { articles } from './data/articles.js'
 
 function stableShuffleOptions(options, questionIndex) {
   return [...options]
@@ -342,7 +341,6 @@ function Header({ setActiveParty, setActiveTopic }) {
         <button onClick={() => goHome('#flokkar')}>Flokkar</button>
         <button onClick={() => goHome('#malefni')}>Málefni</button>
         <button onClick={() => goHome('#vidburdir')}>Viðburðir</button>
-        <button onClick={() => goHome('#greinar')}>Greinar</button>
         <button onClick={() => goHome('#kosningar')}>Kosningar</button>
         <button onClick={() => goHome('#konnun')}>Könnun</button>
         <button onClick={() => goHome('#heimildir')}>Heimildir</button>
@@ -877,43 +875,6 @@ function EventsPanel() {
   )
 }
 
-function ArticlesPanel({ setActiveTopic }) {
-  const openArticle = (article) => {
-    if (article.topicId) {
-      setActiveTopic(article.topicId)
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    } else if (article.anchor) {
-      document.querySelector(`#${article.anchor}`)?.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
-  return (
-    <section id="greinar" className="panel articlesPanel">
-      <div className="panelHeader">
-        <div>
-          <p className="eyebrow">Greinar</p>
-          <h2>Kosningavakt</h2>
-          <p>Stuttar samantektir sem hjálpa íbúum að bera saman málefni og upplýsingar.</p>
-        </div>
-      </div>
-
-      <div className="articleGrid">
-        {articles.map((article) => (
-          <button
-            className="articleCard"
-            key={article.title}
-            onClick={() => openArticle(article)}
-          >
-            <span>{article.category}</span>
-            <h3>{article.title}</h3>
-            <p>{article.summary}</p>
-            <small>{article.date}</small>
-          </button>
-        ))}
-      </div>
-    </section>
-  )
-}
 
 function Sources() {
   return (
@@ -966,7 +927,6 @@ export default function App() {
 <div className="pageWrap stackedSections">
             <TopicsOverview setActiveTopic={setActiveTopic} />
             <EventsPanel />
-            <ArticlesPanel setActiveTopic={setActiveTopic} />
             <ElectionInfoPanel />
             <CampaignInfoPanel />
             <QuizPanel />

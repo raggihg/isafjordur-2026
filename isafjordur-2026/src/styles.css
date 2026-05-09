@@ -2654,3 +2654,11 @@ body {
   background: rgba(255,255,255,.65);
   font-size: 14px;
 }
+
+
+/* Greinar/Kosningavakt removed */
+.articlesPanel,
+.articleGrid,
+.articleCard {
+  display: none !important;
+}
