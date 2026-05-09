@@ -2373,3 +2373,131 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Clean editorial election info */
+.cleanElectionPanel {
+  padding: 26px !important;
+}
+
+.cleanElectionPanel .panelHeader {
+  margin-bottom: 18px !important;
+}
+
+.cleanElectionPanel .panelHeader h2,
+.sourcesFooterHeader h2,
+.campaignPanel .panelHeader h2,
+.topicsOverview .panelHeader h2 {
+  display: none !important;
+}
+
+.electionSummary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.electionSummary article {
+  padding: 15px;
+  border: 1px solid rgba(13,27,42,.08);
+  border-radius: 14px;
+  background: rgba(255,255,255,.78);
+}
+
+.electionSummary span {
+  display: block;
+  color: #5b6680;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+
+.electionSummary strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--deep);
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.electionSummary p {
+  margin: 7px 0 0;
+  color: #5b6680;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.electionInfoRows {
+  display: grid;
+  gap: 0;
+  border: 1px solid rgba(13,27,42,.08);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.electionInfoRows section {
+  padding: 18px;
+  border-bottom: 1px solid rgba(13,27,42,.08);
+}
+
+.electionInfoRows section:last-child {
+  border-bottom: 0;
+}
+
+.electionInfoRows h3 {
+  margin: 0 0 10px;
+  color: var(--deep);
+  font-size: 16px;
+}
+
+.electionInfoRows p {
+  margin: 6px 0 0;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.electionInfoRows ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  list-style: none;
+}
+
+.electionInfoRows li {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.electionInfoRows li strong {
+  color: var(--blue);
+}
+
+.electionInfoRows li span {
+  color: #334155;
+}
+
+@media (max-width: 900px) {
+  .electionSummary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .electionInfoRows li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+@media (max-width: 560px) {
+  .electionSummary {
+    grid-template-columns: 1fr;
+  }
+
+  .cleanElectionPanel {
+    padding: 18px !important;
+  }
+}
