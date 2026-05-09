@@ -23,9 +23,9 @@ function Header({ activeParty, setActiveParty }) {
   return (
     <header className="topbar">
       <a href="#" className="brand" onClick={() => setActiveParty(null)}>
-        <div className="brandBadge">Í26</div>
+        <img className="siteLogoIcon" src="/favicon.svg" alt="Ísafjarðarbær 2026" />
         <div>
-          <strong>Ísafjörður 2026</strong>
+          <strong>Ísafjarðarbær 2026</strong>
           <span>Stefnuskrár í einum stað</span>
         </div>
       </a>
@@ -50,6 +50,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="heroContent">
+        <img className="heroBrandLogo" src="/brand-logo.svg" alt="Ísafjarðarbær 2026 - Stefnuskrár í einum stað" />
         <p className="eyebrow"><ShieldCheck size={16} /> Óháð yfirlit í vinnslu</p>
         <h1>Berðu saman stefnur flokkanna í Ísafjarðarbæ.</h1>
         <p>
