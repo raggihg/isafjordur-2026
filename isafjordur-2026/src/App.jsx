@@ -134,10 +134,43 @@ function ComparisonTable({ query }) {
   )
 }
 
+function PartySwitchButton({ party, direction, onClick }) {
+  return (
+    <button className={`partySwitch ${direction}`} onClick={onClick}>
+      <span className="switchArrow">{direction === 'prev' ? '←' : '→'}</span>
+      <LogoMark party={party} />
+      <span className="switchText">
+        <small>{party.list}</small>
+        <strong>{party.name}</strong>
+      </span>
+    </button>
+  )
+}
+
 function PartyDetail({ party, setActiveParty }) {
+  const currentIndex = parties.findIndex((item) => item.id === party.id)
+  const previousParty = parties[(currentIndex - 1 + parties.length) % parties.length]
+  const nextParty = parties[(currentIndex + 1) % parties.length]
+
   return (
     <section className="partyDetail">
-      <button className="backButton" onClick={() => setActiveParty(null)}>← Til baka á forsíðu</button>
+      <div className="partyDetailNav">
+        <PartySwitchButton
+          party={previousParty}
+          direction="prev"
+          onClick={() => setActiveParty(previousParty.id)}
+        />
+
+        <button className="backButton" onClick={() => setActiveParty(null)}>
+          Allir flokkar
+        </button>
+
+        <PartySwitchButton
+          party={nextParty}
+          direction="next"
+          onClick={() => setActiveParty(nextParty.id)}
+        />
+      </div>
 
       <div className="detailHero" style={{ '--party': party.color, '--light': party.lightColor }}>
         <LogoMark party={party} large />

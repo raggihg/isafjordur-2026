@@ -519,3 +519,124 @@ nav a:hover { color: var(--blue); }
 .hero .eyebrow {
   margin-top: 0;
 }
+
+
+.partyDetailNav {
+  position: sticky;
+  top: 92px;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding: 10px;
+  border: 1px solid rgba(7,22,49,.1);
+  border-radius: 18px;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 14px 32px rgba(15,23,42,.08);
+}
+
+.partySwitch {
+  min-height: 70px;
+  display: grid;
+  grid-template-columns: auto 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--navy);
+  cursor: pointer;
+  text-align: left;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.partySwitch:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  box-shadow: 0 12px 26px rgba(15,23,42,.10);
+}
+
+.partySwitch.next {
+  grid-template-columns: minmax(0, 1fr) 48px auto;
+  text-align: right;
+}
+
+.partySwitch.next .switchArrow { order: 3; }
+.partySwitch.next .logoMark { order: 2; }
+.partySwitch.next .switchText { order: 1; }
+
+.partySwitch .logoMark {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  padding: 5px;
+}
+
+.switchArrow {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  color: var(--blue);
+  background: #eef5ff;
+  font-weight: 950;
+}
+
+.switchText { min-width: 0; }
+
+.switchText small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.switchText strong {
+  display: block;
+  margin-top: 2px;
+  overflow: hidden;
+  color: #122441;
+  font-size: 15px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.partyDetailNav .backButton {
+  margin: 0;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f8fbff;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .partyDetailNav {
+    position: static;
+    grid-template-columns: 1fr;
+  }
+
+  .partySwitch,
+  .partySwitch.next {
+    grid-template-columns: auto 46px minmax(0, 1fr);
+    text-align: left;
+  }
+
+  .partySwitch.next .switchArrow,
+  .partySwitch.next .logoMark,
+  .partySwitch.next .switchText {
+    order: initial;
+  }
+
+  .partyDetailNav .backButton {
+    width: 100%;
+  }
+}
