@@ -11,9 +11,7 @@ import {
   HelpCircle,
   Info,
   Link as LinkIcon,
-  ListFilter,
   MapPin,
-  Search,
   ShieldCheck,
   UserRound,
   Vote
@@ -153,7 +151,6 @@ function Header({ setActiveParty, setActiveTopic }) {
 
       <nav>
         <button onClick={() => goHome('#flokkar')}>Flokkar</button>
-        <button onClick={() => goHome('#samanburdur')}>Samanburður</button>
         <button onClick={() => goHome('#malefni')}>Málefni</button>
         <button onClick={() => goHome('#kosningar')}>Kosningar</button>
         <button onClick={() => goHome('#konnun')}>Könnun</button>
@@ -193,51 +190,6 @@ function PartyCards({ setActiveParty }) {
           </div>
         </article>
       ))}
-    </section>
-  )
-}
-
-function ComparisonTable({ query }) {
-  const rows = useMemo(() => {
-    const q = query.toLowerCase().trim()
-    if (!q) return comparisonItems
-    return comparisonItems.filter((item) =>
-      `${item.area} ${item.focus} ${Object.values(item.parties).join(' ')}`.toLowerCase().includes(q)
-    )
-  }, [query])
-
-  return (
-    <section id="samanburdur" className="panel comparisonPanel">
-      <div className="panelHeader">
-        <div>
-          <p className="eyebrow"><ListFilter size={15} /> Samanburður</p>
-          <h2>Hver er að leggja áherslu á hvað?</h2>
-          <p>Stutt og hnitmiðað yfirlit yfir áherslur flokkanna. Hér eru löngu stefnutextarnir brotnir niður í fá orð svo auðveldara sé að bera saman.</p>
-        </div>
-      </div>
-
-      <div className="focusTable">
-        <div className="focusHead">Mál</div>
-        <div className="focusHead">Atriði</div>
-        {parties.map((party) => (
-          <div className="focusHead partyMiniHead" key={party.id}>
-            <LogoMark party={party} />
-            <span>{party.letter}</span>
-          </div>
-        ))}
-
-        {rows.map((item) => (
-          <React.Fragment key={`${item.area}-${item.focus}`}>
-            <div className="focusArea">{item.area}</div>
-            <div className="focusItem">{item.focus}</div>
-            {parties.map((party) => (
-              <div className="focusCell" key={`${item.focus}-${party.letter}`}>
-                {item.parties[party.letter] || '—'}
-              </div>
-            ))}
-          </React.Fragment>
-        ))}
-      </div>
     </section>
   )
 }
@@ -564,8 +516,8 @@ function TopicsOverview({ setActiveTopic }) {
       <div className="panelHeader">
         <div>
           <p className="eyebrow"><BarChart3 size={15} /> Málefnasíður</p>
-          <h2>Skoða eftir málaflokkum</h2>
-          <p>Veldu málaflokk og sjáðu áherslur allra flokka á einni síðu.</p>
+          <h2>Berðu saman eftir málefnum</h2>
+          <p>Veldu málefni og sjáðu allar áherslur allra flokka á einni síðu.</p>
         </div>
       </div>
 
@@ -608,7 +560,6 @@ function Sources() {
 export default function App() {
   const [activePartyId, setActiveParty] = useState(null)
   const [activeTopicId, setActiveTopic] = useState(null)
-  const [query, setQuery] = useState('')
   const activeParty = parties.find((party) => party.id === activePartyId)
   const activeTopic = topics.find((topic) => topic.id === activeTopicId)
 
@@ -628,45 +579,7 @@ export default function App() {
         <main>
           <Hero />
           <PartyCards setActiveParty={setActiveParty} />
-
-          <section className="tools pageWrap">
-            <div className="searchBox">
-              <Search size={18} />
-              <input
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Leita að málaflokki, t.d. húsnæði, skólar eða fjármál..."
-              />
-            </div>
-            <div className="infoBox">
-              <Info size={18} />
-              <span>Stóra uppfærslan er komin: samanburður, könnun og kosningaupplýsingar á einum stað.</span>
-            </div>
-          </section>
-
-          <div className="pageWrap layoutGrid">
-            <ComparisonTable query={query} />
-            <aside className="sideStack">
-              <article className="panel">
-                <p className="eyebrow">Staða gagna</p>
-                <h2>Hvað er komið?</h2>
-                <ul className="statusList">
-                  <li><CheckCircle2 size={18} /> Frambjóðendur allra lista</li>
-                  <li><CheckCircle2 size={18} /> Staðbundin SVG-listamerki</li>
-                  <li><CheckCircle2 size={18} /> Stefnuskrár B, C, D og S tengdar</li>
-                  <li><Info size={18} /> Samanburður og könnun komin inn</li>
-                </ul>
-              </article>
-
-              <article className="panel">
-                <p className="eyebrow">Næst</p>
-                <h2>Til að klára</h2>
-                <p>Næst fínpússum við texta, heimildamerkingar, mobile-útlit og kosningakaffi þegar staðfestar upplýsingar berast.</p>
-              </article>
-            </aside>
-          </div>
-
-          <div className="pageWrap stackedSections">
+<div className="pageWrap stackedSections">
             <TopicsOverview setActiveTopic={setActiveTopic} />
             <ElectionInfoPanel />
             <CampaignInfoPanel />

@@ -1253,3 +1253,44 @@ nav a:hover { color: var(--blue); }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Comparison table removed: málefnasíður are now the main comparison system */
+.comparisonPanel,
+.comparisonGrid,
+.focusTable,
+.tools,
+.searchBox,
+.infoBox,
+.layoutGrid .comparisonPanel {
+  display: none !important;
+}
+
+.stackedSections {
+  margin-top: 18px;
+}
+
+.topicsOverview {
+  border: 1px solid rgba(0,78,203,.16);
+  box-shadow: 0 16px 36px rgba(15,23,42,.08);
+}
+
+.topicsOverview .panelHeader h2 {
+  font-size: 30px;
+}
+
+.topicOverviewGrid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1180px) {
+  .topicOverviewGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .topicOverviewGrid {
+    grid-template-columns: 1fr;
+  }
+}
