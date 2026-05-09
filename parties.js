@@ -1,1 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="28" fill="#e4f6e9"/><text x="60" y="74" text-anchor="middle" font-family="Arial,sans-serif" font-size="48" font-weight="900" fill="#178447">xB</text></svg>
