@@ -481,7 +481,7 @@ function TopicDetail({ topic, setActiveTopic }) {
         <div>
           <p className="eyebrow">Málefnasíða</p>
           <h1>{topic.name}</h1>
-          <p>Hér má sjá hvernig allir flokkar nálgast þennan málaflokk, sett fram í stuttum atriðum til að auðvelda samanburð.</p>
+          <p>Hér má sjá stefnuatriði flokkanna undir þessu málefni. Atriðin eru tekin úr stefnuskrám, vefsíðum og efni flokkanna og höfð sýnileg án þess að fela neitt á bak við „sýna meira“.</p>
         </div>
       </article>
 

@@ -62,47 +62,84 @@ export const parties = [
       culture: 'Jöfn tækifæri barna til íþrótta, tónlistar og tómstunda óháð búsetu.'
     },
     policyByTopic: {
-      housing: [
-        'Auka framboð á fjölbreyttu húsnæði fyrir ólík æviskeið.',
-        'Tryggja að lóðaframboð og skipulag styðji við uppbyggingu íbúðarhúsnæðis.',
-        'Stuðla að því að ungt fólk, fjölskyldur og eldri íbúar geti búið áfram í sveitarfélaginu.'
-      ],
-      schools: [
-        'Styrkja leikskóla og grunnskóla sem grunnstoðir samfélagsins.',
-        'Efla tómstundir, íþróttir og menningarstarf barna óháð búsetu.',
-        'Styðja við fjölskylduvænt samfélag í öllum byggðakjörnum.'
-      ],
-      welfare: [
-        'Tryggja góða þjónustu við eldri borgara.',
-        'Styrkja nærþjónustu og stuðning við fjölskyldur.',
-        'Horfa til jafns aðgengis íbúa að grunnþjónustu.'
-      ],
-      economy: [
-        'Halda utan um ábyrga fjármálastjórn sveitarfélagsins.',
-        'Forgangsraða fjárfestingum í nauðsynlegum innviðum.',
-        'Tryggja að rekstur sveitarfélagsins sé sjálfbær til lengri tíma.'
-      ],
-      jobs: [
-        'Efla atvinnulíf og nýsköpun á svæðinu.',
-        'Styðja við ferðaþjónustu, sjávarútveg og orkutengd tækifæri.',
-        'Horfa til hafna og atvinnusvæða sem lykilinnviða.'
-      ],
-      environment: [
-        'Tengja umhverfismál við skipulag og búsetugæði.',
-        'Nýta tækifæri í sjálfbærri uppbyggingu.',
-        'Huga að orkumálum og innviðum í langtímasýn sveitarfélagsins.'
-      ],
-      transport: [
-        'Bæta tengingar milli byggðakjarna.',
-        'Styðja við betri samgöngur til og frá sveitarfélaginu.',
-        'Horfa á samgöngur sem grunnforsendu búsetu og atvinnulífs.'
-      ],
-      culture: [
-        'Tryggja börnum jöfn tækifæri til íþrótta, tónlistar og tómstunda.',
-        'Styrkja félagslíf og samfélagsþátttöku.',
-        'Horfa til menningar og tómstunda sem hluta af lífsgæðum.'
-      ]
-    }
+    housing: [
+        "Hafa á hverjum tíma nægar lóðir í boði í hverjum byggðarkjarna lausar til úthlutunar",
+        "Leiða og styðja uppbyggingu á leiguhúsnæði með því að búa til verkefni með leigufélögum líkt og Bríet og Brák",
+        "Stuðla að nýbyggingum íbúða í tilbúnum götum sem ekki hefur verið byggt í mörg ár t.d. með niðurfellingu gatnargerðagjalda",
+        "Mikilvægt er að flýta nýju miðbæjarskipulagi í Skutulsfirði þar sem tækifæri eru til uppbyggingar fjölbýlishúsa",
+        "Halda áfram uppbyggingu í Tungu- og Seljalandshverfi",
+        "Horfra til stækkunar á Tunguhverfi til framtíðar",
+        "Á Suðureyri eru spennandi möguleikar á nýju íbúðahverfi á svæði gamla flugvallarins",
+        "Á Flateyri þarf að hefja skipulagningu nýrra lóða til að bregðast við eftirspurn",
+        "Á Þingeyri þarf að tryggja að skipulagðar lóðir uppfylli væntingar og framboð sé ávallt nægilegt",
+        "Kanna möguleika á byggingu íbúða eða íbúðakjarna í samstarfi við Þroskahjálp og Brynju hússjóð Öryrkjabandalags Íslands"
+    ],
+    schools: [
+        "Styðja við starfstengt nám fyrir ófaglærða starfsmenn grunn- og leikskóla",
+        "Stækka Grunnskóla Ísafjarðar og bæta aðstöðu nemenda og starfsfólks",
+        "Byggja við leikskóla á Ísafirði og fjölga þannig leikskólaplássum með það að markmiði að tryggja samfellu frá 12 mánaða aldri",
+        "Koma á fót ungmennahúsi í samstarfi við Edinborgarhúsið",
+        "Innleiða símafrí í grunnskólum",
+        "Halda úti öflugum félagsmiðstöðvum",
+        "Efla stoðþjónustu við skólana",
+        "Innleiða forvarnarstefnu með sérstaka áherslu á að tryggja velferð barna"
+    ],
+    welfare: [
+        "Samþætta þjónustu ríkis og sveitarfélags við eldra fólk, það á að vera gott að vera eldri borgari í Ísafjarðarbæ",
+        "Vinna tímasetta aðgerðaráætlun um að bæta hjólastólaaðgengi á kjörtímabilinu",
+        "Taka upp móttökuáætlun fyrir innflytjendur",
+        "Innleiða tekjutengda frístundastyrki fyrir eldri borgara",
+        "Innleiða tekjutengda frístundastyrki fyrir foreldra í fæðingarorlofi",
+        "Innleiða forvarnarstefnu með sérstaka áherslu á að tryggja velferð barna",
+        "Kanna möguleika á byggingu íbúða eða íbúðakjarna í samstarfi við Þroskahjálp og Brynju hússjóð Öryrkjabandalags Íslands"
+    ],
+    economy: [
+        "Sýna ábyrgð í fjármálum",
+        "Setja fjárhagsleg markmið með jafnvægi milli þess að lækka skuldir en jafnframt fjárfesta í innviðum",
+        "Byggja upp góða samvinnu milli byggðakjarna",
+        "Skýra verkferla í stjórnsýslunni með áherslu á skilvirkni og gagnsæi",
+        "Tryggja að erindi hverfisráða fara í úrvinnslu",
+        "Minnka álögur á íbúa eins og kostur er og lækka fasteignaskattshlutfall",
+        "Greina möguleika á nýtingu gervigreindar í starfsemi sveitarfélagsins til að styðja við og efla stjórnsýsluna"
+    ],
+    jobs: [
+        "Hafa frumkvæði að því að laða starfsemi og fyrirtæki til bæjarfélagsins og ýta undir auknar fjárfestingar í sveitarfélaginu",
+        "Berjast fyrir aukinni raforku á svæðinu",
+        "Stunda öfluga hagsmunavörslu fyrir atvinnulíf svæðisins",
+        "Vinna með Vestfjarðarstofu og fleiri aðilum að stofnun Nýsköpunarseturs og að fjölgun starfsstöðva og starfa hins opinbera á svæðinu",
+        "Stuðla að heilsársferðaþjónustu"
+    ],
+    environment: [
+        "Leiða með góðu fordæmi og halda svæðum Ísafjarðarbæjar snyrtilegum og vel hirtum",
+        "Fjölga göngustígum og viðhalda þeim sem fyrir eru",
+        "Fjölga vistgötum í gamla bænum á Ísafirði og helluleggja fleiri götur",
+        "Útbúa tímasetta aðgerðaráætlun er varðar viðhald og nýframkvæmdir á gangstéttum",
+        "Gera úttekt á leikvöllum bæjarins og gera tímaáætlun um úrbætur",
+        "Setja upp ærslabelg í Holtahverfi"
+    ],
+    transport: [
+        "Fjölga ferðum í almenningssamgöngum milli hverfa og byggðarkjarna þar sem sérstaklega er tekið tillit til íþrótta og tómstundastarfs barna",
+        "Styðja við eflingu landtenginga skipa í höfnum",
+        "Þrýsta á gerð Álftafjarðargangna",
+        "Styðja við orkuskipti í samgöngum og uppbyggingu hleðsluinnviða",
+        "Berjast fyrir bættari flugsamgöngum"
+    ],
+    culture: [
+        "Hækka aldurstakmark frístundastyrks úr 16 í 18 ára",
+        "Jafna aðgengi barna að íþrótta og tómstundastarfi",
+        "Hanna og skipuleggja framtíðarskipulag íþróttamannvirkja á Torfnessvæðinu með þarfir íbúa og íþróttafélaga í fyrirrúmi",
+        "Efla starfsemi skíðasvæðisins með áframhaldandi uppbyggingu",
+        "Lengja opnunartíma í sundlaugum bæjarins",
+        "Bæta tækjakost til líkamsræktar í öllum byggðakjörnum",
+        "Styðja við uppbyggingu fyrir akstursíþróttir",
+        "Bæta merkingar gönguleiða í Ísafjarðarbæ",
+        "Tryggja þríhliða samning milli ríkis, sveitarfélags og Edinborgarhúss um menningarhús",
+        "Bæta aðstöðu og aðkomu að Byggðasafni",
+        "Frekari stuðningur við menningar- og bæjarhátíðir",
+        "Framfylgja menningarstefnu og endurskoða hana reglulega",
+        "Hækka menningarstyrki og endurskoða hámarksfjárhæð einstakra styrkja"
+    ]
+  }
   },
   {
     id: 'vidreisn',
@@ -155,47 +192,55 @@ export const parties = [
       culture: 'Fjölbreytt íþróttastarf og félagsstarf fyrir ólíka aldurshópa.'
     },
     policyByTopic: {
-      housing: [
-        'Skapa forsendur fyrir áframhaldandi búsetu og fjölbreyttu samfélagi.',
-        'Horfa á húsnæði og skipulag sem hluta af stærri framtíðarsýn sveitarfélagsins.',
-        'Auka fyrirsjáanleika í skipulags- og stjórnsýslumálum.'
-      ],
-      schools: [
-        'Setja skólamál í forgrunn.',
-        'Tryggja vel mannaða leikskóla og metnaðarfulla grunnskóla.',
-        'Efla sérfræðiþjónustu í heimabyggð og stuðla að inngildingu.'
-      ],
-      welfare: [
-        'Tryggja jafnt aðgengi að þjónustu.',
-        'Byggja upp þjónustu sem mætir ólíkum þörfum íbúa.',
-        'Leggja áherslu á faglega og gagnsæja stjórnsýslu í velferðarmálum.'
-      ],
-      economy: [
-        'Efla gagnsæi í stjórnsýslu og fjármálum.',
-        'Tryggja ábyrga meðferð fjármuna.',
-        'Styrkja skilvirkni og skýra forgangsröðun.'
-      ],
-      jobs: [
-        'Styðja við atvinnuþróun og nýsköpun.',
-        'Byggja upp fjölbreytt samfélag sem laðar að fólk og fyrirtæki.',
-        'Horfa til langtímasýnar í atvinnumálum sveitarfélagsins.'
-      ],
-      environment: [
-        'Setja sjálfbærni inn í uppbyggingu og ákvarðanatöku.',
-        'Huga að skýrri framtíðarsýn í skipulagsmálum.',
-        'Vinna að samfélagi sem virkar betur fyrir alla.'
-      ],
-      transport: [
-        'Styðja við góða innviði og aðgengi.',
-        'Horfa á samgöngur sem hluta af þjónustu og byggðaþróun.',
-        'Auka skilvirkni í verkefnum sem tengjast tengingum og þjónustu.'
-      ],
-      culture: [
-        'Styðja við fjölbreytt íþrótta- og félagsstarf.',
-        'Tryggja börnum og ungmennum aðgengi að uppbyggilegu starfi.',
-        'Efla samfélagsþátttöku og fjölbreytileika.'
-      ]
-    }
+    housing: [
+        "Koma ánægju íbúa með skipulagsmál upp fyrir landsmeðaltal með bættum ferlum",
+        "Skipuleggja þéttingarreiti til húsbygginga í öllum byggðarkjörnum",
+        "Auka viðhald á eignum Ísafjarðarbæjar, bæta merkingar og fyrirbyggja dýrar skemmdir"
+    ],
+    schools: [
+        "Stækka Eyrarskjól og Sólborg, og setja í gang áætlun um fjölgun leikskólakennara í öllum byggðarkjörnum",
+        "Móta og innleiða metnaðarfulla menntastefnu með skýrri aðgerðaáætlun",
+        "Setja skýrar reglur um takmarkanir á símanotkun í grunnskólum",
+        "Efla aðkomu sérfræðinga í skólunum svo hægt sé að mæta nemendum betur þar sem þeir eru staddir"
+    ],
+    welfare: [
+        "Endurskoða akstursþjónustu bæjarins",
+        "Breyta fjórðu hæðinni á Hlíf í nýjar íbúðir fyrir aldraða",
+        "Innleiða farsældarlögin með metnaði",
+        "Hlúa að aðgengi í víðu samhengi",
+        "Auka upplýsingagjöf og auðvelda aðgengi fatlaðs fólks að húsnæði sveitarfélagsins",
+        "Efla félagsstarf eldri borgara enn frekar og skapa tækifæri til virkni og samveru"
+    ],
+    economy: [
+        "Passa upp á peninga íbúanna, lækka fasteignaskattshlutfall enn meira og halda áfram að lækka skuldir bæjarins",
+        "Tryggja að æðstu stjórnendur bæjarins eigi reglulega vinnudaga í öllum byggðarkjörnum",
+        "Breyta léni sveitarfélagsins úr isafjordur.is í isafjardarbaer.is",
+        "Stjórnsýslan þarf að verða rafræn, ferlarnir í stjórnsýslunni einfaldari og afgreiðslutími styttri"
+    ],
+    jobs: [
+        "Klára móttökuhús fyrir gesti skemmtiferðaskipa, rafvæða höfnina fyrir skip og stór ökutæki og klára löngu tímabærar framkvæmdir í öllum höfnum sveitarfélagsins",
+        "Berjast fyrir umbótum innan fjórðungsins, svo sem með bættum samgöngum, betra raforkukerfi, aukinni notkun jarðhita og hóflegri skattheimtu",
+        "Styðja áframhaldandi uppbyggingu umhverfisvæns laxeldis",
+        "Sjá mikil tækifæri í ferðaþjónustu samfara samgöngubótum á sunnanverðum Vestfjörðum"
+    ],
+    environment: [
+        "Bæta ásýnd og umhirðu sveitarfélagsins, meðal annars með því að fjarlægja númerslausa bíla og rusl úr bæjarlandinu á kostnað eigenda þeirra",
+        "Klára fráveituframkvæmdir í öllum kjörnum",
+        "Bæta útivistarmöguleika með betri leiksvæðum fyrir börn, göngu- og hjólastígum og fleiri svæðum fyrir hunda"
+    ],
+    transport: [
+        "Skoða hvernig almenningssamgöngur geta betur nýst íbúum, sérstaklega börnum og ungmennum",
+        "Berjast fyrir umbótum innan fjórðungsins, svo sem með bættum samgöngum",
+        "Vilja sjá betri vetrarþjónustu á vegum og að reglulegt innanlandsflug sé tryggt"
+    ],
+    culture: [
+        "Efla tómstundastarf og afþreyingarmöguleika fyrir 16–23 ára og auka framboð af afþreyingu utan íþrótta fyrir börn í 5.–10. bekk. Nýtt ungmennaráð leiði stefnumótunina",
+        "Undirbúa viðbyggingu við íþróttahúsið á Torfnesi svo þar verði pláss fyrir alla",
+        "Stækka styrktarsjóð hafna Ísafjarðarbæjar svo menningin og íbúar fái að njóta afrakstursins",
+        "Gera tilraun til að endurvekja skapandi sumarstörf fyrir unglinga",
+        "Gera samstarfsamning við Menningarmiðstöðina Edinborg"
+    ]
+  }
   },
   {
     id: 'sjalfstaedisflokkur',
@@ -248,47 +293,76 @@ export const parties = [
       culture: 'Íþrótta- og tómstundamál sem hluti af góðu samfélagi.'
     },
     policyByTopic: {
-      housing: [
-        'Styðja við uppbyggingu og framkvæmdir sem bæta búsetuskilyrði.',
-        'Horfa til skipulags og innviða sem forsendu húsnæðisuppbyggingar.',
-        'Auka skilvirkni í stjórnsýslu tengdri framkvæmdum.'
-      ],
-      schools: [
-        'Tryggja sterka grunnþjónustu fyrir börn og fjölskyldur.',
-        'Styðja við skóla og fjölskylduvænt samfélag.',
-        'Horfa til hagkvæms reksturs og góðrar þjónustu.'
-      ],
-      welfare: [
-        'Veita þjónustu með áherslu á árangur og hagkvæmni.',
-        'Tryggja að velferðarþjónusta sé hluti af ábyrgum rekstri.',
-        'Horfa til þarfa íbúa í öllum byggðakjörnum.'
-      ],
-      economy: [
-        'Leggja áherslu á ábyrgan rekstur sveitarfélagsins.',
-        'Forgangsraða fjármunum skýrt og hagkvæmt.',
-        'Efla skilvirka stjórnsýslu og betri nýtingu fjármuna.'
-      ],
-      jobs: [
-        'Styrkja atvinnulíf og verðmætasköpun.',
-        'Horfa sérstaklega til hafna, innviða og framkvæmda.',
-        'Skapa betri forsendur fyrir fyrirtæki og störf í sveitarfélaginu.'
-      ],
-      environment: [
-        'Tengja umhverfismál við skipulag, framkvæmdir og innviði.',
-        'Vinna að skýrri og hagkvæmri uppbyggingu.',
-        'Horfa á umhverfismál sem hluta af ábyrgri sveitarstjórn.'
-      ],
-      transport: [
-        'Horfa á samgöngur og hafnir sem lykil að atvinnu og búsetu.',
-        'Styðja við uppbyggingu nauðsynlegra innviða.',
-        'Auka skilvirkni í framkvæmdum og þjónustu.'
-      ],
-      culture: [
-        'Styðja við íþrótta- og tómstundamál sem hluta af góðu samfélagi.',
-        'Horfa til fjölskylduvænna lausna.',
-        'Efla lífsgæði og virkni íbúa.'
-      ]
-    }
+    housing: [
+        "Tryggja aukið framboð af nýjum íbúðum fyrir eldra fólk",
+        "Tryggja nægt og fjölbreytt lóðaframboð í öllum byggðarkjörnum",
+        "Auka skilvirkni og fyrirsjáanleika í skipulags- og byggingarmálum með bættum verkferlum",
+        "Tengja Holtahverfi betur saman við Tungu- og Seljalandshverfi í samvinnu við Vegagerðina, t.d. með undirgöngum"
+    ],
+    schools: [
+        "Innleiða heimgreiðslur til foreldra barna frá 12 mánaða aldri",
+        "Báðir leikskólar á Ísafirði verði stækkaðir á kjörtímabilinu",
+        "Bæta leikskólalóðir, taka út ónýt tæki og setja ný í staðinn",
+        "Styðja starfsfólk til náms án þess að það komi niður á starfseminni",
+        "Skoða möguleikann á gjaldfrjálsum leikskólum til kl. 14:00 og þannig draga úr álagi á starfsfólk",
+        "Styrkja og styðja við faglegt starf",
+        "Styðja ófaglært starfsfólk leikskóla til að sækja fjölbreytt námskeið sem nýtast í starfi",
+        "Stækka Grunnskólann á Ísafirði og bæta með nýbyggingum, endurbótum og stórbættri skólalóð",
+        "Forgangsraða fjármagni með menntun barna að leiðarljósi",
+        "Efla miðlæga fagþjónustu skólanna og stytta bið eftir stuðningi",
+        "Styðja ófaglært starfsfólk grunnskóla til náms og faglegra framfara",
+        "Útfæra leiðir í samvinnu við nemendur og stjórnendur skóla um að gera skólana símalausa"
+    ],
+    welfare: [
+        "Efla úrræði fyrir eldra fólk til virkni og félagslegra tengsla",
+        "Kynna betur íþróttastarf eldri borgara og vinna markvisst að aukinni þátttöku",
+        "Styðja eldra fólk til sjálfstæðrar búsetu svo það geti búið heima eins lengi og það kýs",
+        "Tryggja aukið framboð af nýjum íbúðum fyrir eldra fólk",
+        "Fjölga atvinnutækifærum fyrir fatlað fólk og gera sveitarfélagið að fyrirmynd í atvinnumöguleikum",
+        "Auka áherslu á úrræði sem efla sjálfsbjargargetu og bæta lífsgæði til lengri tíma",
+        "Efla forvarnarstarf í sveitarfélaginu í samvinnu við skóla, heilbrigðisþjónustu og frjáls félagasamtök",
+        "Móta heildstæða stefnu í málefnum eldra fólks"
+    ],
+    economy: [
+        "Sýna ráðdeild í rekstri og fara vel með fjármuni íbúanna, rýna reglulega hvernig megi gera betur og skila jákvæðri afkomu",
+        "Lækka fasteignaskatta",
+        "Hafa reglulega samráðsfundi með íbúum allra byggðakjarna til að jafna aðgengi að samtali og þjónustu",
+        "Bæta stafræna þjónustu og einfalda ferla þannig að þjónusta bæjarins verði skilvirkari, hraðari og samfelldari",
+        "Mæla reglulega ánægju íbúa með þjónustu sveitarfélagsins og setja markviss markmið um úrbætur"
+    ],
+    jobs: [
+        "Styðja við atvinnulíf á svæðinu með öflugri hagsmunagæslu",
+        "Tryggja skýra verkferla og boðleiðir í stjórnsýslu",
+        "Einfalda úrvinnslu umsókna um atvinnulóðir og uppbyggingu fyrirtækja",
+        "Bæta aðstöðu fyrir ferðamenn. Byggja móttökustöð skemmtiferðaskipa og bæta salernisaðstöðu í öllum byggðarkjörnum",
+        "Lækka álögur á fyrirtæki og tryggja nægt framboð af lóðum fyrir atvinnustarfsemi",
+        "Vinna með fyrirtækjum á svæðinu og þeim sem hafa hug á að hefja starfsemi í Ísafjarðarbæ"
+    ],
+    environment: [
+        "Setja skýrar kröfur um umgengi, umhirðu og faglega ásýnd innan sveitarfélagsins",
+        "Hlúa markvisst að opnum svæðum og almenningsrýmum í öllum byggðarkjörnum",
+        "Endurvekja Græna viku í Ísafjarðarbæ og efla umhverfisvitund íbúa",
+        "Gera heildstæða framtíðarsýn fyrir svæðið í Tunguskógi og þróa það sem fjölbreytt útivistarsvæði",
+        "Laga gangstéttir, leggja nýjar og malbika götur"
+    ],
+    transport: [
+        "Bjóða upp á frístundaferðir og almenningssamgöngur í samræmi við þarfir barna og ungmenna",
+        "Efla frístundaakstur og almenningssamgöngur",
+        "Tengja Holtahverfi betur saman við Tungu- og Seljalandshverfi í samvinnu við Vegagerðina, t.d. með undirgöngum"
+    ],
+    culture: [
+        "Rýmka opnunartíma félagsmiðstöðva með þarfir ungmenna í öllum kjörnum í huga",
+        "Setja á fót öflugt ungmennaráð sem hefur raunveruleg áhrif á málefni ungs fólks",
+        "Bæta aðgengi og möguleika fatlaðra barna að íþrótta- og tómstundastarfi í samstarfi við íþróttahreyfinguna",
+        "Tryggja aðgengi allra barna á aldrinum 6 til 18 ára, óháð efnahag að íþrótta- og tómstundastarfi með hækkun frístundastyrkja",
+        "Auka framlög til íþróttafélaga og endurskoða verkefnasamninga",
+        "Gera uppbyggingarsamninga við íþróttafélög til lengri tíma en eins árs",
+        "Ljúka vinnu við framtíðarskipulag og hefja uppbyggingu á Torfnessvæði með knatthús, sundlaug og stækkun íþróttahúss sem langtímamarkmið",
+        "Hækka styrki til menningarmála",
+        "Efla starfsemi menningarhúsanna og tryggja áframhaldandi opnun og virka nýtingu fyrir íbúa svæðisins",
+        "Styðja skapandi verkefni ungs fólks"
+    ]
+  }
   },
   {
     id: 'midflokkurinn',
@@ -331,52 +405,52 @@ export const parties = [
       culture: 'Vantar staðfesta stefnutexta.'
     },
     policyByTopic: {
-      housing: [
-        'Tryggja framboð lóða fyrir íbúðir og atvinnustarfsemi.',
-        'Styðja við framkvæmdir sem hefjast á kjörtímabilinu.',
-        'Bæta nærumhverfi með göngustígum, leikvöllum og grænum svæðum.'
-      ],
-      schools: [
-        'Tryggja leikskólapláss frá 12 mánaða aldri.',
-        'Halda leikskólagjöldum í lágmarki.',
-        'Efla grunnskóla og fagþjónustu í samráði við kennara.',
-        'Opna ungmennahús fyrir framhaldsskólanema.',
-        'Bæta samstarf heimila og skóla.'
-      ],
-      welfare: [
-        'Markviss þjónusta við eldri borgara.',
-        'Tryggja jöfn tækifæri fyrir alla íbúa.',
-        'Byggja samfélag samstöðu, virðingar og samhjálpar.'
-      ],
-      economy: [
-        'Rýna rekstur og hagræða þar sem hægt er.',
-        'Stöðva sjálfvirka útgjaldaaukningu.',
-        'Tryggja að fjárhagslegur meðbyr skili sér í uppbyggingu en ekki skrifræði.',
-        'Fara vel með eignir bæjarins með langtímahugsun.'
-      ],
-      jobs: [
-        'Virk þjónusta við fyrirtæki og einfaldari leið að uppbyggingu.',
-        'Stjórnsýslan verði leiðbeinandi og lausnamiðuð.',
-        'Skjót og fagleg afgreiðsla erinda.'
-      ],
-      environment: [
-        'Viðhald og uppbygging gatna og bæjarrýmis.',
-        'Leikvellir og græn svæði í forgangi.',
-        'Bæta upplifun íbúa og gesta í sveitarfélaginu.'
-      ],
-      transport: [
-        'Setja Suðavíkurveg í forgang.',
-        'Þrýsta á tvöföldun Vestfjarðaganga.',
-        'Efla göngu- og hjólastíga.',
-        'Styrkja fjarskipti og áreiðanlega tengingu.'
-      ],
-      culture: [
-        'Hafa öflugar félagsmiðstöðvar.',
-        'Fjárfesta í samfélagi og fólki.',
-        'Huga að íþróttamannvirkjum og fjölnota íþróttahúsi.',
-        'Vinna að samfélagi fyrir alla án útilokunar.'
-      ]
-    }
+    housing: [
+        "Tryggja framboð lóða fyrir íbúðir og atvinnustarfsemi",
+        "Styðja við framkvæmdir sem hefjast á kjörtímabilinu",
+        "Bæta nærumhverfi með göngustígum, leikvöllum og grænum svæðum"
+    ],
+    schools: [
+        "Tryggja leikskólapláss frá 12 mánaða aldri",
+        "Halda leikskólagjöldum í lágmarki",
+        "Efla grunnskóla og fagþjónustu í samráði við kennara",
+        "Opna ungmennahús fyrir framhaldsskólanema",
+        "Bæta samstarf heimila og skóla"
+    ],
+    welfare: [
+        "Markviss þjónusta við eldri borgara",
+        "Tryggja jöfn tækifæri fyrir alla íbúa",
+        "Byggja samfélag samstöðu, virðingar og samhjálpar"
+    ],
+    economy: [
+        "Rýna rekstur og hagræða þar sem hægt er",
+        "Stöðva sjálfvirka útgjaldaaukningu",
+        "Tryggja að fjárhagslegur meðbyr skili sér í uppbyggingu en ekki skrifræði",
+        "Fara vel með eignir bæjarins með langtímahugsun"
+    ],
+    jobs: [
+        "Virk þjónusta við fyrirtæki og einfaldari leið að uppbyggingu",
+        "Stjórnsýslan verði leiðbeinandi og lausnamiðuð",
+        "Skjót og fagleg afgreiðsla erinda"
+    ],
+    environment: [
+        "Viðhald og uppbygging gatna og bæjarrýmis",
+        "Leikvellir og græn svæði í forgangi",
+        "Bæta upplifun íbúa og gesta í sveitarfélaginu"
+    ],
+    transport: [
+        "Setja Suðavíkurveg í forgang",
+        "Þrýsta á tvöföldun Vestfjarðaganga",
+        "Efla göngu- og hjólastíga",
+        "Styrkja fjarskipti og áreiðanlega tengingu"
+    ],
+    culture: [
+        "Hafa öflugar félagsmiðstöðvar",
+        "Fjárfesta í samfélagi og fólki",
+        "Huga að íþróttamannvirkjum og fjölnota íþróttahúsi",
+        "Vinna að samfélagi fyrir alla án útilokunar"
+    ]
+  }
   },
   {
     id: 'samfylkingin',
@@ -430,47 +504,83 @@ export const parties = [
       culture: 'Menning og samvera sem mikilvægur þáttur í lífsgæðum.'
     },
     policyByTopic: {
-      housing: [
-        'Auka húsnæðisframboð sem forsenda þess að samfélagið geti vaxið.',
-        'Horfa til búsetuöryggis og framtíðaruppbyggingar.',
-        'Vinna að lausnum sem styðja við fjölskyldur og fólk á ólíkum æviskeiðum.'
-      ],
-      schools: [
-        'Styðja við börn, fjölskyldur og menntun.',
-        'Horfa til félagslegs öryggis barna og ungmenna.',
-        'Efla þjónustu sem styður við barnafjölskyldur.'
-      ],
-      welfare: [
-        'Styrkja velferðarþjónustu og félagslega þjónustu.',
-        'Leggja áherslu á öldrunarþjónustu, öryggi og reisn eldri íbúa.',
-        'Vinna að jöfnuði og jöfnum tækifærum.'
-      ],
-      economy: [
-        'Tengja fjármál sveitarfélagsins við velferð, þjónustu og samfélagsuppbyggingu.',
-        'Forgangsraða verkefnum sem styrkja lífsgæði íbúa.',
-        'Horfa til samfélagslegrar ábyrgðar í rekstri.'
-      ],
-      jobs: [
-        'Styðja við framtíðaruppbyggingu sveitarfélagsins.',
-        'Byggja upp gott samfélag sem heldur í fólk og laðar að nýja íbúa.',
-        'Horfa til atvinnu og þjónustu sem hluta af lífsgæðum.'
-      ],
-      environment: [
-        'Vinna að sjálfbærri og samfélagslegri uppbyggingu.',
-        'Tengja skipulag, umhverfi og lífsgæði.',
-        'Horfa til framtíðarsýnar í þróun sveitarfélagsins.'
-      ],
-      transport: [
-        'Horfa á samgöngur og aðgengi sem hluta af góðri þjónustu.',
-        'Tryggja aðgengi íbúa að þjónustu og samfélagsþátttöku.',
-        'Tengja samgöngur við velferð og búsetuskilyrði.'
-      ],
-      culture: [
-        'Styrkja menningu og samveru sem hluta af lífsgæðum.',
-        'Styðja við samfélagslegt starf og þátttöku.',
-        'Horfa á menningu sem þátt í aðlaðandi bæjarfélagi.'
-      ]
-    }
+    housing: [
+        "Stuðla að byggingu nýs íbúðarhúsnæðis með samtali við óhagnaðardrifin leigufélög",
+        "Sveitarfélagið verði virkur þátttakandi í uppbyggingu húsnæðis, meðal annars í samstarfi við óhagnaðardrifin leigufélög",
+        "Sérstök áhersla á húsnæði fyrir ungt fólk og eldri íbúa",
+        "4. hæð Hlífar verði breytt í íbúðir",
+        "Móta skýra framtíðarsýn í húsnæðismálum grunnskóla",
+        "Ljúka gerð aðalskipulags og samræmd þróun byggðar"
+    ],
+    schools: [
+        "Endurskoða leikskólamál með tilliti til gjaldskrár, forvarna og framtíðarhúsnæðis",
+        "Setja þarf þak á greiðslur fyrir leikskólavist og endurskoða gjaldskrá, afsláttarkerfi og tekjutengingu til að draga úr kostnaði fyrir barnafólk",
+        "Bæta þarf starfsumhverfi barna og kennara sem felst meðal annars í aukningu stöðugilda",
+        "Ráðast þarf í uppbyggingu nýs leikskóla á Ísafirði og tryggja að bráðabirgða lausnir verði ekki til langs tíma",
+        "Setja á laggirnar opinn leikskóla þar sem foreldrar ungra barna geta komið saman með börn sín í öruggu og styðjandi umhverfi",
+        "Skoða uppbyggingu sérstaks húsnæðis fyrir unglingastig og félagsmiðstöð",
+        "Öflugur leiðtogi í forvarnarstarfi",
+        "Tryggja að samþætt þjónusta barna skili áfram árangri í kjölfar innleiðingar farsældar laganna"
+    ],
+    welfare: [
+        "Eflum þjónustu við eldra fólk",
+        "Þjónusta við eldri borgara þarf að vera samfelld og taka mið af þörfum hvers og eins",
+        "Þjónustan á fyrst og fremst að byggja á stuðningi í heimahúsum",
+        "Auka þarf áherslu á samþættingu þjónustu, svo stuðningur berist á réttum tíma og taki mið af raunverulegum þörfum",
+        "Mikilvægt er að starfandi sé öldrunarráð og að öldrunarfulltrúi haldi áfram utan um virkt félagsstarf og góða aðstöðu fyrir eldri borgara",
+        "Eflum þjónustu við fatlaða",
+        "Þjónustan á að tryggja jöfn tækifæri til þátttöku í samfélaginu",
+        "Sérstök áhersla verður lögð á skýrar boðleiðir, aðgengilegar upplýsingar og virka leiðbeiningarskyldu"
+    ],
+    economy: [
+        "Endurskoða verkferla bæjarins með það fyrir augum að bæta flæði í þjónustu við íbúa",
+        "Einfalda ferla og bæta þjónustu við íbúa og fyrirtæki",
+        "Leggja áherslu á skýrari ferla, betri samhæfingu milli deilda og hraðari afgreiðslu mála",
+        "Styðja áframhaldandi niðurgreiðslu skulda og ábyrga fjármálastjórn",
+        "Halda jafnvægi í rekstri á sama tíma og byggt er upp til framtíðar",
+        "Bæta skipulag íbúalýðræðis",
+        "Efla samstarf við hverfaráð og móta skýrari og virkari farvegi fyrir aðkomu íbúa að ákvörðunum"
+    ],
+    jobs: [
+        "Auðvelda rekstur og uppbyggingu",
+        "Fyrirtæki hafi fastan tengipunkt í samskiptum við sveitarfélagið",
+        "Virkt og reglulegt samtal við atvinnulífið í Ísafjarðarbæ",
+        "Styðja við uppbyggingu og stuðla að traustu umhverfi fyrir rekstur",
+        "Efla hafnsækna starfsemi",
+        "Styðja áfram við uppbyggingu hafnsækinnar starfsemi, jafnt í tengslum við sjávarútveg, fiskeldi sem og ferðaþjónustu",
+        "Gæta að viðhaldi og uppbyggingu hafna í öllum byggðarkjörnum Ísafjarðarbæjar"
+    ],
+    environment: [
+        "Hreint og aðgengilegt nærumhverfi",
+        "Viðhalda gangstéttum og göngustígum í sveitarfélaginu",
+        "Tryggja að svæði bæjarins séu ekki aðeins hreinsuð heldur haldist hrein til lengri tíma",
+        "Leggja áherslu á græn svæði með góðu aðgengi og aðstöðu",
+        "Standa vörð um náttúruperlur í umhverfinu",
+        "Hafa umhverfisvernd að leiðarljósi í öllum ákvarðanatökum",
+        "Vinna eftir aðgerðarbundinni umhverfis- og loftslagsstefnu sem verður endurskoðuð á tveggja ára fresti",
+        "Bærinn sem eigandi fasteigna sinni viðhaldi á eignum"
+    ],
+    transport: [
+        "Endurskoða aksturs fyrirkomulag milli byggðarkjarna",
+        "Stuðla að öruggum flugsamgöngum fyrir sveitarfélagið",
+        "Vera virkur þátttakandi í samtalinu um framtíð flugsamgangna á svæðinu",
+        "Þrýsta á um langtímalausn sem tryggir öryggi og stöðugleika í samgöngum til og frá Ísafjarðarbæ",
+        "Vera í fararbroddi í baráttunni fyrir úrbótum í raforkumálum",
+        "Styðja áfram kröfu sveitarfélaga á Vestfjörðum um að tvítengja afhendingarstaði Landsnets"
+    ],
+    culture: [
+        "Jöfn tækifæri til íþrótta- og tómstundastarfs",
+        "Efla frístundastyrki enn frekar",
+        "Auka framboð í öllum byggðarkjörnum og styðja við starfsemi lista og tónlistarskóla",
+        "Koma á fót ungmennahúsi með fjölbreyttri aðstöðu fyrir mismunandi áhugasvið",
+        "Endurvekja ungmennaráð Ísafjarðarbæjar og eiga við það virkt samtal um félagslegt umhverfi þeirra",
+        "Ísafjarðarbær sem listamanna samfélag",
+        "Hækka menningastyrki",
+        "Styðja við söfn og menningarrými í sveitarfélaginu",
+        "Auka aðgengi að lista- og menningar viðburðum",
+        "Tryggja að íbúar alls sveitarfélagsins geti notið menningar, óháð búsetu"
+    ]
+  }
   }
 ]
 

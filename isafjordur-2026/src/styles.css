@@ -1294,3 +1294,16 @@ nav a:hover { color: var(--blue); }
     grid-template-columns: 1fr;
   }
 }
+
+.topicPartyCard .topicActionList {
+  gap: 6px;
+  font-size: 14px;
+}
+
+.topicPartyCard .topicActionList li {
+  line-height: 1.38;
+}
+
+.topicPartyCard > p {
+  margin-bottom: 0;
+}
