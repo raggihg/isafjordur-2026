@@ -2086,3 +2086,78 @@ body {
 .quizResult {
   border-radius: 22px !important;
 }
+
+
+.socialButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.socialButtons a {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #eef6ff;
+  color: #004ecb;
+  font-size: 13px;
+  font-weight: 900;
+  transition: all .18s ease;
+}
+
+.socialButtons a:hover {
+  background: #004ecb;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.infoMiniCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoMiniCard strong {
+  order: 1;
+}
+
+.infoMiniCard h3 {
+  order: 2;
+  margin: 0;
+}
+
+.infoMiniCard p {
+  order: 3;
+  margin: 0;
+}
+
+.quizProgress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quizProgress span {
+  font-size: 13px;
+  font-weight: 800;
+  color: #5b6680;
+}
+
+.quizProgressBar {
+  flex: 1;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0,78,203,.08);
+  overflow: hidden;
+}
+
+.quizProgressBar i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#004ecb,#1e88b5);
+}

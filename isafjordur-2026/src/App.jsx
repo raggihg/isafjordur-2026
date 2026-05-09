@@ -340,7 +340,15 @@ function PartyDetail({ party, setActiveParty }) {
           <p className="eyebrow">{party.list}</p>
           <h1>{party.name}</h1>
           <p>{party.summary}</p>
-          <div className="detailLinks">
+          <div className="socialButtons">
+        {party.socials?.map((social) => (
+          <a key={social.url} href={social.url} target="_blank" rel="noreferrer">
+            {social.label}
+          </a>
+        ))}
+      </div>
+
+      <div className="detailLinks">
             <a href={party.website} target="_blank" rel="noreferrer"><Globe2 size={17} /> Heimasíða</a>
             {party.manifestoUrl ? (
               <a href={party.manifestoUrl} target="_blank" rel="noreferrer"><FileText size={17} /> Stefnuskrá</a>
@@ -532,7 +540,14 @@ function QuizPanel() {
       </div>
 
       <div className="quizGrid">
-        <div className="quizQuestions">
+        <div className="quizProgress">
+        <div className="quizProgressBar">
+          <i style={{ width: '68%' }} />
+        </div>
+        <span>8 af 12 spurningum</span>
+      </div>
+
+      <div className="quizQuestions">
           {quizQuestions.map((question, index) => (
             <article className="quizQuestion" key={question.text}>
               <h3>{index + 1}. {question.text}</h3>

@@ -143,6 +143,10 @@ export const parties = [
   },
   {
     id: 'vidreisn',
+    socials: [
+      { label: 'Facebook', url: 'https://www.facebook.com/framsoknisafjardarbaer' },
+      { label: 'Vefsíða', url: 'https://www.framsokn.is/sveitarfelog/isafjardarbaer' }
+    ],
     letter: 'C',
     list: 'C-listi',
     name: 'Viðreisn',
@@ -244,6 +248,11 @@ export const parties = [
   },
   {
     id: 'sjalfstaedisflokkur',
+    socials: [
+      { label: 'Facebook', url: 'https://www.facebook.com/vidreisnisafjardarbaer' },
+      { label: 'Instagram', url: 'https://www.instagram.com/vidreisn/' },
+      { label: 'Vefsíða', url: 'https://vidreisn.is/isafjardarbaer/' }
+    ],
     letter: 'D',
     list: 'D-listi',
     name: 'Sjálfstæðisflokkur',
@@ -366,6 +375,10 @@ export const parties = [
   },
   {
     id: 'midflokkurinn',
+    socials: [
+      { label: 'Facebook', url: 'https://www.facebook.com/DlistinnIsafjardarbae' },
+      { label: 'Vefsíða', url: 'https://xd.is/sveitarstjornarkosningar/isafjardarbaer/' }
+    ],
     letter: 'M',
     list: 'M-listi',
     name: 'Miðflokkur og hin',
@@ -454,6 +467,10 @@ export const parties = [
   },
   {
     id: 'samfylkingin',
+    socials: [
+      { label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61572070263010' },
+      { label: 'Vefsíða', url: 'https://midflokkurinn.is/' }
+    ],
     letter: 'S',
     list: 'S-listi',
     name: 'Samfylkingin',
@@ -598,4 +615,9 @@ export const sources = [
   { label: 'Viðreisn — heimasíða', url: 'https://vidreisn.is/isafjardarbaer/' },
   { label: 'Viðreisn — stefna', url: 'https://vidreisn.is/isafjardarbaer/stefnan/' },
   { label: 'Viðreisn — frambjóðendur', url: 'https://vidreisn.is/isafjardarbaer/frambjodendur/' }
-]
+]socials: [
+      { label: 'Facebook', url: 'https://www.facebook.com/samfylkinginisafjardarbae' },
+      { label: 'Instagram', url: 'https://www.instagram.com/samfylkingin/' },
+      { label: 'Vefsíða', url: 'https://xs.is/isafjardarbaer' }
+    ],
+    
