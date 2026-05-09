@@ -1439,3 +1439,379 @@ nav a:hover { color: var(--blue); }
 .sourceGroupLinks a:hover {
   color: var(--blue);
 }
+
+
+/* Visual polish update */
+:root {
+  --gold: #f2b705;
+  --sky: #d9eef7;
+  --deep: #0d1b2a;
+  --softBlue: #eef6ff;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 6%, rgba(30,136,181,.16), transparent 30%),
+    radial-gradient(circle at 88% 14%, rgba(242,183,5,.14), transparent 28%),
+    linear-gradient(180deg, #f7fbff 0%, #eef5fb 48%, #f8fbff 100%);
+}
+
+.topbar {
+  box-shadow: 0 12px 36px rgba(13,27,42,.08);
+}
+
+.brandButton {
+  border-radius: 16px;
+  padding: 6px;
+  transition: transform .18s ease, background .18s ease;
+}
+
+.brandButton:hover {
+  background: #f5f9ff;
+  transform: translateY(-1px);
+}
+
+.topbar nav {
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.topbar nav button {
+  min-height: 38px;
+  padding: 0 12px;
+  border-radius: 999px;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.topbar nav button:hover {
+  background: var(--softBlue);
+  transform: translateY(-1px);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 0;
+  background:
+    linear-gradient(110deg, rgba(247,251,255,.96) 0%, rgba(247,251,255,.90) 42%, rgba(247,251,255,.42) 100%),
+    url("https://images.unsplash.com/photo-1533423996375-f914ab78988f?auto=format&fit=crop&w=1900&q=85");
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: auto -8% -42px -8%;
+  height: 120px;
+  background: #f6f9fd;
+  transform: rotate(-2deg);
+  transform-origin: center;
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: 58px;
+  width: 210px;
+  height: 210px;
+  border-radius: 46px;
+  background:
+    linear-gradient(135deg, rgba(13,27,42,.92), rgba(30,136,181,.82));
+  box-shadow: 0 30px 80px rgba(13,27,42,.22);
+  transform: rotate(8deg);
+  opacity: .92;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+}
+
+.heroContent::after {
+  content: "✓";
+  position: absolute;
+  right: -240px;
+  top: 64px;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  color: #0d1b2a;
+  background: var(--gold);
+  font-size: 70px;
+  font-weight: 950;
+  box-shadow: 0 24px 58px rgba(242,183,5,.30);
+}
+
+.hero h1 {
+  max-width: 920px;
+  color: var(--deep);
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.hero p {
+  max-width: 720px;
+  color: #263653;
+}
+
+.heroChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.heroChips a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 15px;
+  border: 1px solid rgba(13,27,42,.10);
+  border-radius: 999px;
+  background: rgba(255,255,255,.82);
+  color: var(--deep);
+  font-weight: 900;
+  box-shadow: 0 12px 26px rgba(15,23,42,.07);
+  backdrop-filter: blur(12px);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.heroChips a:first-child {
+  color: #fff;
+  background: var(--blue);
+}
+
+.heroChips a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15,23,42,.12);
+}
+
+.partyStrip {
+  margin-top: -74px;
+}
+
+.partyCard {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88));
+  box-shadow: 0 18px 42px rgba(13,27,42,.10);
+}
+
+.partyCard::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+}
+
+.partyCard::after {
+  content: "";
+  position: absolute;
+  right: -34px;
+  bottom: -34px;
+  width: 92px;
+  height: 92px;
+  border-radius: 999px;
+  background: rgba(0,78,203,.07);
+}
+
+.partyCard .logoMark {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 16px 30px rgba(13,27,42,.10);
+}
+
+.partyCardBody {
+  position: relative;
+  z-index: 2;
+}
+
+.partyCard h2 {
+  color: #0d1b2a;
+}
+
+.partyCard button {
+  width: fit-content;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--softBlue);
+  transition: background .18s ease, color .18s ease;
+}
+
+.partyCard button:hover {
+  color: #fff;
+  background: var(--blue);
+}
+
+.panel {
+  border: 1px solid rgba(13,27,42,.08);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 18px 44px rgba(13,27,42,.07);
+  backdrop-filter: blur(12px);
+}
+
+.panelHeader h2 {
+  color: var(--deep);
+}
+
+.eyebrow {
+  color: #005bd8;
+}
+
+.topicsOverview {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.95), rgba(238,246,255,.95));
+}
+
+.topicsOverview::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 190px;
+  height: 190px;
+  border-radius: 999px;
+  background: rgba(242,183,5,.18);
+}
+
+.topicOverviewCard {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  background:
+    linear-gradient(180deg, #fff, #f9fcff);
+  box-shadow: 0 12px 30px rgba(13,27,42,.07);
+}
+
+.topicOverviewCard::after {
+  content: "";
+  position: absolute;
+  right: -24px;
+  bottom: -24px;
+  width: 74px;
+  height: 74px;
+  border-radius: 999px;
+  background: rgba(30,136,181,.10);
+}
+
+.topicOverviewCard span,
+.topicIconLarge {
+  background: linear-gradient(135deg, var(--blue), #1e88b5);
+  box-shadow: 0 12px 24px rgba(0,78,203,.18);
+}
+
+.detailHero {
+  border: 0;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(242,183,5,.20), transparent 25%),
+    linear-gradient(135deg, var(--light), #fff 58%);
+  box-shadow: 0 20px 52px rgba(13,27,42,.10);
+}
+
+.detailHero h1 {
+  color: var(--deep);
+}
+
+.detailLinks a,
+.detailLinks span {
+  box-shadow: 0 8px 20px rgba(13,27,42,.06);
+}
+
+.partyDetailNav,
+.topicDetailNav {
+  border: 0;
+  box-shadow: 0 18px 42px rgba(13,27,42,.12);
+}
+
+.partySwitch,
+.topicSwitch {
+  border: 0;
+  box-shadow: 0 10px 24px rgba(13,27,42,.07);
+}
+
+.policyItem,
+.miniTopic,
+.topicPartyCard,
+.infoMiniCard,
+.campaignItem,
+.quizQuestion,
+.sourceGroup {
+  border: 1px solid rgba(13,27,42,.075);
+  box-shadow: 0 10px 22px rgba(13,27,42,.045);
+}
+
+.policyItem h3,
+.miniTopic h3,
+.topicPartyHeader h2 {
+  color: var(--deep);
+}
+
+.topicActionList li::marker {
+  color: var(--gold);
+}
+
+.infoMiniCard strong {
+  color: #005bd8;
+}
+
+.quizPanel {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.96), rgba(250,246,230,.80));
+}
+
+.quizOptions button {
+  box-shadow: 0 6px 16px rgba(13,27,42,.04);
+}
+
+.quizResult {
+  background:
+    linear-gradient(180deg, #f8fbff, #fff);
+  box-shadow: inset 0 0 0 1px rgba(0,78,203,.06), 0 16px 34px rgba(13,27,42,.08);
+}
+
+.bar i {
+  background: linear-gradient(90deg, var(--blue), #1e88b5);
+}
+
+.sourcesPanel {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.96), rgba(238,246,255,.84));
+}
+
+.sourceGroup summary::after {
+  background: var(--softBlue);
+  padding: 4px 9px;
+  border-radius: 999px;
+}
+
+@media (max-width: 1180px) {
+  .hero::after,
+  .heroContent::after {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 360px;
+    padding-top: 42px;
+  }
+
+  .heroChips a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .partyStrip {
+    margin-top: -58px;
+  }
+}

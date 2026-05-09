@@ -221,6 +221,12 @@ function Hero() {
         <p>
           Vefurinn safnar saman stefnuskrám, framboðslistum og heimildum á einn stað svo íbúar geti séð muninn á áherslum flokkanna.
         </p>
+
+        <div className="heroChips">
+          <a href="#flokkar">Skoða flokka</a>
+          <a href="#malefni">Málefnasíður</a>
+          <a href="#konnun">Taka könnun</a>
+        </div>
       </div>
     </section>
   )
