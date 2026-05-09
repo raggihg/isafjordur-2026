@@ -481,3 +481,20 @@ nav a:hover { color: var(--blue); }
   .comparisonGrid { grid-template-columns: 160px repeat(5, 180px); }
   .detailHero { grid-template-columns: 1fr; }
 }
+
+
+.topicActionList {
+  margin: 12px 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 7px;
+  color: #23344f;
+}
+
+.topicActionList li {
+  line-height: 1.45;
+}
+
+.topicActionList li::marker {
+  color: var(--blue);
+}

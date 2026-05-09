@@ -60,6 +60,48 @@ export const parties = [
       environment: 'Sjálfbær uppbygging, orkutækifæri og skýrt skipulag.',
       transport: 'Betri samgöngur milli byggðakjarna og til og frá svæðinu.',
       culture: 'Jöfn tækifæri barna til íþrótta, tónlistar og tómstunda óháð búsetu.'
+    },,
+    policyByTopic: {
+      housing: [
+        'Auka framboð á fjölbreyttu húsnæði fyrir ólík æviskeið.',
+        'Tryggja að lóðaframboð og skipulag styðji við uppbyggingu íbúðarhúsnæðis.',
+        'Stuðla að því að ungt fólk, fjölskyldur og eldri íbúar geti búið áfram í sveitarfélaginu.'
+      ],
+      schools: [
+        'Styrkja leikskóla og grunnskóla sem grunnstoðir samfélagsins.',
+        'Efla tómstundir, íþróttir og menningarstarf barna óháð búsetu.',
+        'Styðja við fjölskylduvænt samfélag í öllum byggðakjörnum.'
+      ],
+      welfare: [
+        'Tryggja góða þjónustu við eldri borgara.',
+        'Styrkja nærþjónustu og stuðning við fjölskyldur.',
+        'Horfa til jafns aðgengis íbúa að grunnþjónustu.'
+      ],
+      economy: [
+        'Halda utan um ábyrga fjármálastjórn sveitarfélagsins.',
+        'Forgangsraða fjárfestingum í nauðsynlegum innviðum.',
+        'Tryggja að rekstur sveitarfélagsins sé sjálfbær til lengri tíma.'
+      ],
+      jobs: [
+        'Efla atvinnulíf og nýsköpun á svæðinu.',
+        'Styðja við ferðaþjónustu, sjávarútveg og orkutengd tækifæri.',
+        'Horfa til hafna og atvinnusvæða sem lykilinnviða.'
+      ],
+      environment: [
+        'Tengja umhverfismál við skipulag og búsetugæði.',
+        'Nýta tækifæri í sjálfbærri uppbyggingu.',
+        'Huga að orkumálum og innviðum í langtímasýn sveitarfélagsins.'
+      ],
+      transport: [
+        'Bæta tengingar milli byggðakjarna.',
+        'Styðja við betri samgöngur til og frá sveitarfélaginu.',
+        'Horfa á samgöngur sem grunnforsendu búsetu og atvinnulífs.'
+      ],
+      culture: [
+        'Tryggja börnum jöfn tækifæri til íþrótta, tónlistar og tómstunda.',
+        'Styrkja félagslíf og samfélagsþátttöku.',
+        'Horfa til menningar og tómstunda sem hluta af lífsgæðum.'
+      ]
     }
   },
   {
@@ -68,7 +110,7 @@ export const parties = [
     list: 'C-listi',
     name: 'Viðreisn',
     shortName: 'Viðreisn',
-    logo: '/logos/vidreisn.svg',
+    logo: '/logos/vidreisn.png',
     color: '#f58219',
     lightColor: '#fff0de',
     website: 'https://vidreisn.is/isafjardarbaer/',
@@ -111,6 +153,48 @@ export const parties = [
       environment: 'Sjálfbærni og nútímaleg samfélagsuppbygging.',
       transport: 'Góðir innviðir og aðgengi styðja þjónustu og byggðaþróun.',
       culture: 'Fjölbreytt íþróttastarf og félagsstarf fyrir ólíka aldurshópa.'
+    },,
+    policyByTopic: {
+      housing: [
+        'Skapa forsendur fyrir áframhaldandi búsetu og fjölbreyttu samfélagi.',
+        'Horfa á húsnæði og skipulag sem hluta af stærri framtíðarsýn sveitarfélagsins.',
+        'Auka fyrirsjáanleika í skipulags- og stjórnsýslumálum.'
+      ],
+      schools: [
+        'Setja skólamál í forgrunn.',
+        'Tryggja vel mannaða leikskóla og metnaðarfulla grunnskóla.',
+        'Efla sérfræðiþjónustu í heimabyggð og stuðla að inngildingu.'
+      ],
+      welfare: [
+        'Tryggja jafnt aðgengi að þjónustu.',
+        'Byggja upp þjónustu sem mætir ólíkum þörfum íbúa.',
+        'Leggja áherslu á faglega og gagnsæja stjórnsýslu í velferðarmálum.'
+      ],
+      economy: [
+        'Efla gagnsæi í stjórnsýslu og fjármálum.',
+        'Tryggja ábyrga meðferð fjármuna.',
+        'Styrkja skilvirkni og skýra forgangsröðun.'
+      ],
+      jobs: [
+        'Styðja við atvinnuþróun og nýsköpun.',
+        'Byggja upp fjölbreytt samfélag sem laðar að fólk og fyrirtæki.',
+        'Horfa til langtímasýnar í atvinnumálum sveitarfélagsins.'
+      ],
+      environment: [
+        'Setja sjálfbærni inn í uppbyggingu og ákvarðanatöku.',
+        'Huga að skýrri framtíðarsýn í skipulagsmálum.',
+        'Vinna að samfélagi sem virkar betur fyrir alla.'
+      ],
+      transport: [
+        'Styðja við góða innviði og aðgengi.',
+        'Horfa á samgöngur sem hluta af þjónustu og byggðaþróun.',
+        'Auka skilvirkni í verkefnum sem tengjast tengingum og þjónustu.'
+      ],
+      culture: [
+        'Styðja við fjölbreytt íþrótta- og félagsstarf.',
+        'Tryggja börnum og ungmennum aðgengi að uppbyggilegu starfi.',
+        'Efla samfélagsþátttöku og fjölbreytileika.'
+      ]
     }
   },
   {
@@ -162,6 +246,48 @@ export const parties = [
       environment: 'Umhverfi, skipulag og framkvæmdir í samhengi við innviði.',
       transport: 'Samgöngur og hafnir sem lykill að atvinnu og búsetu.',
       culture: 'Íþrótta- og tómstundamál sem hluti af góðu samfélagi.'
+    },,
+    policyByTopic: {
+      housing: [
+        'Styðja við uppbyggingu og framkvæmdir sem bæta búsetuskilyrði.',
+        'Horfa til skipulags og innviða sem forsendu húsnæðisuppbyggingar.',
+        'Auka skilvirkni í stjórnsýslu tengdri framkvæmdum.'
+      ],
+      schools: [
+        'Tryggja sterka grunnþjónustu fyrir börn og fjölskyldur.',
+        'Styðja við skóla og fjölskylduvænt samfélag.',
+        'Horfa til hagkvæms reksturs og góðrar þjónustu.'
+      ],
+      welfare: [
+        'Veita þjónustu með áherslu á árangur og hagkvæmni.',
+        'Tryggja að velferðarþjónusta sé hluti af ábyrgum rekstri.',
+        'Horfa til þarfa íbúa í öllum byggðakjörnum.'
+      ],
+      economy: [
+        'Leggja áherslu á ábyrgan rekstur sveitarfélagsins.',
+        'Forgangsraða fjármunum skýrt og hagkvæmt.',
+        'Efla skilvirka stjórnsýslu og betri nýtingu fjármuna.'
+      ],
+      jobs: [
+        'Styrkja atvinnulíf og verðmætasköpun.',
+        'Horfa sérstaklega til hafna, innviða og framkvæmda.',
+        'Skapa betri forsendur fyrir fyrirtæki og störf í sveitarfélaginu.'
+      ],
+      environment: [
+        'Tengja umhverfismál við skipulag, framkvæmdir og innviði.',
+        'Vinna að skýrri og hagkvæmri uppbyggingu.',
+        'Horfa á umhverfismál sem hluta af ábyrgri sveitarstjórn.'
+      ],
+      transport: [
+        'Horfa á samgöngur og hafnir sem lykil að atvinnu og búsetu.',
+        'Styðja við uppbyggingu nauðsynlegra innviða.',
+        'Auka skilvirkni í framkvæmdum og þjónustu.'
+      ],
+      culture: [
+        'Styðja við íþrótta- og tómstundamál sem hluta af góðu samfélagi.',
+        'Horfa til fjölskylduvænna lausna.',
+        'Efla lífsgæði og virkni íbúa.'
+      ]
     }
   },
   {
@@ -203,6 +329,16 @@ export const parties = [
       environment: 'Vantar staðfesta stefnutexta.',
       transport: 'Vantar staðfesta stefnutexta.',
       culture: 'Vantar staðfesta stefnutexta.'
+    },,
+    policyByTopic: {
+      housing: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
+      schools: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
+      welfare: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
+      economy: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
+      jobs: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
+      environment: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
+      transport: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
+      culture: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.']
     }
   },
   {
@@ -255,6 +391,48 @@ export const parties = [
       environment: 'Sjálfbær og samfélagsleg nálgun í uppbyggingu.',
       transport: 'Samgöngur og aðgengi sem hluti af góðri þjónustu.',
       culture: 'Menning og samvera sem mikilvægur þáttur í lífsgæðum.'
+    },,
+    policyByTopic: {
+      housing: [
+        'Auka húsnæðisframboð sem forsenda þess að samfélagið geti vaxið.',
+        'Horfa til búsetuöryggis og framtíðaruppbyggingar.',
+        'Vinna að lausnum sem styðja við fjölskyldur og fólk á ólíkum æviskeiðum.'
+      ],
+      schools: [
+        'Styðja við börn, fjölskyldur og menntun.',
+        'Horfa til félagslegs öryggis barna og ungmenna.',
+        'Efla þjónustu sem styður við barnafjölskyldur.'
+      ],
+      welfare: [
+        'Styrkja velferðarþjónustu og félagslega þjónustu.',
+        'Leggja áherslu á öldrunarþjónustu, öryggi og reisn eldri íbúa.',
+        'Vinna að jöfnuði og jöfnum tækifærum.'
+      ],
+      economy: [
+        'Tengja fjármál sveitarfélagsins við velferð, þjónustu og samfélagsuppbyggingu.',
+        'Forgangsraða verkefnum sem styrkja lífsgæði íbúa.',
+        'Horfa til samfélagslegrar ábyrgðar í rekstri.'
+      ],
+      jobs: [
+        'Styðja við framtíðaruppbyggingu sveitarfélagsins.',
+        'Byggja upp gott samfélag sem heldur í fólk og laðar að nýja íbúa.',
+        'Horfa til atvinnu og þjónustu sem hluta af lífsgæðum.'
+      ],
+      environment: [
+        'Vinna að sjálfbærri og samfélagslegri uppbyggingu.',
+        'Tengja skipulag, umhverfi og lífsgæði.',
+        'Horfa til framtíðarsýnar í þróun sveitarfélagsins.'
+      ],
+      transport: [
+        'Horfa á samgöngur og aðgengi sem hluta af góðri þjónustu.',
+        'Tryggja aðgengi íbúa að þjónustu og samfélagsþátttöku.',
+        'Tengja samgöngur við velferð og búsetuskilyrði.'
+      ],
+      culture: [
+        'Styrkja menningu og samveru sem hluta af lífsgæðum.',
+        'Styðja við samfélagslegt starf og þátttöku.',
+        'Horfa á menningu sem þátt í aðlaðandi bæjarfélagi.'
+      ]
     }
   }
 ]

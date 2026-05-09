@@ -3,7 +3,7 @@
 Þessi mappa inniheldur logo/myndmerki sem vefurinn notar:
 
 - framsokn.png
-- vidreisn.svg
+- vidreisn.png
 - xd.png
 - midflokkur.png
 - samfylking.png

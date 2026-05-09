@@ -194,6 +194,11 @@ function PartyDetail({ party, setActiveParty }) {
             <div className="miniTopic" key={topic.id}>
               <h3>{topic.name}</h3>
               <p>{party.topics[topic.id]}</p>
+              <ul className="topicActionList">
+                {(party.policyByTopic?.[topic.id] || []).map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
