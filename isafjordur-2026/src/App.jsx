@@ -1,19 +1,97 @@
 import React, { useMemo, useState } from 'react'
 import {
   ArrowRight,
+  BarChart3,
   CheckCircle2,
+  Clock3,
+  Coffee,
   ExternalLink,
   FileText,
   Globe2,
+  HelpCircle,
   Info,
   Link as LinkIcon,
   ListFilter,
+  MapPin,
   Search,
   ShieldCheck,
   UserRound,
   Vote
 } from 'lucide-react'
 import { parties, sources, topics } from './data/parties.js'
+
+const comparisonItems = [
+  { area: 'Húsnæði', focus: 'Lóðaframboð', parties: { B: 'Lóðir + uppbygging', C: 'Skipulag og búseta', D: 'Framkvæmdir', M: 'Lóðir', S: 'Húsnæðisframboð' } },
+  { area: 'Húsnæði', focus: 'Búsetuöryggi', parties: { B: 'Ólík æviskeið', C: 'Fjölbreytt samfélag', D: 'Búsetuskilyrði', M: 'Nærumhverfi', S: 'Búsetuöryggi' } },
+  { area: 'Skólar', focus: 'Leikskólar', parties: { B: 'Sterkir leikskólar', C: 'Vel mannaðir', D: 'Grunnþjónusta', M: '12 mánaða pláss', S: 'Barnafjölskyldur' } },
+  { area: 'Skólar', focus: 'Sérfræðiþjónusta', parties: { B: 'Stuðningur', C: 'Í heimabyggð', D: 'Þjónusta', M: 'Fagþjónusta', S: 'Félagslegt öryggi' } },
+  { area: 'Samgöngur', focus: 'Suðavíkurvegur', parties: { B: 'Tengingar', C: 'Innviðir', D: 'Samgöngur', M: 'Í forgang', S: 'Aðgengi' } },
+  { area: 'Samgöngur', focus: 'Vestfjarðagöng', parties: { B: 'Samgöngur', C: 'Tengingar', D: 'Innviðir', M: 'Tvöföldun', S: 'Aðgengi' } },
+  { area: 'Fjármál', focus: 'Fjármálaagi', parties: { B: 'Ábyrg stjórn', C: 'Gagnsæi', D: 'Ábyrg rekstur', M: 'Hagræðing', S: 'Velferð í forgang' } },
+  { area: 'Atvinna', focus: 'Fyrirtækjaþjónusta', parties: { B: 'Atvinnusvæði', C: 'Nýsköpun', D: 'Verðmætasköpun', M: 'Lausnamiðuð þjónusta', S: 'Framtíðaruppbygging' } },
+  { area: 'Samfélag', focus: 'Eldri borgarar', parties: { B: 'Reisn og öryggi', C: 'Jafnt aðgengi', D: 'Hagkvæm þjónusta', M: 'Markviss þjónusta', S: 'Öldrunarþjónusta' } },
+  { area: 'Menning', focus: 'Tómstundir', parties: { B: 'Jöfn tækifæri', C: 'Félagsstarf', D: 'Íþróttir', M: 'Félagsmiðstöðvar', S: 'Menning og samvera' } }
+]
+
+const quizQuestions = [
+  {
+    text: 'Hvað skiptir þig mestu máli í skólamálum?',
+    options: [
+      { label: 'Leikskólapláss og lægri kostnaður', parties: ['M', 'B'] },
+      { label: 'Sérfræðiþjónusta og inngilding', parties: ['C', 'S'] },
+      { label: 'Hagkvæm og sterk grunnþjónusta', parties: ['D', 'B'] }
+    ]
+  },
+  {
+    text: 'Hvaða samgöngumál er mikilvægast?',
+    options: [
+      { label: 'Suðavíkurvegur og Vestfjarðagöng', parties: ['M', 'D'] },
+      { label: 'Tengingar milli byggðakjarna', parties: ['B', 'C'] },
+      { label: 'Aðgengi að þjónustu fyrir alla', parties: ['S', 'C'] }
+    ]
+  },
+  {
+    text: 'Hvernig ætti sveitarfélagið að nálgast fjármál?',
+    options: [
+      { label: 'Hagræða og stöðva útgjaldaaukningu', parties: ['M', 'D'] },
+      { label: 'Ábyrg fjármálastjórn og fjárfesting í innviðum', parties: ['B', 'D'] },
+      { label: 'Forgangsraða velferð og samfélagslegri þjónustu', parties: ['S', 'C'] }
+    ]
+  },
+  {
+    text: 'Hvað er mikilvægast í húsnæðismálum?',
+    options: [
+      { label: 'Fjölga lóðum og ýta undir uppbyggingu', parties: ['B', 'M'] },
+      { label: 'Búsetuöryggi og samfélagsleg uppbygging', parties: ['S', 'C'] },
+      { label: 'Skipulag og framkvæmdir sem bæta búsetu', parties: ['D', 'B'] }
+    ]
+  },
+  {
+    text: 'Hvað á að leggja mesta áherslu á í atvinnumálum?',
+    options: [
+      { label: 'Hafnir, innviðir og verðmætasköpun', parties: ['D', 'B'] },
+      { label: 'Nýsköpun og fjölbreytt samfélag', parties: ['C', 'S'] },
+      { label: 'Einfaldari stjórnsýsla fyrir fyrirtæki', parties: ['M', 'D'] }
+    ]
+  }
+]
+
+const electionInfo = [
+  { title: 'Kosningadagur', value: '16. maí 2026', note: 'Sveitarstjórnarkosningar í Ísafjarðarbæ.' },
+  { title: 'Framboðslistar', value: '5 listar', note: 'B, C, D, M og S-listi.' },
+  { title: 'Íbúar', value: '4.117', note: 'Skráðir íbúar 15. nóvember 2025 samkvæmt fjárhagsáætlun/Þjóðskrá.' },
+  { title: 'Utan kjörfundar', value: 'Hafnarstræti 1', note: 'Bæjarskrifstofur, 2. hæð. Kl. 10-12 og 12.30-15 virka daga.' },
+  { title: 'Kjósendur', value: 'Bíður staðfestingar', note: 'Setjum inn fjölda af kjörskrá þegar birt.' },
+  { title: 'Kjörstaðir', value: 'Bíður staðfestingar', note: 'Bætum inn þegar Ísafjarðarbær birtir kjördeildir 2026.' }
+]
+
+const campaignInfo = [
+  { party: 'B', title: 'Framsókn og óháðir', value: 'Hafnarstræti 8', note: 'Kosningaskrifstofa opnaði 10. apríl kl. 17 samkvæmt BB.' },
+  { party: 'C', title: 'Viðreisn', value: 'Kosningamiðstöð', note: 'Viðburðir auglýstir á vef Viðreisnar; staðsetning/opnunartími þarf staðfestingu.' },
+  { party: 'D', title: 'Sjálfstæðisflokkurinn', value: 'Bíður upplýsinga', note: 'Setjum inn skrifstofu/kosningakaffi þegar staðfest.' },
+  { party: 'M', title: 'Miðflokkurinn', value: 'Bíður upplýsinga', note: 'Setjum inn skrifstofu/kosningakaffi þegar staðfest.' },
+  { party: 'S', title: 'Samfylkingin', value: 'Bíður upplýsinga', note: 'Setjum inn skrifstofu/kosningakaffi þegar staðfest.' }
+]
 
 function LogoMark({ party, large = false }) {
   return <img className={large ? 'logoMark large' : 'logoMark'} src={party.logo} alt={`Merki ${party.name}`} />
@@ -81,9 +159,12 @@ function PartyCards({ setActiveParty }) {
 }
 
 function ComparisonTable({ query }) {
-  const visibleTopics = useMemo(() => {
+  const rows = useMemo(() => {
     const q = query.toLowerCase().trim()
-    return q ? topics.filter((topic) => topic.name.toLowerCase().includes(q)) : topics
+    if (!q) return comparisonItems
+    return comparisonItems.filter((item) =>
+      `${item.area} ${item.focus} ${Object.values(item.parties).join(' ')}`.toLowerCase().includes(q)
+    )
   }, [query])
 
   return (
@@ -91,26 +172,28 @@ function ComparisonTable({ query }) {
       <div className="panelHeader">
         <div>
           <p className="eyebrow"><ListFilter size={15} /> Samanburður</p>
-          <h2>Málaflokkar eftir flokkum</h2>
-          <p>Yfirlit yfir helstu áherslur hvers flokks eftir málaflokki.</p>
+          <h2>Hver er að leggja áherslu á hvað?</h2>
+          <p>Stutt og hnitmiðað yfirlit yfir áherslur flokkanna. Hér eru löngu stefnutextarnir brotnir niður í fá orð svo auðveldara sé að bera saman.</p>
         </div>
       </div>
 
-      <div className="comparisonGrid">
-        <div className="gridHead topicHead">Málaflokkur</div>
+      <div className="focusTable">
+        <div className="focusHead">Mál</div>
+        <div className="focusHead">Atriði</div>
         {parties.map((party) => (
-          <div className="gridHead partyHead" key={party.id}>
+          <div className="focusHead partyMiniHead" key={party.id}>
             <LogoMark party={party} />
-            <span>{party.shortName}</span>
+            <span>{party.letter}</span>
           </div>
         ))}
 
-        {visibleTopics.map((topic) => (
-          <React.Fragment key={topic.id}>
-            <div className="topicName">{topic.name}</div>
+        {rows.map((item) => (
+          <React.Fragment key={`${item.area}-${item.focus}`}>
+            <div className="focusArea">{item.area}</div>
+            <div className="focusItem">{item.focus}</div>
             {parties.map((party) => (
-              <div className="topicText" key={`${topic.id}-${party.id}`}>
-                {party.topics[topic.id]}
+              <div className="focusCell" key={`${item.focus}-${party.letter}`}>
+                {item.parties[party.letter] || '—'}
               </div>
             ))}
           </React.Fragment>
@@ -182,7 +265,8 @@ function PartyDetail({ party, setActiveParty }) {
 
       <div className="detailGrid">
         <article className="panel">
-          <h2>Stefnur flokksins</h2>
+          <h2>Í stuttu máli</h2>
+          <p className="policyIntro">Helstu áherslur flokksins teknar saman úr stefnuefni og birtar sem stuttar aðgerðir.</p>
           <div className="policyList">
             {party.policies.map((policy) => (
               <section className="policyItem" key={policy.title}>
@@ -223,6 +307,131 @@ function PartyDetail({ party, setActiveParty }) {
           ))}
         </div>
       </article>
+    </section>
+  )
+}
+
+function ElectionInfoPanel() {
+  return (
+    <section className="panel electionPanel">
+      <div className="panelHeader">
+        <div>
+          <p className="eyebrow"><MapPin size={15} /> Kosningaupplýsingar</p>
+          <h2>Tölfræði og framkvæmd</h2>
+          <p>Hér söfnum við praktískum upplýsingum um kosningarnar. Atriði sem vantar eru merkt þannig þar til opinber staðfesting liggur fyrir.</p>
+        </div>
+      </div>
+
+      <div className="infoGridCards">
+        {electionInfo.map((item) => (
+          <article className="infoMiniCard" key={item.title}>
+            <strong>{item.value}</strong>
+            <span>{item.title}</span>
+            <p>{item.note}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function CampaignInfoPanel() {
+  return (
+    <section className="panel campaignPanel">
+      <div className="panelHeader">
+        <div>
+          <p className="eyebrow"><Coffee size={15} /> Skrifstofur og kosningakaffi</p>
+          <h2>Staðir og opnunartímar</h2>
+          <p>Þetta er vinnuyfirlit. Við fyllum inn kosningakaffi og opnun skrifstofa þegar flokkarnir auglýsa það.</p>
+        </div>
+      </div>
+
+      <div className="campaignList">
+        {campaignInfo.map((item) => {
+          const party = parties.find((p) => p.letter === item.party)
+          return (
+            <article className="campaignItem" key={item.party}>
+              {party && <LogoMark party={party} />}
+              <div>
+                <h3>{item.title}</h3>
+                <strong>{item.value}</strong>
+                <p>{item.note}</p>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
+function QuizPanel() {
+  const [answers, setAnswers] = useState({})
+
+  const scores = useMemo(() => {
+    const result = { B: 0, C: 0, D: 0, M: 0, S: 0 }
+    Object.values(answers).forEach((option) => {
+      option.parties.forEach((letter) => {
+        result[letter] += 1
+      })
+    })
+    return Object.entries(result)
+      .map(([letter, score]) => ({
+        letter,
+        score,
+        party: parties.find((item) => item.letter === letter)
+      }))
+      .sort((a, b) => b.score - a.score)
+  }, [answers])
+
+  const answeredCount = Object.keys(answers).length
+  const topScore = scores[0]?.score || 0
+
+  return (
+    <section id="konnun" className="panel quizPanel">
+      <div className="panelHeader">
+        <div>
+          <p className="eyebrow"><HelpCircle size={15} /> Könnun</p>
+          <h2>Hvaða áherslur passa þér?</h2>
+          <p>Stutt próf sem ber saman áherslur, ekki endanlegt kosningapróf. Við getum fínpússað spurningarnar síðar.</p>
+        </div>
+      </div>
+
+      <div className="quizGrid">
+        <div className="quizQuestions">
+          {quizQuestions.map((question, index) => (
+            <article className="quizQuestion" key={question.text}>
+              <h3>{index + 1}. {question.text}</h3>
+              <div className="quizOptions">
+                {question.options.map((option) => (
+                  <button
+                    key={option.label}
+                    className={answers[index]?.label === option.label ? 'selected' : ''}
+                    onClick={() => setAnswers({ ...answers, [index]: option })}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <aside className="quizResult">
+          <h3>Niðurstaða</h3>
+          <p>{answeredCount} af {quizQuestions.length} spurningum svarað.</p>
+          <div className="resultBars">
+            {scores.map(({ letter, score, party }) => (
+              <div className="resultRow" key={letter}>
+                <LogoMark party={party} />
+                <span>{party.shortName}</span>
+                <div className="bar"><i style={{ width: topScore ? `${(score / topScore) * 100}%` : '0%' }} /></div>
+                <strong>{score}</strong>
+              </div>
+            ))}
+          </div>
+        </aside>
+      </div>
     </section>
   )
 }
@@ -293,19 +502,22 @@ export default function App() {
                   <li><CheckCircle2 size={18} /> Frambjóðendur allra lista</li>
                   <li><CheckCircle2 size={18} /> Staðbundin SVG-listamerki</li>
                   <li><CheckCircle2 size={18} /> Stefnuskrár B, C, D og S tengdar</li>
-                  <li><Info size={18} /> M-lista vantar enn staðbundna stefnuskrá</li>
+                  <li><Info size={18} /> Samanburður og könnun komin inn</li>
                 </ul>
               </article>
 
               <article className="panel">
                 <p className="eyebrow">Næst</p>
                 <h2>Til að klára</h2>
-                <p>Næst getum við lesið PDF-stefnuskrárnar nánar og sett inn beinar tilvitnanir með heimildum.</p>
+                <p>Næst fínpússum við texta, heimildamerkingar, mobile-útlit og kosningakaffi þegar staðfestar upplýsingar berast.</p>
               </article>
             </aside>
           </div>
 
-          <div className="pageWrap">
+          <div className="pageWrap stackedSections">
+            <ElectionInfoPanel />
+            <CampaignInfoPanel />
+            <QuizPanel />
             <Sources />
           </div>
         </main>

@@ -674,3 +674,302 @@ nav a:hover { color: var(--blue); }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Next-morning improvements */
+.focusTable {
+  display: grid;
+  grid-template-columns: 120px minmax(150px, 1.1fr) repeat(5, minmax(120px, 1fr));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+.focusHead,
+.focusArea,
+.focusItem,
+.focusCell {
+  min-height: 58px;
+  padding: 10px 12px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.focusHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fbff;
+  font-size: 13px;
+  font-weight: 950;
+  color: #132344;
+}
+
+.partyMiniHead {
+  justify-content: center;
+}
+
+.partyMiniHead .logoMark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  padding: 3px;
+}
+
+.focusArea {
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  font-weight: 950;
+  background: #fcfdff;
+}
+
+.focusItem {
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  color: #132344;
+}
+
+.focusCell {
+  display: flex;
+  align-items: center;
+  color: #34425f;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.policyIntro {
+  margin: 10px 0 0;
+  color: #5b6680;
+}
+
+.candidateList {
+  gap: 5px;
+}
+
+.candidateList li {
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+
+.candidateList strong {
+  font-size: 14px;
+}
+
+.candidateList span {
+  font-size: 12px;
+}
+
+.stackedSections {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.infoGridCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.infoMiniCard {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fbfdff;
+}
+
+.infoMiniCard strong {
+  display: block;
+  color: var(--blue);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.infoMiniCard span {
+  display: block;
+  margin-top: 4px;
+  font-weight: 950;
+  color: #132344;
+}
+
+.infoMiniCard p {
+  margin: 8px 0 0;
+  color: #5b6680;
+  font-size: 13px;
+}
+
+.campaignList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.campaignItem {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fbfdff;
+}
+
+.campaignItem .logoMark {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.campaignItem h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.campaignItem strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--blue);
+  font-size: 14px;
+}
+
+.campaignItem p {
+  margin: 6px 0 0;
+  color: #5b6680;
+  font-size: 12px;
+}
+
+.quizGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 16px;
+}
+
+.quizQuestions {
+  display: grid;
+  gap: 12px;
+}
+
+.quizQuestion {
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fbfdff;
+}
+
+.quizQuestion h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.quizOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quizOptions button {
+  border: 1px solid #cbd8ea;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fff;
+  color: #263653;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quizOptions button.selected,
+.quizOptions button:hover {
+  color: #fff;
+  border-color: var(--blue);
+  background: var(--blue);
+}
+
+.quizResult {
+  position: sticky;
+  top: 92px;
+  align-self: start;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #f8fbff;
+}
+
+.quizResult h3 {
+  margin: 0;
+}
+
+.quizResult p {
+  margin: 6px 0 14px;
+  font-size: 13px;
+}
+
+.resultBars {
+  display: grid;
+  gap: 10px;
+}
+
+.resultRow {
+  display: grid;
+  grid-template-columns: 34px 88px 1fr 24px;
+  align-items: center;
+  gap: 8px;
+}
+
+.resultRow .logoMark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  padding: 3px;
+}
+
+.resultRow span {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.bar {
+  height: 9px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #e1eaf5;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--blue);
+}
+
+.resultRow strong {
+  text-align: right;
+}
+
+@media (max-width: 1100px) {
+  .campaignList,
+  .infoGridCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quizGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .quizResult {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .focusTable {
+    grid-template-columns: 100px 150px repeat(5, 130px);
+  }
+
+  .campaignList,
+  .infoGridCards {
+    grid-template-columns: 1fr;
+  }
+}
