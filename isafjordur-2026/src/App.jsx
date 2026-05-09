@@ -552,11 +552,12 @@ function ElectionInfoPanel() {
           <p>Talning hefst kl. 21:00 á kjördag í fundarsal Stjórnsýsluhússins á Ísafirði, 4. hæð.</p>
         </section>
       </div>
+
+
       <div className="siteCredit">
         Unnið af Ragnari Högna í samstarfi við ChatGPT.<br />
         Upplýsingar byggja á opinberum gögnum og efni frá framboðunum sjálfum.
       </div>
-
     </section>
   )
 }
