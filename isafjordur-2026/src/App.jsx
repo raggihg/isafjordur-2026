@@ -77,12 +77,46 @@ const quizQuestions = [
 ]
 
 const electionInfo = [
-  { title: 'Kosningadagur', value: '16. maí 2026', note: 'Sveitarstjórnarkosningar í Ísafjarðarbæ.' },
-  { title: 'Framboðslistar', value: '5 listar', note: 'B, C, D, M og S-listi.' },
-  { title: 'Íbúar', value: '4.117', note: 'Skráðir íbúar 15. nóvember 2025 samkvæmt fjárhagsáætlun/Þjóðskrá.' },
-  { title: 'Utan kjörfundar', value: 'Hafnarstræti 1', note: 'Bæjarskrifstofur, 2. hæð. Kl. 10-12 og 12.30-15 virka daga.' },
-  { title: 'Kjósendur', value: 'Bíður staðfestingar', note: 'Setjum inn fjölda af kjörskrá þegar birt.' },
-  { title: 'Kjörstaðir', value: 'Bíður staðfestingar', note: 'Bætum inn þegar Ísafjarðarbær birtir kjördeildir 2026.' }
+  {
+    title: 'Kosningadagur',
+    value: '16. maí 2026',
+    note: 'Kosið verður til bæjarstjórnar í Ísafjarðarbæ.'
+  },
+  {
+    title: 'Kjörskrá',
+    value: '2.976 kjósendur',
+    note: '1.542 karlar, 1.430 konur og 4 kynsegin/annað samkvæmt Þjóðskrá.'
+  },
+  {
+    title: 'Kjördeildir',
+    value: '6 kjördeildir',
+    note: '1.-3. á Ísafirði, 4. Suðureyri, 5. Flateyri og 6. Þingeyri.'
+  },
+  {
+    title: 'Ísafjörður',
+    value: '09:00–20:00',
+    note: '1.-3. kjördeild í Grunnskólanum á Ísafirði.'
+  },
+  {
+    title: 'Suðureyri, Flateyri, Þingeyri',
+    value: '09:00–18:00',
+    note: 'Kjördeildir í grunnskólunum á hverjum stað.'
+  },
+  {
+    title: 'Utan kjörfundar',
+    value: 'Frá 17. apríl',
+    note: 'Atkvæðisbréf móttekin á bæjarskrifstofum, Hafnarstræti 1, 2. hæð.'
+  },
+  {
+    title: 'Opnun utankjörfundar',
+    value: '10–12 / 12:30–15',
+    note: 'Opið alla virka daga á bæjarskrifstofum Ísafjarðarbæjar.'
+  },
+  {
+    title: 'Talning atkvæða',
+    value: 'Kl. 21:00',
+    note: 'Talning hefst á kjördag í fundarsal Stjórnsýsluhússins, 4. hæð.'
+  }
 ]
 
 const campaignInfo = [
@@ -111,6 +145,8 @@ function Header({ activeParty, setActiveParty }) {
       <nav>
         <a href="#flokkar">Flokkar</a>
         <a href="#samanburdur">Samanburður</a>
+        <a href="#kosningar">Kosningar</a>
+        <a href="#konnun">Könnun</a>
         <a href="#heimildir">Heimildir</a>
       </nav>
     </header>
@@ -313,7 +349,7 @@ function PartyDetail({ party, setActiveParty }) {
 
 function ElectionInfoPanel() {
   return (
-    <section className="panel electionPanel">
+    <section id="kosningar" className="panel electionPanel">
       <div className="panelHeader">
         <div>
           <p className="eyebrow"><MapPin size={15} /> Kosningaupplýsingar</p>
@@ -330,6 +366,18 @@ function ElectionInfoPanel() {
             <p>{item.note}</p>
           </article>
         ))}
+      </div>
+
+      <div className="officialLinks">
+        <a href="https://www.isafjordur.is/is/stjornsysla/stjornsyslan/kosningar-2026#kosid-utan-kjorfundar" target="_blank" rel="noreferrer">
+          Ísafjarðarbær — kosningar 2026 <ExternalLink size={15} />
+        </a>
+        <a href="https://www.skra.is/gogn/talnaefni/kosningar/talnaefni-vegna-sveitarstjornakosninga-2026/" target="_blank" rel="noreferrer">
+          Þjóðskrá — talnaefni <ExternalLink size={15} />
+        </a>
+        <a href="https://www.kosning.is/" target="_blank" rel="noreferrer">
+          Kosning.is <ExternalLink size={15} />
+        </a>
       </div>
     </section>
   )
@@ -488,7 +536,7 @@ export default function App() {
             </div>
             <div className="infoBox">
               <Info size={18} />
-              <span>Smelltu á flokk til að sjá frambjóðendur. Kennitölur og heimilisföng eru ekki birt.</span>
+              <span>Stóra uppfærslan er komin: samanburður, könnun og kosningaupplýsingar á einum stað.</span>
             </div>
           </section>
 

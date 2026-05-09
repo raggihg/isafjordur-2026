@@ -475,6 +475,8 @@ export const parties = [
 ]
 
 export const sources = [
+  { label: 'Þjóðskrá — talnaefni vegna sveitarstjórnarkosninga 2026', url: 'https://www.skra.is/gogn/talnaefni/kosningar/talnaefni-vegna-sveitarstjornakosninga-2026/' },
+  { label: 'Kosning.is — opinber kosningavefur', url: 'https://www.kosning.is/' },
   { label: 'Ísafjarðarbær — opinber framboðslisti og kosningaupplýsingar', url: 'https://www.isafjordur.is/is/stjornsysla/stjornsyslan/kosningar-2026' },
   { label: 'Framsókn og óháðir — heimasíða', url: 'https://www.framsokn.is/sveitarfelog/isafjardarbaer' },
   { label: 'Framsókn og óháðir — stefnuskrá', url: 'https://framerusercontent.com/assets/8duIPh2HtzZMoGVwPzCEsqBKD3w.pdf' },
