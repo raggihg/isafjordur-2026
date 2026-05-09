@@ -1,0 +1,74 @@
+import React from 'react'
+import { parties, topics } from '../data/parties.js'
+import LogoMark from './LogoMark.jsx'
+
+function TopicSwitchButton({ topic, direction, onClick }) {
+  return (
+    <button className={`topicSwitch ${direction}`} onClick={onClick}>
+      <span className="switchArrow">{direction === 'prev' ? '←' : '→'}</span>
+      <span className="switchText">
+        <small>{direction === 'prev' ? 'Fyrra málefni' : 'Næsta málefni'}</small>
+        <strong>{topic.name}</strong>
+      </span>
+    </button>
+  )
+}
+
+export default function TopicDetail({ topic, setActiveTopic }) {
+  const currentIndex = topics.findIndex((item) => item.id === topic.id)
+  const previousTopic = topics[(currentIndex - 1 + topics.length) % topics.length]
+  const nextTopic = topics[(currentIndex + 1) % topics.length]
+
+  return (
+    <section className="topicDetail">
+      <div className="topicDetailNav">
+        <TopicSwitchButton
+          topic={previousTopic}
+          direction="prev"
+          onClick={() => setActiveTopic(previousTopic.id)}
+        />
+
+        <button className="backButton" onClick={() => setActiveTopic(null)}>
+          Öll málefni
+        </button>
+
+        <TopicSwitchButton
+          topic={nextTopic}
+          direction="next"
+          onClick={() => setActiveTopic(nextTopic.id)}
+        />
+      </div>
+
+      <article className="detailHero topicHero">
+        <div className="topicIconLarge">•</div>
+        <div>
+          <p className="eyebrow">Málefnasíða</p>
+          <h1>{topic.name}</h1>
+          <p>Hér má sjá stefnuatriði flokkanna undir þessu málefni. Atriðin eru tekin úr stefnuskrám, vefsíðum og efni flokkanna og höfð sýnileg án þess að fela neitt á bak við „sýna meira“.</p>
+        </div>
+      </article>
+
+      <div className="topicPartyGrid">
+        {parties.map((party) => (
+          <article className="panel topicPartyCard" key={party.id}>
+            <div className="topicPartyHeader">
+              <LogoMark party={party} />
+              <div>
+                <span>{party.list}</span>
+                <h2>{party.name}</h2>
+              </div>
+            </div>
+
+            <p>{party.topics[topic.id]}</p>
+
+            <ul className="topicActionList">
+              {(party.policyByTopic?.[topic.id] || []).map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
