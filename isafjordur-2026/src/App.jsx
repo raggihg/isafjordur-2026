@@ -131,28 +131,37 @@ function LogoMark({ party, large = false }) {
   return <img className={large ? 'logoMark large' : 'logoMark'} src={party.logo} alt={`Merki ${party.name}`} />
 }
 
-function Header({ activeParty, setActiveParty }) {
+function Header({ setActiveParty, setActiveTopic }) {
+  const goHome = (hash) => {
+    setActiveParty(null)
+    setActiveTopic(null)
+    window.setTimeout(() => {
+      if (hash) document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
+      else window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 0)
+  }
+
   return (
     <header className="topbar">
-      <a href="#" className="brand" onClick={() => setActiveParty(null)}>
+      <button className="brand brandButton" onClick={() => goHome(null)}>
         <img className="siteLogoIcon" src="/favicon.svg" alt="Ísafjarðarbær 2026" />
         <div>
           <strong>Ísafjarðarbær 2026</strong>
           <span>Stefnuskrár í einum stað</span>
         </div>
-      </a>
+      </button>
 
       <nav>
-        <a href="#flokkar">Flokkar</a>
-        <a href="#samanburdur">Samanburður</a>
-        <a href="#kosningar">Kosningar</a>
-        <a href="#konnun">Könnun</a>
-        <a href="#heimildir">Heimildir</a>
+        <button onClick={() => goHome('#flokkar')}>Flokkar</button>
+        <button onClick={() => goHome('#samanburdur')}>Samanburður</button>
+        <button onClick={() => goHome('#malefni')}>Málefni</button>
+        <button onClick={() => goHome('#kosningar')}>Kosningar</button>
+        <button onClick={() => goHome('#konnun')}>Könnun</button>
+        <button onClick={() => goHome('#heimildir')}>Heimildir</button>
       </nav>
     </header>
   )
 }
-
 function Hero() {
   const candidateCount = parties.reduce((sum, party) => sum + party.candidates.length, 0)
 
@@ -164,12 +173,6 @@ function Hero() {
         <p>
           Vefurinn safnar saman stefnuskrám, framboðslistum og heimildum á einn stað svo íbúar geti séð muninn á áherslum flokkanna.
         </p>
-      </div>
-
-      <div className="heroStats">
-        <div><strong>{parties.length}</strong><span>framboðslistar</span></div>
-        <div><strong>{topics.length}</strong><span>málaflokkar</span></div>
-        <div><strong>{candidateCount}</strong><span>frambjóðendur skráðir</span></div>
       </div>
     </section>
   )
@@ -484,6 +487,101 @@ function QuizPanel() {
   )
 }
 
+function TopicSwitchButton({ topic, direction, onClick }) {
+  return (
+    <button className={`topicSwitch ${direction}`} onClick={onClick}>
+      <span className="switchArrow">{direction === 'prev' ? '←' : '→'}</span>
+      <span className="switchText">
+        <small>{direction === 'prev' ? 'Fyrra málefni' : 'Næsta málefni'}</small>
+        <strong>{topic.name}</strong>
+      </span>
+    </button>
+  )
+}
+
+function TopicDetail({ topic, setActiveTopic }) {
+  const currentIndex = topics.findIndex((item) => item.id === topic.id)
+  const previousTopic = topics[(currentIndex - 1 + topics.length) % topics.length]
+  const nextTopic = topics[(currentIndex + 1) % topics.length]
+
+  return (
+    <section className="topicDetail">
+      <div className="topicDetailNav">
+        <TopicSwitchButton
+          topic={previousTopic}
+          direction="prev"
+          onClick={() => setActiveTopic(previousTopic.id)}
+        />
+
+        <button className="backButton" onClick={() => setActiveTopic(null)}>
+          Öll málefni
+        </button>
+
+        <TopicSwitchButton
+          topic={nextTopic}
+          direction="next"
+          onClick={() => setActiveTopic(nextTopic.id)}
+        />
+      </div>
+
+      <article className="detailHero topicHero">
+        <div className="topicIconLarge">{currentIndex + 1}</div>
+        <div>
+          <p className="eyebrow">Málefnasíða</p>
+          <h1>{topic.name}</h1>
+          <p>Hér má sjá hvernig allir flokkar nálgast þennan málaflokk, sett fram í stuttum atriðum til að auðvelda samanburð.</p>
+        </div>
+      </article>
+
+      <div className="topicPartyGrid">
+        {parties.map((party) => (
+          <article className="panel topicPartyCard" key={party.id}>
+            <div className="topicPartyHeader">
+              <LogoMark party={party} />
+              <div>
+                <span>{party.list}</span>
+                <h2>{party.name}</h2>
+              </div>
+            </div>
+
+            <p>{party.topics[topic.id]}</p>
+
+            <ul className="topicActionList">
+              {(party.policyByTopic?.[topic.id] || []).map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function TopicsOverview({ setActiveTopic }) {
+  return (
+    <section id="malefni" className="panel topicsOverview">
+      <div className="panelHeader">
+        <div>
+          <p className="eyebrow"><BarChart3 size={15} /> Málefnasíður</p>
+          <h2>Skoða eftir málaflokkum</h2>
+          <p>Veldu málaflokk og sjáðu áherslur allra flokka á einni síðu.</p>
+        </div>
+      </div>
+
+      <div className="topicOverviewGrid">
+        {topics.map((topic, index) => (
+          <button className="topicOverviewCard" key={topic.id} onClick={() => setActiveTopic(topic.id)}>
+            <span>{index + 1}</span>
+            <strong>{topic.name}</strong>
+            <small>Skoða áherslur allra flokka →</small>
+          </button>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function Sources() {
   return (
     <section id="heimildir" className="panel sourcesPanel">
@@ -509,14 +607,20 @@ function Sources() {
 
 export default function App() {
   const [activePartyId, setActiveParty] = useState(null)
+  const [activeTopicId, setActiveTopic] = useState(null)
   const [query, setQuery] = useState('')
   const activeParty = parties.find((party) => party.id === activePartyId)
+  const activeTopic = topics.find((topic) => topic.id === activeTopicId)
 
   return (
     <div className="site">
-      <Header activeParty={activePartyId} setActiveParty={setActiveParty} />
+      <Header setActiveParty={setActiveParty} setActiveTopic={setActiveTopic} />
 
-      {activeParty ? (
+      {activeTopic ? (
+        <main className="pageWrap">
+          <TopicDetail topic={activeTopic} setActiveTopic={setActiveTopic} />
+        </main>
+      ) : activeParty ? (
         <main className="pageWrap">
           <PartyDetail party={activeParty} setActiveParty={setActiveParty} />
         </main>
@@ -563,6 +667,7 @@ export default function App() {
           </div>
 
           <div className="pageWrap stackedSections">
+            <TopicsOverview setActiveTopic={setActiveTopic} />
             <ElectionInfoPanel />
             <CampaignInfoPanel />
             <QuizPanel />
