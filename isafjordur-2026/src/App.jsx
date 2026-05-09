@@ -18,6 +18,17 @@ import {
 } from 'lucide-react'
 import { parties, sources, topics } from './data/parties.js'
 
+function stableShuffleOptions(options, questionIndex) {
+  return [...options]
+    .map((option, index) => ({
+      option,
+      sortKey: ((index + 1) * 37 + (questionIndex + 3) * 19) % 101
+    }))
+    .sort((a, b) => a.sortKey - b.sortKey)
+    .map((item) => item.option)
+}
+
+
 const comparisonItems = [
   { area: 'Húsnæði', focus: 'Lóðaframboð', parties: { B: 'Lóðir + uppbygging', C: 'Skipulag og búseta', D: 'Framkvæmdir', M: 'Lóðir', S: 'Húsnæðisframboð' } },
   { area: 'Húsnæði', focus: 'Búsetuöryggi', parties: { B: 'Ólík æviskeið', C: 'Fjölbreytt samfélag', D: 'Búsetuskilyrði', M: 'Nærumhverfi', S: 'Búsetuöryggi' } },
@@ -35,51 +46,51 @@ const quizQuestions = [
   {
     text: 'Hvað á að vera stærsta forgangsmálið í húsnæðismálum?',
     options: [
-      { label: 'Fjölga lóðum og styðja leiguhúsnæði með samstarfi við leigufélög', parties: ['B'] },
-      { label: 'Bæta skipulagsferla og skipuleggja þéttingarreiti í öllum byggðarkjörnum', parties: ['C'] },
-      { label: 'Tryggja fjölbreytt lóðaframboð og skilvirkari byggingarmál', parties: ['D'] },
+      { label: 'Byggja upp með óhagnaðardrifnum leigufélögum og áherslu á ungt fólk og eldri íbúa', parties: ['S'] },
       { label: 'Tryggja framboð lóða fyrir íbúðir og atvinnustarfsemi', parties: ['M'] },
-      { label: 'Byggja upp með óhagnaðardrifnum leigufélögum og áherslu á ungt fólk og eldri íbúa', parties: ['S'] }
+      { label: 'Bæta skipulagsferla og skipuleggja þéttingarreiti í öllum byggðarkjörnum', parties: ['C'] },
+      { label: 'Fjölga lóðum og styðja leiguhúsnæði með samstarfi við leigufélög', parties: ['B'] },
+      { label: 'Tryggja fjölbreytt lóðaframboð og skilvirkari byggingarmál', parties: ['D'] }
     ]
   },
   {
     text: 'Hvaða leikskólaáhersla passar þér best?',
     options: [
-      { label: 'Byggja við leikskóla og tryggja samfellu frá 12 mánaða aldri', parties: ['B'] },
-      { label: 'Stækka leikskóla og fjölga leikskólakennurum', parties: ['C'] },
       { label: 'Heimgreiðslur frá 12 mánaða aldri og skoða gjaldfrjálsan leikskóla til kl. 14', parties: ['D'] },
+      { label: 'Endurskoða gjaldskrá, afsláttarkerfi og tekjutengingu leikskóla', parties: ['S'] },
+      { label: 'Byggja við leikskóla og tryggja samfellu frá 12 mánaða aldri', parties: ['B'] },
       { label: 'Leikskólapláss frá 12 mánaða aldri og halda leikskólagjöldum í lágmarki', parties: ['M'] },
-      { label: 'Endurskoða gjaldskrá, afsláttarkerfi og tekjutengingu leikskóla', parties: ['S'] }
+      { label: 'Stækka leikskóla og fjölga leikskólakennurum', parties: ['C'] }
     ]
   },
   {
     text: 'Hvaða nálgun finnst þér best í fjármálum bæjarins?',
     options: [
-      { label: 'Ábyrg fjármál, lægri fasteignaskattur og skýrari verkferlar', parties: ['B'] },
-      { label: 'Lækka fasteignaskatt, lækka skuldir og gera stjórnsýslu rafræna', parties: ['C'] },
-      { label: 'Ráðdeild, lægri fasteignaskattar og skilvirkari stafræna þjónusta', parties: ['D'] },
       { label: 'Rýna rekstur, hagræða og stöðva sjálfvirka útgjaldaaukningu', parties: ['M'] },
-      { label: 'Ábyrg fjármál en bæta flæði, ferla og íbúalýðræði', parties: ['S'] }
+      { label: 'Ráðdeild, lægri fasteignaskattar og skilvirkari stafræna þjónusta', parties: ['D'] },
+      { label: 'Ábyrg fjármál en bæta flæði, ferla og íbúalýðræði', parties: ['S'] },
+      { label: 'Lækka fasteignaskatt, lækka skuldir og gera stjórnsýslu rafræna', parties: ['C'] },
+      { label: 'Ábyrg fjármál, lægri fasteignaskattur og skýrari verkferlar', parties: ['B'] }
     ]
   },
   {
     text: 'Hvernig á að þjónusta eldri borgara?',
     options: [
-      { label: 'Samþætta þjónustu ríkis og sveitarfélags við eldra fólk', parties: ['B'] },
       { label: 'Efla félagsstarf eldri borgara og breyta 4. hæð Hlífar í íbúðir', parties: ['C'] },
-      { label: 'Styðja sjálfstæða búsetu, virkni og félagsleg tengsl', parties: ['D'] },
+      { label: 'Samfelld þjónusta, stuðningur í heimahúsum og öldrunarráð', parties: ['S'] },
       { label: 'Markviss þjónusta við eldri borgara og jöfn tækifæri', parties: ['M'] },
-      { label: 'Samfelld þjónusta, stuðningur í heimahúsum og öldrunarráð', parties: ['S'] }
+      { label: 'Samþætta þjónustu ríkis og sveitarfélags við eldra fólk', parties: ['B'] },
+      { label: 'Styðja sjálfstæða búsetu, virkni og félagsleg tengsl', parties: ['D'] }
     ]
   },
   {
     text: 'Hvaða samgönguáhersla skiptir þig mestu?',
     options: [
-      { label: 'Fjölga almenningssamgöngum milli hverfa og byggðarkjarna', parties: ['B'] },
-      { label: 'Skoða hvernig almenningssamgöngur nýtast betur, sérstaklega börnum og ungmennum', parties: ['C'] },
-      { label: 'Efla frístundaakstur og almenningssamgöngur', parties: ['D'] },
       { label: 'Setja Suðavíkurveg í forgang og þrýsta á tvöföldun Vestfjarðaganga', parties: ['M'] },
-      { label: 'Endurskoða akstur milli byggðarkjarna og tryggja öruggar flugsamgöngur', parties: ['S'] }
+      { label: 'Endurskoða akstur milli byggðarkjarna og tryggja öruggar flugsamgöngur', parties: ['S'] },
+      { label: 'Fjölga almenningssamgöngum milli hverfa og byggðarkjarna', parties: ['B'] },
+      { label: 'Efla frístundaakstur og almenningssamgöngur', parties: ['D'] },
+      { label: 'Skoða hvernig almenningssamgöngur nýtast betur, sérstaklega börnum og ungmennum', parties: ['C'] }
     ]
   },
   {
@@ -346,13 +357,7 @@ function Hero() {
         <p>
           Vefurinn safnar saman stefnuskrám, framboðslistum og heimildum á einn stað svo íbúar geti séð muninn á áherslum flokkanna.
         </p>
-
-        <div className="heroChips">
-          <a href="#flokkar">Skoða flokka</a>
-          <a href="#malefni">Málefnasíður</a>
-          <a href="#konnun">Taka könnun</a>
-        </div>
-      </div>
+</div>
     </section>
   )
 }
@@ -495,8 +500,8 @@ function ElectionInfoPanel() {
       <div className="panelHeader">
         <div>
           <p className="eyebrow"><MapPin size={15} /> Kosningaupplýsingar</p>
-          <h2>Tölfræði og framkvæmd</h2>
-          <p>Hér söfnum við praktískum upplýsingum um kosningarnar. Atriði sem vantar eru merkt þannig þar til opinber staðfesting liggur fyrir.</p>
+          
+          <p>Helstu upplýsingar um kjördag, kjördeildir, opnunartíma og utankjörfundaratkvæðagreiðslu.</p>
         </div>
       </div>
 
@@ -509,19 +514,7 @@ function ElectionInfoPanel() {
           </article>
         ))}
       </div>
-
-      <div className="officialLinks">
-        <a href="https://www.isafjordur.is/is/stjornsysla/stjornsyslan/kosningar-2026#kosid-utan-kjorfundar" target="_blank" rel="noreferrer">
-          Ísafjarðarbær — kosningar 2026 <ExternalLink size={15} />
-        </a>
-        <a href="https://www.skra.is/gogn/talnaefni/kosningar/talnaefni-vegna-sveitarstjornakosninga-2026/" target="_blank" rel="noreferrer">
-          Þjóðskrá — talnaefni <ExternalLink size={15} />
-        </a>
-        <a href="https://www.kosning.is/" target="_blank" rel="noreferrer">
-          Kosning.is <ExternalLink size={15} />
-        </a>
-      </div>
-    </section>
+</section>
   )
 }
 
@@ -630,7 +623,7 @@ function QuizPanel() {
             <article className="quizQuestion" key={question.text}>
               <h3>{index + 1}. {question.text}</h3>
               <div className="quizOptions">
-                {question.options.map((option) => (
+                {stableShuffleOptions(question.options, index).map((option) => (
                   <button
                     key={option.label}
                     className={answers[index]?.label === option.label ? 'selected' : ''}
@@ -781,31 +774,24 @@ function TopicsOverview({ setActiveTopic }) {
 
 function Sources() {
   return (
-    <section id="heimildir" className="panel sourcesPanel">
-      <div className="panelHeader">
-        <div>
-          <p className="eyebrow"><LinkIcon size={15} /> Heimildir</p>
-          <h2>Heimildir</h2>
-          <p>Helstu heimildir og tenglar, felld saman eftir flokkum.</p>
-        </div>
+    <section id="heimildir" className="sourcesFooter">
+      <div className="sourcesFooterHeader">
+        <p className="eyebrow"><LinkIcon size={15} /> Heimildir</p>
+        <h2>Heimildir og tenglar</h2>
       </div>
 
-      <div className="sourceAccordion">
+      <div className="sourcesFooterGrid">
         {sourceGroups.map((group) => (
-          <details key={group.title} className="sourceGroup">
-            <summary>
-              <span>{group.title}</span>
-              <strong>{group.links.length}</strong>
-            </summary>
-            <div className="sourceGroupLinks">
+          <div className="sourceFooterGroup" key={group.title}>
+            <h3>{group.title}</h3>
+            <div>
               {group.links.map((link) => (
                 <a href={link.url} target="_blank" rel="noreferrer" key={link.url}>
                   {link.label}
-                  <ExternalLink size={15} />
                 </a>
               ))}
             </div>
-          </details>
+          </div>
         ))}
       </div>
     </section>

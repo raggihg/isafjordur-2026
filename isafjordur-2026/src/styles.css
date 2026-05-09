@@ -2270,3 +2270,106 @@ body {
   font-size: 12px;
   line-height: 1.4;
 }
+
+
+/* Clean hero and election info */
+.heroChips,
+.officialLinks {
+  display: none !important;
+}
+
+.electionPanel .panelHeader h2:empty {
+  display: none;
+}
+
+.electionPanel .panelHeader {
+  margin-bottom: 16px;
+}
+
+.electionPanel .panelHeader p {
+  max-width: 760px;
+}
+
+/* Replace bulky source accordion with compact footer */
+.sourcesPanel,
+.sourceAccordion,
+.sourceGroup,
+.sourceList {
+  display: none !important;
+}
+
+.sourcesFooter {
+  margin-top: 6px;
+  padding: 22px;
+  border: 1px solid rgba(13,27,42,.08);
+  border-radius: 20px;
+  background: rgba(255,255,255,.70);
+  box-shadow: 0 10px 26px rgba(13,27,42,.045);
+}
+
+.sourcesFooterHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.sourcesFooterHeader h2 {
+  margin: 0;
+  color: var(--deep);
+  font-size: 20px;
+}
+
+.sourcesFooterHeader .eyebrow {
+  margin: 0;
+}
+
+.sourcesFooterGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 22px;
+}
+
+.sourceFooterGroup h3 {
+  margin: 0 0 7px;
+  color: #132344;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.sourceFooterGroup div {
+  display: grid;
+  gap: 4px;
+}
+
+.sourceFooterGroup a {
+  color: #5b6680;
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 750;
+}
+
+.sourceFooterGroup a:hover {
+  color: var(--blue);
+}
+
+@media (max-width: 900px) {
+  .sourcesFooterGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .sourcesFooter {
+    padding: 16px;
+  }
+
+  .sourcesFooterHeader {
+    display: block;
+  }
+
+  .sourcesFooterGrid {
+    grid-template-columns: 1fr;
+  }
+}
