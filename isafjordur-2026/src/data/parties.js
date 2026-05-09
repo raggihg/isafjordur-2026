@@ -331,14 +331,51 @@ export const parties = [
       culture: 'Vantar staðfesta stefnutexta.'
     },,
     policyByTopic: {
-      housing: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
-      schools: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
-      welfare: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
-      economy: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
-      jobs: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
-      environment: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
-      transport: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.'],
-      culture: ['Vantar staðfesta stefnuskrá fyrir þennan málaflokk.']
+      housing: [
+        'Tryggja framboð lóða fyrir íbúðir og atvinnustarfsemi.',
+        'Styðja við framkvæmdir sem hefjast á kjörtímabilinu.',
+        'Bæta nærumhverfi með göngustígum, leikvöllum og grænum svæðum.'
+      ],
+      schools: [
+        'Tryggja leikskólapláss frá 12 mánaða aldri.',
+        'Halda leikskólagjöldum í lágmarki.',
+        'Efla grunnskóla og fagþjónustu í samráði við kennara.',
+        'Opna ungmennahús fyrir framhaldsskólanema.',
+        'Bæta samstarf heimila og skóla.'
+      ],
+      welfare: [
+        'Markviss þjónusta við eldri borgara.',
+        'Tryggja jöfn tækifæri fyrir alla íbúa.',
+        'Byggja samfélag samstöðu, virðingar og samhjálpar.'
+      ],
+      economy: [
+        'Rýna rekstur og hagræða þar sem hægt er.',
+        'Stöðva sjálfvirka útgjaldaaukningu.',
+        'Tryggja að fjárhagslegur meðbyr skili sér í uppbyggingu en ekki skrifræði.',
+        'Fara vel með eignir bæjarins með langtímahugsun.'
+      ],
+      jobs: [
+        'Virk þjónusta við fyrirtæki og einfaldari leið að uppbyggingu.',
+        'Stjórnsýslan verði leiðbeinandi og lausnamiðuð.',
+        'Skjót og fagleg afgreiðsla erinda.'
+      ],
+      environment: [
+        'Viðhald og uppbygging gatna og bæjarrýmis.',
+        'Leikvellir og græn svæði í forgangi.',
+        'Bæta upplifun íbúa og gesta í sveitarfélaginu.'
+      ],
+      transport: [
+        'Setja Suðavíkurveg í forgang.',
+        'Þrýsta á tvöföldun Vestfjarðaganga.',
+        'Efla göngu- og hjólastíga.',
+        'Styrkja fjarskipti og áreiðanlega tengingu.'
+      ],
+      culture: [
+        'Hafa öflugar félagsmiðstöðvar.',
+        'Fjárfesta í samfélagi og fólki.',
+        'Huga að íþróttamannvirkjum og fjölnota íþróttahúsi.',
+        'Vinna að samfélagi fyrir alla án útilokunar.'
+      ]
     }
   },
   {
