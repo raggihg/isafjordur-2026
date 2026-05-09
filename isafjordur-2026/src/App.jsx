@@ -96,14 +96,24 @@ const electionInfo = [
     note: '1.-3. kjördeild í Grunnskólanum á Ísafirði.'
   },
   {
-    title: 'Suðureyri, Flateyri, Þingeyri',
+    title: 'Suðureyri',
     value: '09:00–18:00',
-    note: 'Kjördeildir í grunnskólunum á hverjum stað.'
+    note: '4. kjördeild í Grunnskólanum á Suðureyri.'
+  },
+  {
+    title: 'Flateyri',
+    value: '09:00–18:00',
+    note: '5. kjördeild í Grunnskóla Önundarfjarðar á Flateyri.'
+  },
+  {
+    title: 'Þingeyri',
+    value: '09:00–18:00',
+    note: '6. kjördeild í Grunnskólanum á Þingeyri.'
   },
   {
     title: 'Utan kjörfundar',
     value: 'Frá 17. apríl',
-    note: 'Atkvæðisbréf móttekin á bæjarskrifstofum, Hafnarstræti 1, 2. hæð.'
+    note: 'Atkvæðisbréfum tekið við á bæjarskrifstofum, Hafnarstræti 1, 2. hæð.'
   },
   {
     title: 'Opnun utankjörfundar',
@@ -113,7 +123,7 @@ const electionInfo = [
   {
     title: 'Talning atkvæða',
     value: 'Kl. 21:00',
-    note: 'Talning hefst á kjördag í fundarsal Stjórnsýsluhússins, 4. hæð.'
+    note: 'Talning hefst á kjördag í fundarsal Stjórnsýsluhússins á Ísafirði, 4. hæð.'
   }
 ]
 
@@ -144,7 +154,7 @@ const campaignInfo = [
   },
   {
     party: 'M',
-    title: 'Miðflokkurinn',
+    title: 'Miðflokkurinn og hin',
     location: 'Vesturferðir í Edinborgarhúsinu',
     hours: '9. maí kl. 12–14 · fleiri tímar væntanlegir',
     cafe: 'Heitt á könnunni ☕️',
@@ -194,7 +204,7 @@ const sourceGroups = [
     ]
   },
   {
-    title: 'Miðflokkurinn',
+    title: 'Miðflokkurinn og hin',
     links: [
       { label: 'Heimasíða framboðs', url: 'https://midflokkurinn.is/isafjordur' },
       { label: 'Facebook myndir / stefnumál', url: 'https://www.facebook.com/profile.php?id=61572070263010&sk=photos' },
@@ -450,18 +460,15 @@ function CampaignInfoPanel() {
 
       <div className="campaignGrid">
         {campaignInfo.map((item) => {
-          const status = statusMap[item.status]
+          const party = parties.find((p) => p.letter === item.party)
 
           return (
             <article className="campaignCard" key={item.party}>
               <div className="campaignTop">
-                <div className="campaignLetter">{item.party}</div>
+                {party && <LogoMark party={party} />}
 
                 <div>
                   <h3>{item.title}</h3>
-                  <span className={`statusBadge ${status.className}`}>
-                    {status.label}
-                  </span>
                 </div>
               </div>
 
