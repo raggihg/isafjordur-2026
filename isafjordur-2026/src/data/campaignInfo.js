@@ -15,12 +15,16 @@ export const campaignInfo = [
     cafe: 'Kosningamiðstöð opin alla kosningavikuna',
     status: 'confirmed'
   },
- {
+{
   party: 'D',
   title: 'Sjálfstæðisflokkur',
   location: 'Aðalstræti 24, Ísafirði',
   hours: 'Opnunartímar samkvæmt auglýsingu í stefnuskrá flokksins',
-  cafe: 'Fjölskyldufjör sunnudag kl. 15:30<br />Kosningakaffi á Logn Hótel Ísafirði á kjördag kl. 14:00<br />Kosningavaka á Logn Hótel Ísafirði kl. 21:30'
+  cafe: `
+    Fjölskyldufjör sunnudag kl. 15:30<br />
+    Kosningakaffi á Logn Hótel Ísafirði á kjördag kl. 14:00<br />
+    Kosningavaka á Logn Hótel Ísafirði kl. 21:30
+  `
 },
   {
     party: 'M',
