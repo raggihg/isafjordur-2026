@@ -256,9 +256,8 @@ export const parties = [
     id: 'sjalfstaedisflokkur',
     socials: [
       { label: 'Facebook', url: 'https://www.facebook.com/xdisafjardar/' },
-      { label: 'Instagram', url: 'https://instagram.com/sjalfstaedis' },
-      { label: 'TikTok', url: 'https://www.tiktok.com/@xdisafjardar' },
-      { label: 'YouTube', url: 'https://www.youtube.com/user/Sjalfstaedisflokkur' }
+      { label: 'Instagram', url: 'https://www.instagram.com/sjalfstaedis/' },
+      { label: 'TikTok', url: 'https://www.tiktok.com/@xd.safjararbr' }
     ],
     letter: 'D',
     list: 'D-listi',
@@ -475,9 +474,7 @@ export const parties = [
     id: 'samfylkingin',
     socials: [
       { label: 'Facebook', url: 'https://www.facebook.com/xsisafjardarbaer/' },
-      { label: 'Instagram', url: 'https://www.instagram.com/xsisafjardarbaer/' },
-      { label: 'X/Twitter', url: 'https://twitter.com/samfylkingin' },
-      { label: 'YouTube', url: 'https://www.youtube.com/channel/UCFvYdckW1NIw24L3pxZyoPQ' }
+      { label: 'Instagram', url: 'https://www.instagram.com/xsisafjardarbaer/' }
     ],
     letter: 'S',
     list: 'S-listi',
