@@ -67,7 +67,7 @@ export default function CampaignInfoPanel() {
       </div>
 
       <p className="campaignUpdated">
-        Síðast uppfært: 10. maí 2026 · Upplýsingar uppfærast þegar framboð birta nýja opnunartíma eða viðburði.
+        Síðast uppfært: maí 2026 · Upplýsingar uppfærast þegar framboð birta nýja opnunartíma eða viðburði.
       </p>
     </section>
   )
