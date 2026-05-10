@@ -7,7 +7,12 @@ import LogoMark from './LogoMark.jsx'
 
 export default function QuizPanel() {
   const [answers, setAnswers] = useState({})
+  const [currentQuestion, setCurrentQuestion] = useState(0)
   const [showResults, setShowResults] = useState(false)
+
+  const question = quizQuestions[currentQuestion]
+  const answeredCount = Object.keys(answers).length
+  const isLastQuestion = currentQuestion === quizQuestions.length - 1
 
   const scores = useMemo(() => {
     const result = { B: 0, C: 0, D: 0, M: 0, S: 0 }
@@ -25,83 +30,132 @@ export default function QuizPanel() {
       .sort((a, b) => b.score - a.score)
   }, [answers])
 
-  const answeredCount = Object.keys(answers).length
   const topScore = scores[0]?.score || 0
+  const topParty = scores[0]?.party
+  const progress = ((currentQuestion + (answers[currentQuestion] ? 1 : 0)) / quizQuestions.length) * 100
+
+  const answerQuestion = (option) => {
+    const nextAnswers = { ...answers, [currentQuestion]: option }
+    setAnswers(nextAnswers)
+    setShowResults(false)
+
+    if (isLastQuestion) {
+      setShowResults(true)
+      window.setTimeout(() => {
+        document.querySelector('#konnun')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 80)
+      return
+    }
+
+    window.setTimeout(() => {
+      setCurrentQuestion((value) => Math.min(value + 1, quizQuestions.length - 1))
+    }, 160)
+  }
+
+  const goBack = () => {
+    setShowResults(false)
+    setCurrentQuestion((value) => Math.max(value - 1, 0))
+  }
+
+  const goNext = () => {
+    if (!answers[currentQuestion]) return
+    if (isLastQuestion) {
+      setShowResults(true)
+    } else {
+      setCurrentQuestion((value) => Math.min(value + 1, quizQuestions.length - 1))
+    }
+  }
+
+  const resetQuiz = () => {
+    setAnswers({})
+    setCurrentQuestion(0)
+    setShowResults(false)
+  }
 
   return (
-    <section id="konnun" className="panel quizPanel">
+    <section id="konnun" className="panel quizPanel quizFocusPanel">
       <div className="panelHeader">
         <div>
           <p className="eyebrow"><HelpCircle size={15} /> Könnun</p>
-          <h2>Hvaða áherslur passa þér?</h2>
-          <p>Svaraðu spurningunum og sjáðu hvaða framboð í Ísafjarðarbæ er næst þínum áherslum.</p>
+          <h2>Hvaða framboð ert þú næst?</h2>
+          <p>Svaraðu einni spurningu í einu og fáðu niðurstöðu í lokin.</p>
         </div>
       </div>
 
       <div className="quizProgress">
         <div className="quizProgressBar">
-          <i style={{ width: `${(answeredCount / quizQuestions.length) * 100}%` }} />
+          <i style={{ width: `${Math.min(progress, 100)}%` }} />
         </div>
-        <span>{answeredCount} af {quizQuestions.length} spurningum</span>
+        <span>{Math.min(answeredCount, quizQuestions.length)} af {quizQuestions.length}</span>
       </div>
 
-      <div className="quizGrid">
-        <div className="quizQuestions">
-          {quizQuestions.map((question, index) => (
-            <article className="quizQuestion" key={question.text}>
-              <h3>{index + 1}. {question.text}</h3>
-              <div className="quizOptions">
-                {stableShuffleOptions(question.options, index).map((option) => (
-                  <button
-                    key={option.label}
-                    className={answers[index]?.label === option.label ? 'selected' : ''}
-                    onClick={() => { setAnswers({ ...answers, [index]: option }); setShowResults(false) }}
-                  >
-                    {option.label}
-                  </button>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
+      {!showResults ? (
+        <div className="singleQuizLayout">
+          <article className="singleQuestionCard">
+            <div className="questionMeta">
+              <span>Spurning {currentQuestion + 1}</span>
+              <strong>{quizQuestions.length}</strong>
+            </div>
 
-        <aside className="quizResult">
-          <h3>Niðurstaða</h3>
-          <p>{answeredCount} af {quizQuestions.length} spurningum svarað.</p>
+            <h3>{question.text}</h3>
 
-          {!showResults ? (
-            <div className="quizLocked">
-              <strong>Engin niðurstaða enn</strong>
-              <span>Svaraðu spurningunum og smelltu svo á takkann til að sjá hvaða framboð passar best við áherslurnar þínar.</span>
-              <button
-                className="quizSubmit"
-                disabled={answeredCount === 0}
-                onClick={() => setShowResults(true)}
-              >
-                Sjá niðurstöðu
+            <div className="quizOptions singleQuizOptions">
+              {stableShuffleOptions(question.options, currentQuestion).map((option) => (
+                <button
+                  key={option.label}
+                  className={answers[currentQuestion]?.label === option.label ? 'selected' : ''}
+                  onClick={() => answerQuestion(option)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="quizNavigation">
+              <button onClick={goBack} disabled={currentQuestion === 0}>
+                Til baka
+              </button>
+
+              <button onClick={goNext} disabled={!answers[currentQuestion]}>
+                {isLastQuestion ? 'Sjá mína niðurstöðu' : 'Næsta spurning'}
               </button>
             </div>
-          ) : (
-            <>
-              <div className="resultBars">
-                {scores.map(({ letter, score, party }) => (
-                  <div className="resultRow" key={letter}>
-                    <LogoMark party={party} />
-                    <span>{party.shortName}</span>
-                    <div className="bar"><i style={{ width: topScore ? `${(score / topScore) * 100}%` : '0%' }} /></div>
-                    <strong>{score}</strong>
-                  </div>
-                ))}
-              </div>
-              <p className="quizDisclaimer">Niðurstaðan er vísbending byggð á svörum þínum, ekki formleg kosningaráðgjöf.</p>
-            </>
-          )}
+          </article>
+        </div>
+      ) : (
+        <div className="quizFinalResult">
+          <div className="winnerCard">
+            {topParty && <LogoMark party={topParty} />}
+            <div>
+              <span>Þú ert næst</span>
+              <h3>{topParty?.name}</h3>
+              <p>Niðurstaðan byggir á svörum þínum í könnuninni.</p>
+            </div>
+          </div>
 
-          <button className="quizReset" onClick={() => { setAnswers({}); setShowResults(false) }}>
-            Hreinsa svör
-          </button>
-        </aside>
-      </div>
+          <div className="resultBars">
+            {scores.map(({ letter, score, party }) => (
+              <div className="resultRow" key={letter}>
+                <LogoMark party={party} />
+                <span>{party.shortName}</span>
+                <div className="bar"><i style={{ width: topScore ? `${(score / topScore) * 100}%` : '0%' }} /></div>
+                <strong>{score}</strong>
+              </div>
+            ))}
+          </div>
+
+          <p className="quizDisclaimer">Niðurstaðan er vísbending byggð á svörum þínum, ekki formleg kosningaráðgjöf.</p>
+
+          <div className="quizResultActions">
+            <button onClick={() => { setShowResults(false); setCurrentQuestion(quizQuestions.length - 1) }}>
+              Breyta síðasta svari
+            </button>
+            <button onClick={resetQuiz}>
+              Taka könnun aftur
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

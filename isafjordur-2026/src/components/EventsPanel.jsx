@@ -50,7 +50,7 @@ export default function EventsPanel() {
               <div>
                 <h3>{event.title}</h3>
                 <p>{event.location}</p>
-                <small>{event.source}</small>
+                <small className="eventSource">{event.source}</small>
               </div>
             </a>
           )
