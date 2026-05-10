@@ -2,6 +2,7 @@ import React from 'react'
 import { parties } from '../data/parties.js'
 import { events } from '../data/events.js'
 import LogoMark from './LogoMark.jsx'
+import { trackEvent } from '../utils/analytics.js'
 
 export default function EventsPanel() {
   const visibleEvents = [...events]
@@ -20,7 +21,7 @@ export default function EventsPanel() {
           const party = parties.find((item) => item.letter === event.party)
 
           return (
-            <a className="eventItem" href={event.url} target="_blank" rel="noreferrer" key={`${event.date}-${event.time}-${event.title}`}>
+            <a className="eventItem" href={event.url} target="_blank" rel="noreferrer" key={`${event.date}-${event.time}-${event.title}`} onClick={() => trackEvent('Event Link Click', { title: event.title, party: event.party })}>
               <div className="eventDate">
                 <strong>{event.date.split('-').slice(1).reverse().join('.')}</strong>
                 <span>{event.time}</span>

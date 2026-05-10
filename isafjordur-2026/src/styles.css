@@ -3266,3 +3266,13 @@ section[id],
 .campaignPanel .panelHeader h2 {
   display: none !important;
 }
+
+
+/* Campaign office naming cleanup */
+.campaignPanel .panelHeader h2 {
+  display: none !important;
+}
+
+.campaignPanel .eyebrow {
+  font-size: 13px;
+}

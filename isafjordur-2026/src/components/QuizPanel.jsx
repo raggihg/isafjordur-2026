@@ -4,6 +4,7 @@ import { parties } from '../data/parties.js'
 import { quizQuestions } from '../data/quizQuestions.js'
 import { stableShuffleOptions } from '../data/quizHelpers.js'
 import LogoMark from './LogoMark.jsx'
+import { trackEvent } from '../utils/analytics.js'
 
 export default function QuizPanel() {
   const [answers, setAnswers] = useState({})
@@ -41,6 +42,7 @@ export default function QuizPanel() {
 
     if (isLastQuestion) {
       setShowResults(true)
+      trackEvent('Quiz Completed')
       window.setTimeout(() => {
         document.querySelector('#konnun')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }, 80)
@@ -61,6 +63,7 @@ export default function QuizPanel() {
     if (!answers[currentQuestion]) return
     if (isLastQuestion) {
       setShowResults(true)
+      trackEvent('Quiz Completed')
     } else {
       setCurrentQuestion((value) => Math.min(value + 1, quizQuestions.length - 1))
     }

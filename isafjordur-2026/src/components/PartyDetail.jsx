@@ -2,6 +2,7 @@ import React from 'react'
 import { FileText, Globe2, Info, UserRound } from 'lucide-react'
 import { parties, topics } from '../data/parties.js'
 import LogoMark from './LogoMark.jsx'
+import { trackEvent } from '../utils/analytics.js'
 
 function PartySwitchButton({ party, direction, onClick }) {
   return (
@@ -51,16 +52,16 @@ export default function PartyDetail({ party, setActiveParty }) {
 
           <div className="detailLinks">
             {party.socials?.map((social) => (
-              <a key={social.url} href={social.url} target="_blank" rel="noreferrer">{social.label}</a>
+              <a key={social.url} href={social.url} target="_blank" rel="noreferrer" onClick={() => trackEvent('Social Link Click', { party: party.name, network: social.label })}>{social.label}</a>
             ))}
-            <a href={party.website} target="_blank" rel="noreferrer"><Globe2 size={17} /> Heimasíða</a>
+            <a href={party.website} target="_blank" rel="noreferrer" onClick={() => trackEvent('Website Opened', { party: party.name })}><Globe2 size={17} /> Heimasíða</a>
             {party.manifestoUrl ? (
-              <a href={party.manifestoUrl} target="_blank" rel="noreferrer"><FileText size={17} /> Stefnuskrá</a>
+              <a href={party.manifestoUrl} target="_blank" rel="noreferrer" onClick={() => trackEvent('Manifesto Opened', { party: party.name })}><FileText size={17} /> Stefnuskrá</a>
             ) : (
               <span><Info size={17} /> Stefnuskrá vantar</span>
             )}
             {party.candidatesUrl ? (
-              <a href={party.candidatesUrl} target="_blank" rel="noreferrer"><UserRound size={17} /> Frambjóðendur</a>
+              <a href={party.candidatesUrl} target="_blank" rel="noreferrer" onClick={() => trackEvent('Candidate List Opened', { party: party.name })}><UserRound size={17} /> Frambjóðendur</a>
             ) : (
               <span><Info size={17} /> Frambjóðendur vantar</span>
             )}

@@ -1,3 +1,4 @@
+import { trackEvent } from '../utils/analytics.js'
 import React from 'react'
 
 export default function Header({ setActiveParty, setActiveTopic }) {

@@ -14,7 +14,7 @@ export default function CampaignInfoPanel() {
     <section className="panel campaignPanel">
       <div className="panelHeader">
         <div>
-          <p className="eyebrow">☕ Kosningavika</p>
+          <p className="eyebrow">☕ Kosningaskrifstofur</p>
           
           <p>Yfirlit yfir kosningamiðstöðvar, opnunartíma og kosningakaffi framboðanna í Ísafjarðarbæ.</p>
         </div>
