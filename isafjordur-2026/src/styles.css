@@ -3289,3 +3289,33 @@ body {
     grid-row: 2;
   }
 }
+
+
+/* Topic icons polish */
+.topicIconWrap {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top left, rgba(0,78,203,.14), transparent 70%),
+    linear-gradient(135deg, rgba(255,255,255,.96), rgba(240,247,255,.92));
+  border: 1px solid rgba(0,78,203,.08);
+  color: var(--blue);
+  box-shadow: 0 16px 34px rgba(13,27,42,.07);
+  margin-bottom: 14px;
+}
+
+.topicHeader p {
+  max-width: 720px;
+  color: #5b6680;
+}
+
+@media (max-width: 680px) {
+  .topicIconWrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+  }
+}

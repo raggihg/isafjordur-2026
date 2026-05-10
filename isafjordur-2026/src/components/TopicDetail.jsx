@@ -1,6 +1,21 @@
+import { Home, Anchor, BookOpen, HeartHandshake, Leaf, Route, Dumbbell, BriefcaseBusiness, Music4, Map } from 'lucide-react'
 import React from 'react'
 import { parties, topics } from '../data/parties.js'
 import LogoMark from './LogoMark.jsx'
+
+const topicIcons = {
+  husnaedi: Home,
+  hafnir: Anchor,
+  menntun: BookOpen,
+  velferd: HeartHandshake,
+  umhverfi: Leaf,
+  samgongur: Route,
+  ithrottir: Dumbbell,
+  atvinnulif: BriefcaseBusiness,
+  menning: Music4,
+  skipulag: Map
+}
+
 
 function TopicSwitchButton({ topic, direction, onClick }) {
   return (
@@ -44,7 +59,7 @@ export default function TopicDetail({ topic, setActiveTopic }) {
         <div>
           <p className="eyebrow">Málefnasíða</p>
           <h1>{topic.name}</h1>
-          <p>Hér má sjá stefnuatriði flokkanna undir þessu málefni. Atriðin eru tekin úr stefnuskrám, vefsíðum og efni flokkanna og höfð sýnileg án þess að fela neitt á bak við „sýna meira“.</p>
+          <p>Stefnuatriði og áherslur framboðanna.</p>
         </div>
       </article>
 
