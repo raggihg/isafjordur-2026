@@ -27,8 +27,8 @@ export default function EventsPanel() {
       <div className="panelHeader">
         <div>
           <p className="eyebrow">Viðburðir</p>
-          <h2>Næstu viðburðir</h2>
-          <p>Viðburðir, opið hús og kosningakaffi sem hafa verið auglýst eftir 13. apríl. Hægt er að uppfæra listann úr Google Sheet.</p>
+          
+          
         </div>
       </div>
 
@@ -50,7 +50,7 @@ export default function EventsPanel() {
               <div>
                 <h3>{event.title}</h3>
                 <p>{event.location}</p>
-                <small className="eventSource">{event.source}</small>
+                <small>{event.source}</small>
               </div>
             </a>
           )

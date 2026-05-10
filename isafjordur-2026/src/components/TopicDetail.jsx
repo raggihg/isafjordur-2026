@@ -1,19 +1,17 @@
-import { Home, Anchor, BookOpen, HeartHandshake, Leaf, Route, Dumbbell, BriefcaseBusiness, Music4, Map } from 'lucide-react'
 import React from 'react'
+import { Home, BookOpen, HeartHandshake, Coins, BriefcaseBusiness, Leaf, Route, Dumbbell, Anchor } from 'lucide-react'
 import { parties, topics } from '../data/parties.js'
 import LogoMark from './LogoMark.jsx'
 
 const topicIcons = {
-  husnaedi: Home,
-  hafnir: Anchor,
-  menntun: BookOpen,
-  velferd: HeartHandshake,
-  umhverfi: Leaf,
-  samgongur: Route,
-  ithrottir: Dumbbell,
-  atvinnulif: BriefcaseBusiness,
-  menning: Music4,
-  skipulag: Map
+  housing: Home,
+  schools: BookOpen,
+  welfare: HeartHandshake,
+  economy: Coins,
+  jobs: BriefcaseBusiness,
+  environment: Leaf,
+  transport: Route,
+  culture: Dumbbell
 }
 
 
@@ -30,6 +28,7 @@ function TopicSwitchButton({ topic, direction, onClick }) {
 }
 
 export default function TopicDetail({ topic, setActiveTopic }) {
+  const TopicIcon = topicIcons[topic.id] || Anchor
   const currentIndex = topics.findIndex((item) => item.id === topic.id)
   const previousTopic = topics[(currentIndex - 1 + topics.length) % topics.length]
   const nextTopic = topics[(currentIndex + 1) % topics.length]
@@ -55,7 +54,7 @@ export default function TopicDetail({ topic, setActiveTopic }) {
       </div>
 
       <article className="detailHero topicHero">
-        <div className="topicIconLarge">•</div>
+        <div className="topicIconWrap"><TopicIcon size={34} strokeWidth={2.1} /></div>
         <div>
           <p className="eyebrow">Málefnasíða</p>
           <h1>{topic.name}</h1>

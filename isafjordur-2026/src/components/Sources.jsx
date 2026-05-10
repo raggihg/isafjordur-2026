@@ -26,8 +26,9 @@ export default function Sources() {
       </div>
 
       <div className="siteCredit">
-        Unnið af Ragnari Högna í samstarfi við ChatGPT.<br />
-        Upplýsingar byggja á opinberum gögnum og efni frá framboðunum sjálfum.
+        Síðan er unnin af Ragnari Högna í samstarfi við ChatGPT.<br />
+        Markmið síðunnar er að gera upplýsingar um sveitarstjórnarkosningarnar í Ísafjarðarbæ aðgengilegri á einum stað.<br />
+        Upplýsingar byggja á opinberum gögnum, stefnuskrám og efni frá framboðunum sjálfum. Upplýsingar geta breyst og misjafnt getur verið hversu aðgengilegar þær eru frá framboðunum og samfélagsmiðlum þeirra. Ekki er ábyrgst að allar upplýsingar séu tæmandi eða fullkomlega réttar.
       </div>
     </section>
   )

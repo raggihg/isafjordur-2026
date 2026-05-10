@@ -25,35 +25,5 @@ export const events = [
     location: 'Guðmundarbúð',
     url: 'https://www.framsokn.is/sveitarfelog/isafjardarbaer',
     source: 'Framboðsvefur'
-  },
-  {
-    date: '2026-05-16',
-    time: '21:00',
-    party: 'OPINBERT',
-    title: 'Talning atkvæða hefst',
-    location: 'Fundarsalur Stjórnsýsluhússins á Ísafirði, 4. hæð',
-    url: 'https://www.isafjordur.is/is/stjornsysla/stjornsyslan/kosningar-2026',
-    source: 'Ísafjarðarbær'
   }
-
-,
-  {
-    date: '2026-05-10',
-    time: '11:00–13:00',
-    party: 'C',
-    title: 'Kleinuhringjakaffi Tómasar',
-    location: 'Kosningaskrifstofa Viðreisnar',
-    url: 'https://www.facebook.com/events/26134282039583378',
-    source: 'Viðreisn'
-  },
-  {
-    date: '2026-05-10',
-    time: '15:30',
-    party: 'D',
-    title: 'Fjölskyldufjör',
-    location: 'Kosningaskrifstofa Sjálfstæðisflokksins',
-    url: 'https://www.facebook.com/events/1311049931137928',
-    source: 'Facebook'
-  }
-
 ]

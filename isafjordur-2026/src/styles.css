@@ -3150,172 +3150,86 @@ body {
 }
 
 
-/* Calendar / event timeline polish */
-.eventsPanel {
-  padding: 22px !important;
-  background: rgba(255,255,255,.82) !important;
+/* Launch polish fixes */
+html {
+  scroll-padding-top: 120px;
+}
+
+section[id],
+#flokkar,
+#malefni,
+#vidburdir,
+#kosningar,
+#konnun,
+#heimildir,
+.partyStrip,
+.topicsOverview,
+.eventsPanel,
+.cleanElectionPanel,
+.quizPanel,
+.sourcesFooter {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 96px;
+  }
+
+  section[id],
+  #flokkar,
+  #malefni,
+  #vidburdir,
+  #kosningar,
+  #konnun,
+  #heimildir,
+  .partyStrip,
+  .topicsOverview,
+  .eventsPanel,
+  .cleanElectionPanel,
+  .quizPanel,
+  .sourcesFooter {
+    scroll-margin-top: 96px;
+  }
+}
+
+/* Topic icon replacement */
+.topicIconLarge,
+.topicBadge {
+  display: none !important;
+}
+
+.topicIconWrap {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(0,78,203,.16), transparent 72%),
+    linear-gradient(135deg, rgba(255,255,255,.98), rgba(240,247,255,.94));
+  border: 1px solid rgba(0,78,203,.09);
+  color: var(--blue);
+  box-shadow: 0 16px 34px rgba(13,27,42,.07);
+}
+
+/* Events: no extra heading text */
+.eventsPanel .panelHeader h2:empty,
+.eventsPanel .panelHeader p:empty {
+  display: none !important;
 }
 
 .eventsPanel .panelHeader {
-  margin-bottom: 14px !important;
+  margin-bottom: 12px !important;
 }
 
-.eventsPanel .panelHeader h2 {
-  font-size: 24px !important;
-}
-
-.eventsPanel .panelHeader p {
-  max-width: 680px;
-  font-size: 14px;
-}
-
-.eventTimeline {
-  position: relative;
-  display: grid !important;
-  gap: 0 !important;
-  border: 1px solid rgba(13,27,42,.08);
-  border-radius: 18px;
-  overflow: hidden;
-  background: rgba(255,255,255,.76);
-}
-
-.eventItem {
-  display: grid !important;
-  grid-template-columns: 74px 42px minmax(0, 1fr) !important;
-  gap: 12px !important;
-  align-items: center !important;
-  padding: 11px 13px !important;
-  border: 0 !important;
-  border-bottom: 1px solid rgba(13,27,42,.075) !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.eventItem:last-child {
-  border-bottom: 0 !important;
-}
-
-.eventItem:hover {
-  transform: none !important;
-  background: #f8fbff !important;
-  box-shadow: none !important;
-}
-
-.eventDate {
-  text-align: left;
-}
-
-.eventDate strong {
-  display: block;
-  color: var(--blue);
-  font-size: 15px !important;
-  line-height: 1.1;
-}
-
-.eventDate span {
-  display: block;
-  margin-top: 3px;
-  color: #6b7688;
-  font-size: 11px !important;
-  font-weight: 900;
-}
-
-.eventLogo .logoMark {
-  width: 38px !important;
-  height: 38px !important;
-  border-radius: 11px !important;
-  padding: 4px !important;
-  background: #fff;
-  box-shadow: 0 8px 18px rgba(13,27,42,.07);
-}
-
-.eventLogo span {
-  width: 38px !important;
-  height: 38px !important;
-  border-radius: 11px !important;
-  font-size: 14px;
-}
-
-.eventItem h3 {
-  margin: 0 !important;
-  color: var(--deep);
-  font-size: 15px !important;
-  line-height: 1.25;
-  letter-spacing: -.01em;
-}
-
-.eventItem p {
-  margin: 3px 0 0 !important;
-  color: #4b5870;
-  font-size: 13px;
-  line-height: 1.35;
-}
-
-.eventSource {
-  display: inline-block !important;
-  margin-top: 4px !important;
-  color: #9aa6b5 !important;
-  font-size: 10px !important;
-  font-weight: 850 !important;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-
-@media (max-width: 620px) {
-  .eventsPanel {
-    padding: 16px !important;
-  }
-
-  .eventItem {
-    grid-template-columns: 1fr 38px !important;
-    gap: 8px !important;
-  }
-
-  .eventDate {
-    grid-column: 1 / -1;
-    display: flex;
-    gap: 8px;
-    align-items: baseline;
-  }
-
-  .eventLogo {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .eventItem > div:last-child {
-    grid-column: 1;
-    grid-row: 2;
-  }
-}
-
-
-/* Topic icons polish */
-.topicIconWrap {
-  width: 72px;
-  height: 72px;
-  display: grid;
-  place-items: center;
-  border-radius: 22px;
-  background:
-    radial-gradient(circle at top left, rgba(0,78,203,.14), transparent 70%),
-    linear-gradient(135deg, rgba(255,255,255,.96), rgba(240,247,255,.92));
-  border: 1px solid rgba(0,78,203,.08);
-  color: var(--blue);
-  box-shadow: 0 16px 34px rgba(13,27,42,.07);
-  margin-bottom: 14px;
-}
-
-.topicHeader p {
-  max-width: 720px;
-  color: #5b6680;
-}
-
-@media (max-width: 680px) {
-  .topicIconWrap {
-    width: 60px;
-    height: 60px;
-    border-radius: 18px;
-  }
+/* Footer disclaimer/credit */
+.siteCredit {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(13,27,42,.07);
+  color: rgba(51,65,85,.72);
+  font-size: 11px;
+  line-height: 1.55;
+  font-weight: 650;
 }
