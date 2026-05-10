@@ -1,21 +1,39 @@
 export const events = [
   {
     date: '2026-05-09',
-    time: '11:00–14:00',
-    party: 'S',
-    title: 'Laugardagssúpa hjá Samfylkingunni',
-    location: 'Hafnarstræti 5, Ísafirði',
-    url: 'https://www.facebook.com/photo.php?fbid=122108108361076056&set=pb.61582281707645.-2207520000&type=3',
+    time: '20:00',
+    party: 'B',
+    title: 'Beint í xBílinn – Pub Quiz með Tinnu Rún og Antoni Helga',
+    location: 'Bubbly Bistro & Wine',
+    url: 'https://www.framsokn.is/vidburdir/isafjardarbaer-beint-i-xbilinn-pubquiz-med-tinnu-run-og-antoni-helga',
+    source: 'Framsókn'
+  },
+  {
+    date: '2026-05-10',
+    time: '11:00–13:00',
+    party: 'C',
+    title: 'Kleinuhringjakaffi Tómasar',
+    location: 'Kosningaskrifstofa Viðreisnar',
+    url: 'https://www.facebook.com/events/26134282039583378',
     source: 'Facebook'
   },
   {
-    date: '2026-05-09',
-    time: '12:00–14:00',
-    party: 'M',
-    title: 'Opið hús hjá Miðflokki og hinum',
-    location: 'Vesturferðir í Edinborgarhúsinu',
-    url: 'https://www.facebook.com/profile.php?id=61572070263010',
+    date: '2026-05-10',
+    time: '15:30',
+    party: 'D',
+    title: 'Fjölskyldufjör',
+    location: 'Við kosningaskrifstofu Sjálfstæðisflokksins',
+    url: 'https://www.facebook.com/events/1311049931137928',
     source: 'Facebook'
+  },
+  {
+    date: '2026-05-16',
+    time: '14:00',
+    party: 'D',
+    title: 'Kosningakaffi Sjálfstæðisflokks',
+    location: 'Logn Hótel Ísafirði',
+    url: 'https://xd.is/wp-content/uploads/2026/05/xd-stefnuskra-isafjardarbaer.pdf',
+    source: 'Stefnuskrá Sjálfstæðisflokks'
   },
   {
     date: '2026-05-16',
@@ -24,6 +42,15 @@ export const events = [
     title: 'Kosningakaffi Framsóknar og óháðra',
     location: 'Guðmundarbúð',
     url: 'https://www.framsokn.is/sveitarfelog/isafjardarbaer',
-    source: 'Framboðsvefur'
+    source: 'Framsókn'
+  },
+  {
+    date: '2026-05-16',
+    time: '21:30',
+    party: 'D',
+    title: 'Kosningavaka Sjálfstæðisflokks',
+    location: 'Logn Hótel Ísafirði',
+    url: 'https://xd.is/wp-content/uploads/2026/05/xd-stefnuskra-isafjardarbaer.pdf',
+    source: 'Stefnuskrá Sjálfstæðisflokks'
   }
 ]

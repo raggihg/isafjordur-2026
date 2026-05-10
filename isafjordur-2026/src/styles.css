@@ -3233,3 +3233,36 @@ section[id],
   line-height: 1.55;
   font-weight: 650;
 }
+
+
+/* Events reliability + clean display */
+.eventsPanel {
+  scroll-margin-top: 120px;
+}
+
+.eventsPanel .panelHeader h2:empty,
+.eventsPanel .panelHeader p:empty {
+  display: none !important;
+}
+
+.eventSource {
+  opacity: .65;
+  font-size: 10px !important;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+
+/* Final event/office cleanup */
+.eventsPanel .panelHeader h2,
+.eventsPanel .panelHeader p {
+  display: none !important;
+}
+
+.eventTimeline {
+  margin-top: 2px;
+}
+
+.campaignPanel .panelHeader h2 {
+  display: none !important;
+}

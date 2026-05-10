@@ -1,25 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { parties } from '../data/parties.js'
-import { loadEvents } from '../data/eventsSheet.js'
+import { events } from '../data/events.js'
 import LogoMark from './LogoMark.jsx'
 
 export default function EventsPanel() {
-  const [loadedEvents, setLoadedEvents] = useState([])
-
-  useEffect(() => {
-    let mounted = true
-
-    loadEvents().then((items) => {
-      if (mounted) setLoadedEvents(items)
-    })
-
-    return () => {
-      mounted = false
-    }
-  }, [])
-
-  const visibleEvents = [...loadedEvents]
-    .filter((event) => event.date >= '2026-04-13')
+  const visibleEvents = [...events]
     .sort((a, b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`))
 
   return (
@@ -27,8 +12,6 @@ export default function EventsPanel() {
       <div className="panelHeader">
         <div>
           <p className="eyebrow">Viðburðir</p>
-          
-          
         </div>
       </div>
 
@@ -50,17 +33,11 @@ export default function EventsPanel() {
               <div>
                 <h3>{event.title}</h3>
                 <p>{event.location}</p>
-                <small>{event.source}</small>
+                <small className="eventSource">{event.source}</small>
               </div>
             </a>
           )
         })}
-
-        {!visibleEvents.length && (
-          <div className="eventEmpty">
-            Engir viðburðir fundust. Athugaðu Google Sheet tenginguna eða bættu við viðburði.
-          </div>
-        )}
       </div>
     </section>
   )

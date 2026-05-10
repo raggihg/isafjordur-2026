@@ -1,23 +1,23 @@
-# Plausible Analytics
+# Plausible Analytics — einföld leið
 
-Til að Plausible virki þarf að setja environment variable í Netlify:
+Best er að setja Plausible scriptið handvirkt í `index.html`.
 
-```txt
-VITE_PLAUSIBLE_DOMAIN
+Finndu þetta í `index.html`:
+
+```html
+<!-- PLAUSIBLE MANUAL SETUP:
 ```
 
-Value á að vera nákvæmlega domainið sem er skráð í Plausible, án `https://`.
+og settu scriptið sem Plausible gefur þér inn í `<head>`.
 
 Dæmi:
 
-```txt
-isafjordur2026.netlify.app
+```html
+<script defer data-domain="isafjordur2026.netlify.app" src="https://plausible.io/js/script.js"></script>
 ```
 
-Eftir breytinguna þarf að redeploya síðuna í Netlify.
-
-Ef Plausible finnur ekki scriptið:
-1. Opna live síðuna.
-2. View source.
-3. Leita að `plausible.io/js/script.js`.
-4. Prófa í incognito eða án adblocker.
+Mikilvægt:
+- `data-domain` á að vera domainið án `https://`
+- það verður að passa við domainið sem er skráð í Plausible
+- eftir breytingu þarf að deploya aftur
+- prófaðu helst í incognito eða án adblocker
