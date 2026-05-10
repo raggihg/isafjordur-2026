@@ -1,23 +1,5 @@
 export const events = [
   {
-    date: '2026-05-10',
-    time: '11:00–13:00',
-    party: 'C',
-    title: 'Kleinuhringjakaffi Tómasar',
-    location: 'Kosningaskrifstofa Viðreisnar',
-    url: 'https://www.facebook.com/events/26134282039583378',
-    source: 'Facebook'
-  },
-  {
-    date: '2026-05-10',
-    time: '15:30',
-    party: 'D',
-    title: 'Fjölskyldufjör',
-    location: 'Við kosningaskrifstofu Sjálfstæðisflokksins',
-    url: 'https://www.facebook.com/events/1311049931137928',
-    source: 'Facebook'
-  },
-  {
     date: '2026-05-12',
     time: '20:00',
     party: 'C',
@@ -52,6 +34,15 @@ export const events = [
     location: 'Guðmundarbúð',
     url: 'https://www.framsokn.is/sveitarfelog/isafjardarbaer',
     source: 'Framsókn'
+  },
+  {
+    date: '2026-05-16',
+    time: '21:00',
+    party: 'B',
+    title: 'Kosningavaka Framsóknar og óháðra',
+    location: 'Guðmundarbúð',
+    url: 'https://fb.me/e/7imAE1WhR',
+    source: 'Facebook'
   },
   {
     date: '2026-05-16',

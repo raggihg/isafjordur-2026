@@ -11,7 +11,8 @@ const campaignInfo = [
       'Virka daga 15:00–18:00'
     ],
     events: [
-      'Kosningakaffi í Guðmundarbúð á kjördag kl. 14:00–17:00'
+      'Kosningakaffi í Guðmundarbúð á kjördag kl. 14:00–17:00',
+      'Kosningavaka Framsóknar og óháðra í Guðmundarbúð kl. 21:00'
     ]
   },
   {
@@ -23,7 +24,6 @@ const campaignInfo = [
       'Laugardag og sunnudag 14:00–17:00'
     ],
     events: [
-      'Kleinuhringjakaffi Tómasar sunnudag kl. 11:00–13:00',
       'Kvöldstund með frambjóðendum Viðreisnar á Þingeyri 12. maí kl. 20:00'
     ]
   },
@@ -36,7 +36,6 @@ const campaignInfo = [
       'Laugardag og sunnudag kl. 12:00–16:00'
     ],
     events: [
-      'Fjölskyldufjör sunnudag kl. 15:30 við kosningaskrifstofuna',
       'Kosningakaffi á Logn Hótel Ísafirði á kjördag kl. 14:00',
       'Kosningavaka á Logn Hótel Ísafirði kl. 21:30'
     ]
