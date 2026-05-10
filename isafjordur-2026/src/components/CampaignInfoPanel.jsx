@@ -32,7 +32,8 @@ const campaignInfo = [
     title: 'Sjálfstæðisflokkur',
     location: 'Aðalstræti 24, Ísafirði',
     hours: [
-      'Opnunartímar samkvæmt auglýsingu í stefnuskrá flokksins'
+      'Opið alla virka daga fram að kosningum kl. 12:00–18:00',
+      'Laugardag og sunnudag kl. 12:00–16:00'
     ],
     events: [
       'Fjölskyldufjör sunnudag kl. 15:30 við kosningaskrifstofuna',
@@ -63,13 +64,13 @@ const campaignInfo = [
       'Mánudag–föstudag 11:00–14:00 og 16:00–19:00',
       'Laugardag 11:00–14:00'
     ],
-    events: [
-      'Laugardagssúpa 9. maí kl. 11:00–14:00'
-    ]
+    events: []
   }
 ]
 
 function InfoList({ items }) {
+  if (!items.length) return null
+
   return (
     <ul className="campaignInfoList">
       {items.map((item) => (
@@ -108,10 +109,12 @@ export default function CampaignInfoPanel() {
                   <InfoList items={item.hours} />
                 </div>
 
-                <div>
-                  <strong>Kosningakaffi og viðburðir</strong>
-                  <InfoList items={item.events} />
-                </div>
+                {item.events.length > 0 && (
+                  <div>
+                    <strong>Kosningakaffi og viðburðir</strong>
+                    <InfoList items={item.events} />
+                  </div>
+                )}
               </div>
             </article>
           )

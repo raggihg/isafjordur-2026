@@ -1,14 +1,5 @@
 export const events = [
   {
-    date: '2026-05-09',
-    time: '20:00',
-    party: 'B',
-    title: 'Beint í xBílinn – Pub Quiz með Tinnu Rún og Antoni Helga',
-    location: 'Bubbly Bistro & Wine',
-    url: 'https://www.framsokn.is/vidburdir/isafjardarbaer-beint-i-xbilinn-pubquiz-med-tinnu-run-og-antoni-helga',
-    source: 'Framsókn'
-  },
-  {
     date: '2026-05-10',
     time: '11:00–13:00',
     party: 'C',
