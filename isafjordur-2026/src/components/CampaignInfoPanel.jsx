@@ -3,6 +3,19 @@ import { parties } from '../data/parties.js'
 import { campaignInfo } from '../data/campaignInfo.js'
 import LogoMark from './LogoMark.jsx'
 
+
+function renderInfoList(value) {
+  const items = Array.isArray(value) ? value : [value].filter(Boolean)
+
+  return (
+    <ul className="campaignInfoList">
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  )
+}
+
 export default function CampaignInfoPanel() {
   const statusMap = {
     confirmed: { label: 'Staðfestar upplýsingar', className: 'green' },
@@ -41,12 +54,12 @@ export default function CampaignInfoPanel() {
 
               <div className="campaignInfoLine">
                 <strong>🕒 Opnunartímar</strong>
-                <p>{item.hours}</p>
+                {renderInfoList(item.hours)}
               </div>
 
               <div className="campaignInfoLine">
                 <strong>☕ Kosningakaffi / viðburðir</strong>
-                <div dangerouslySetInnerHTML={{ __html: item.cafe }} />
+                {renderInfoList(item.cafe)}
               </div>
             </article>
           )

@@ -27,6 +27,15 @@ export const events = [
     source: 'Facebook'
   },
   {
+    date: '2026-05-12',
+    time: '20:30–22:00',
+    party: 'M',
+    title: 'Ingibjörg Davíðs þingmaður í heimsókn',
+    location: 'Kosningaskrifstofa Miðflokks og hinna',
+    url: 'https://www.facebook.com/events/2815419428850833',
+    source: 'Facebook'
+  },
+  {
     date: '2026-05-16',
     time: '14:00',
     party: 'D',
@@ -52,5 +61,14 @@ export const events = [
     location: 'Logn Hótel Ísafirði',
     url: 'https://xd.is/wp-content/uploads/2026/05/xd-stefnuskra-isafjardarbaer.pdf',
     source: 'Stefnuskrá Sjálfstæðisflokks'
+  },
+  {
+    date: '2026-05-16',
+    time: '',
+    party: 'C',
+    title: 'Viðburður Viðreisnar',
+    location: 'Sjá nánar á Facebook',
+    url: 'https://www.facebook.com/events/960342403281350',
+    source: 'Facebook'
   }
 ]

@@ -3276,3 +3276,32 @@ section[id],
 .campaignPanel .eyebrow {
   font-size: 13px;
 }
+
+
+/* Campaign office lists */
+.campaignInfoList {
+  margin: 6px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+  list-style: none;
+}
+
+.campaignInfoList li {
+  position: relative;
+  padding-left: 14px;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.campaignInfoList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--blue);
+}
