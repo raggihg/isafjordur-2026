@@ -13,7 +13,9 @@ export const parties = [
   {
     id: 'framsokn',
     socials: [
-      { label: 'Facebook', url: 'https://www.facebook.com/framsoknisafjardarbaer' },
+      { label: 'Facebook', url: 'https://www.facebook.com/framsoknisafjardarbaer/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/framsoknisa/' },
+      { label: 'TikTok', url: 'https://www.tiktok.com/@framsoknisafjardarbaer' }
     ],
     letter: 'B',
     list: 'B-listi',
@@ -147,8 +149,9 @@ export const parties = [
   {
     id: 'vidreisn',
     socials: [
-      { label: 'Facebook', url: 'https://www.facebook.com/vidreisnisafjardarbaer' },
-      { label: 'Instagram', url: 'https://www.instagram.com/vidreisn/' },
+      { label: 'Facebook', url: 'https://www.facebook.com/vidreisn.isafjardarbaer/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/vidreisn.isafjardarbaer/' },
+      { label: 'TikTok', url: 'https://www.tiktok.com/@xc.isafjardarbaer' }
     ],
     letter: 'C',
     list: 'C-listi',
@@ -252,7 +255,9 @@ export const parties = [
   {
     id: 'sjalfstaedisflokkur',
     socials: [
-      { label: 'Facebook', url: 'https://www.facebook.com/DlistinnIsafjardarbae' },
+      { label: 'Facebook', url: 'https://www.facebook.com/xdisafjardar/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/sjalfstaedis/' },
+      { label: 'TikTok', url: 'https://www.tiktok.com/@xd.safjararbr' }
     ],
     letter: 'D',
     list: 'D-listi',
@@ -261,9 +266,9 @@ export const parties = [
     logo: '/logos/xd.png',
     color: '#1f67c8',
     lightColor: '#eaf2ff',
-    website: 'https://xd.is/sveitarstjornarkosningar/isafjardarbaer/',
+    website: 'https://xd.is/sveitarstjornarkosningar/isafjar-arb-r/',
     manifestoUrl: 'https://xd.is/wp-content/uploads/2026/05/xd-stefnuskra-isafjardarbaer.pdf',
-    candidatesUrl: 'https://xd.is/sveitarstjornarkosningar/isafjardarbaer/',
+    candidatesUrl: 'https://xd.is/sveitarstjornarkosningar/isafjar-arb-r/',
     status: 'Stefnuskrá og framboðslisti tengd',
     summary: 'D-listi Sjálfstæðisflokksins leggur áherslu á ábyrgan rekstur, öflugt atvinnulíf, hafnir, innviði, framkvæmdir og skilvirka stjórnsýslu.',
     candidates: [
@@ -377,7 +382,7 @@ export const parties = [
   {
     id: 'midflokkurinn',
     socials: [
-      { label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61572070263010' },
+      { label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61572070263010' }
     ],
     letter: 'M',
     list: 'M-listi',
@@ -468,8 +473,8 @@ export const parties = [
   {
     id: 'samfylkingin',
     socials: [
-      { label: 'Facebook', url: 'https://www.facebook.com/samfylkinginisafjardarbae' },
-      { label: 'Instagram', url: 'https://www.instagram.com/samfylkingin/' },
+      { label: 'Facebook', url: 'https://www.facebook.com/xsisafjardarbaer/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/xsisafjardarbaer/' }
     ],
     letter: 'S',
     list: 'S-listi',
@@ -610,7 +615,7 @@ export const sources = [
   { label: 'Miðflokkurinn — heimasíða', url: 'https://midflokkurinn.is/isafjordur' },
   { label: 'Samfylkingin — heimasíða', url: 'https://xs.is/isafjardarbaer' },
   { label: 'Samfylkingin — stefnuskrá', url: 'https://samfylkingin.cdn.prismic.io/samfylkingin/afyA0MBOoF08xt4D_Horfttilframt%C3%AD%C3%B0ar-Kosningastefna26.pdf' },
-  { label: 'Sjálfstæðisflokkur — heimasíða og frambjóðendur', url: 'https://xd.is/sveitarstjornarkosningar/isafjardarbaer/' },
+  { label: 'Sjálfstæðisflokkur — heimasíða og frambjóðendur', url: 'https://xd.is/sveitarstjornarkosningar/isafjar-arb-r/' },
   { label: 'Sjálfstæðisflokkur — stefnuskrá', url: 'https://xd.is/wp-content/uploads/2026/05/xd-stefnuskra-isafjardarbaer.pdf' },
   { label: 'Viðreisn — heimasíða', url: 'https://vidreisn.is/isafjardarbaer/' },
   { label: 'Viðreisn — stefna', url: 'https://vidreisn.is/isafjardarbaer/stefnan/' },
