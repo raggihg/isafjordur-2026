@@ -46,7 +46,7 @@ export default function CampaignInfoPanel() {
 
               <div className="campaignInfoLine">
                 <strong>☕ Kosningakaffi / viðburðir</strong>
-                <p>{item.cafe}</p>
+                <div dangerouslySetInnerHTML={{ __html: item.cafe }} />
               </div>
             </article>
           )
