@@ -1,6 +1,5 @@
 import React from 'react'
 import { parties } from '../data/parties.js'
-import { campaignInfo } from '../data/campaignInfo.js'
 import LogoMark from './LogoMark.jsx'
 
 const campaignInfo = [
@@ -11,7 +10,7 @@ const campaignInfo = [
     hours: [
       'Virka daga 15:00–18:00'
     ],
-    cafe: [
+    events: [
       'Kosningakaffi í Guðmundarbúð á kjördag kl. 14:00–17:00'
     ]
   },
@@ -23,7 +22,7 @@ const campaignInfo = [
       'Mánudag–föstudag 12:00–13:00 og 15:00–17:00',
       'Laugardag og sunnudag 14:00–17:00'
     ],
-    cafe: [
+    events: [
       'Kleinuhringjakaffi Tómasar sunnudag kl. 11:00–13:00',
       'Kvöldstund með frambjóðendum Viðreisnar á Þingeyri 12. maí kl. 20:00'
     ]
@@ -33,9 +32,9 @@ const campaignInfo = [
     title: 'Sjálfstæðisflokkur',
     location: 'Aðalstræti 24, Ísafirði',
     hours: [
-      'Opnunartímar samkvæmt stefnuskrá flokksins'
+      'Opnunartímar samkvæmt auglýsingu í stefnuskrá flokksins'
     ],
-    cafe: [
+    events: [
       'Fjölskyldufjör sunnudag kl. 15:30 við kosningaskrifstofuna',
       'Kosningakaffi á Logn Hótel Ísafirði á kjördag kl. 14:00',
       'Kosningavaka á Logn Hótel Ísafirði kl. 21:30'
@@ -52,7 +51,7 @@ const campaignInfo = [
       'Fimmtudagur 16:00–18:00',
       'Föstudagur 16:00–20:00'
     ],
-    cafe: [
+    events: [
       'Heitt á könnunni'
     ]
   },
@@ -64,7 +63,7 @@ const campaignInfo = [
       'Mánudag–föstudag 11:00–14:00 og 16:00–19:00',
       'Laugardag 11:00–14:00'
     ],
-    cafe: [
+    events: [
       'Laugardagssúpa 9. maí kl. 11:00–14:00'
     ]
   }
@@ -111,20 +110,13 @@ export default function CampaignInfoPanel() {
 
                 <div>
                   <strong>Kosningakaffi og viðburðir</strong>
-                  <InfoList items={item.cafe} />
+                  <InfoList items={item.events} />
                 </div>
               </div>
             </article>
           )
         })}
       </div>
-<<<<<<< HEAD
-=======
-
-      <p className="campaignUpdated">
-        Síðast uppfært: 10. maí 2026 · Upplýsingar uppfærast þegar framboð birta nýja opnunartíma eða viðburði.
-      </p>
->>>>>>> d2d1bf352fa0fde733b96392d1fd68ce9ce8fc92
     </section>
   )
 }
