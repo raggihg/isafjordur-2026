@@ -11,6 +11,7 @@ const campaignInfo = [
       'Virka daga 15:00–18:00'
     ],
     events: [
+      'Kvöldkaffi 13. maí kl. 18:00–22:00',
       'Kjötsúpa í hádeginu 15. maí kl. 12:00',
       'Kosningakaffi í Guðmundarbúð á kjördag kl. 14:00–17:00',
       'Kosningavaka Framsóknar og óháðra í Guðmundarbúð kl. 21:00'
@@ -24,9 +25,7 @@ const campaignInfo = [
       'Mánudag–föstudag 12:00–13:00 og 15:00–17:00',
       'Laugardag og sunnudag 14:00–17:00'
     ],
-    events: [
-      'Kvöldstund með frambjóðendum Viðreisnar á Þingeyri 12. maí kl. 20:00'
-    ]
+    events: []
   },
   {
     party: 'D',
@@ -37,7 +36,6 @@ const campaignInfo = [
       'Laugardag og sunnudag kl. 12:00–16:00'
     ],
     events: [
-      'Er lagareldi í hættu og hvað þýðir það fyrir samfélagið okkar? í Edinborg 13. maí kl. 12:00',
       'Velkomin í kaffi á Uppstigningardag kl. 16:00',
       'Kosningakaffi á Logn Hótel Ísafirði á kjördag kl. 14:00',
       'Kosningavaka á Logn Hótel Ísafirði kl. 21:30'
@@ -48,14 +46,13 @@ const campaignInfo = [
     title: 'Miðflokkur og hin',
     location: 'Vesturferðir í Edinborgarhúsinu',
     hours: [
-      'Mánudagur 20:30–22:00 — Ingibjörg Davíðs þingmaður í heimsókn',
       'Þriðjudagur 16:00–18:00',
       'Miðvikudagur 16:00–18:00',
       'Fimmtudagur 16:00–18:00',
       'Föstudagur 16:00–20:00'
     ],
     events: [
-      'Heitt á könnunni'
+      'Bjórkvöld 13. maí kl. 18:00'
     ]
   },
   {
