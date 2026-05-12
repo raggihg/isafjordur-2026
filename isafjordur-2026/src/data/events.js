@@ -18,6 +18,42 @@ export const events = [
     source: 'Facebook'
   },
   {
+    date: '2026-05-13',
+    time: '12:00',
+    party: 'D',
+    title: 'Er lagareldi í hættu og hvað þýðir það fyrir samfélagið okkar?',
+    location: 'Edinborg',
+    url: 'https://www.facebook.com/share/1B2sZnTenN/?mibextid=wwXIfr',
+    source: 'Facebook'
+  },
+  {
+    date: '2026-05-13',
+    time: '21:00',
+    party: 'S',
+    title: 'Bingókvöld',
+    location: 'Aðalstræti 7',
+    url: 'https://www.facebook.com/share/1CQ29LswEq/?mibextid=wwXIfr',
+    source: 'Facebook'
+  },
+  {
+    date: '2026-05-14',
+    time: '16:00',
+    party: 'D',
+    title: 'Velkomin í kaffi á Uppstigningardag',
+    location: 'Aðalstræti 24',
+    url: 'https://fb.me/e/613DVHL2b',
+    source: 'Facebook'
+  },
+  {
+    date: '2026-05-15',
+    time: '12:00',
+    party: 'B',
+    title: 'Kjötsúpa í hádeginu',
+    location: 'Hafnarstræti 8',
+    url: 'https://facebook.com/events/s/kjotsupa-i-hadeginu/1702771504093219/',
+    source: 'Facebook'
+  },
+  {
     date: '2026-05-16',
     time: '14:00',
     party: 'D',

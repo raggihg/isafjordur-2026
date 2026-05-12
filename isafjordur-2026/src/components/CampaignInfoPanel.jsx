@@ -11,6 +11,7 @@ const campaignInfo = [
       'Virka daga 15:00–18:00'
     ],
     events: [
+      'Kjötsúpa í hádeginu 15. maí kl. 12:00',
       'Kosningakaffi í Guðmundarbúð á kjördag kl. 14:00–17:00',
       'Kosningavaka Framsóknar og óháðra í Guðmundarbúð kl. 21:00'
     ]
@@ -36,6 +37,8 @@ const campaignInfo = [
       'Laugardag og sunnudag kl. 12:00–16:00'
     ],
     events: [
+      'Er lagareldi í hættu og hvað þýðir það fyrir samfélagið okkar? í Edinborg 13. maí kl. 12:00',
+      'Velkomin í kaffi á Uppstigningardag kl. 16:00',
       'Kosningakaffi á Logn Hótel Ísafirði á kjördag kl. 14:00',
       'Kosningavaka á Logn Hótel Ísafirði kl. 21:30'
     ]
@@ -63,7 +66,9 @@ const campaignInfo = [
       'Mánudag–föstudag 11:00–14:00 og 16:00–19:00',
       'Laugardag 11:00–14:00'
     ],
-    events: []
+    events: [
+      'Bingókvöld 13. maí kl. 21:00 á Aðalstræti 7'
+    ]
   }
 ]
 
